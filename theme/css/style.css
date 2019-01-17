@@ -125,3 +125,44 @@ hr {
     margin-right: 10px;
   }
 }
+
+
+
+.zanshang{
+    text-align: center;
+}
+.zanshang img{
+    width:100px;
+    height:100px;
+}
+.zanshang button{
+    width:50px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px; ;
+    border: none;
+    font-size: 22px;
+    background-color: #CC0033;
+    color: white;
+    cursor: pointer;
+}
+
+.payContent{
+    margin-top:10px;
+    padding-left:50%;
+    width:100%;
+    font-size: 10px;
+    text-align: center;
+}
+.payContent div:first-child{
+    margin-left:-100px;
+    float:left;
+}
+.payContent div:last-child{
+    float:left;
+}
+.payContent img{
+    margin: 0 auto;
+}
