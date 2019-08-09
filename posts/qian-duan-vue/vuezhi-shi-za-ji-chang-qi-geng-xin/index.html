@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>vue知识杂记（长期更新） | imba吧
+</title>
+  <link rel="canonical" href="https://www.imba.pub/posts/qian-duan-vue/vuezhi-shi-za-ji-chang-qi-geng-xin/index.html">
+
+
+
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/style.css">
+
+
+<meta name="description" content="vue知识杂记">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="https://www.imba.pub">imba吧</a></h1>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="http://www.openui.cn" target="_blank">openui</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>vue知识杂记（长期更新）
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2019-08-09T00:00:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Fri 09 August 2019
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="https://www.imba.pub/category/qian-duan-vue.html">前端,vue</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-user-o"></i>
+        <a href="https://www.imba.pub/author/openui.html">openui</a>      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="https://www.imba.pub/tag/vue.html">#vue</a>,         <a href="https://www.imba.pub/tag/qian-duan.html">#前端</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <h3>vue</h3>
+<ul>
+<li>
+<p>vue-router</p>
+</li>
+<li>
+<p>安装：npm install vue-router  --save-dev </p>
+</li>
+<li>
+<p>使用： src 下新建 router 文件件 新建index.js</p>
+<p>```
+import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/component/helloworld.vue'
+Vue.use(Router)</p>
+<p>export default new Router({
+    route:[
+        {
+            path:'/',
+            name:'helloworld',
+            component:Helloworld,
+            redirect:'/index',
+            alias:'hello'
+        },
+        {
+        //动态路由带参数 ：开头
+        path:'/list/:id',
+        //可以不通过this.$router获取：id
+        //直接当组件的props使用
+        props:true,
+        //通过name跳转
+        name:'listdata',
+        component:listdata
+        }</p>
+<div class="highlight"><pre><span></span>]
+</pre></div>
+
+
+<p>})</p>
+<p>export default{
+    name:'hello',
+    props:['id'],
+    mounted(){
+        console.log(this.id);
+    }
+}
+```</p>
+</li>
+<li>
+<p>引用： main.js import router from './router'</p>
+</li>
+<li>
+<p>导航使用：</p>
+<p>```
+<router-link to="/hello">go hello</router-link></p>
+<p><router-link :to="{name:'view1'}">go hello</router-link></p>
+<p><div @click="goto">function jump</div></p>
+<p>methods:{
+    goto(){
+        this.$router.push('/hello2')
+    }
+}，
+mounted(){
+    //获取路由参数
+    console.log(this.$router.param.id)
+}
+```</p>
+</li>
+<li>
+<p>路由导航守卫</p>
+<p>```
+// 导航守卫
+// 使用 router.beforeEach 注册一个全局前置守卫，判断用户是否登陆
+router.beforeEach((to, from, next) =&gt; {
+  if (to.path === '/login') {
+    next();
+  } else {
+    let token = localStorage.getItem('Authorization');</p>
+<div class="highlight"><pre><span></span>if (token === &#39;null&#39; || token === &#39;&#39;) {
+  next(&#39;/login&#39;);
+} else {
+  next();
+}
+</pre></div>
+
+
+<p>}
+});
+```</p>
+</li>
+<li>
+<p>vuex</p>
+</li>
+<li>
+<p>安装：npm install vuex -s</p>
+</li>
+<li>
+<p>使用：新建文件夹 store 新建index.js</p>
+<p>```
+import Vue from 'vue';
+import Vuex from 'vuex';
+Vue.use(Vuex);
+export default new Vuex.Store({
+    plugin:[createLogger()],
+    state:{
+        x:1
+    },
+    //唯一修改state的方法
+    mutation:{
+        increment(state){
+            state.x++;
+        }
+    }
+})</p>
+<p>Index.vue
+import store from 'Vuex'</p>
+<p>export default{
+    methods:{
+        add(){
+            this.$store.commit('increment');
+        },
+        getx(){
+            return this.$store.state.x
+        } <br>
+    }
+}</p>
+<p>// mapMutations</p>
+<p>import { mapMutations } from 'vuex'</p>
+<p>methods:{
+     ...mapMutations( [ 'add','reduce' ] )
+ }</p>
+<p>// 直接调用即可
+ <button @click='add'>加</button>
+<button @click='reduce'>减</button>
+```</p>
+</li>
+<li>
+<p>element ui</p>
+</li>
+<li>
+<p>导航链接</p>
+<p><code>&lt;el-menu&gt; 
+&lt;/el-menu&gt;</code></p>
+</li>
+<li>
+<p>button</p>
+<p>```
+ <el-button>鼠标滑过/点击背景变淡</el-button>
+  <el-button type="primary" plain>鼠标滑过/点击背景变深色调</el-button>
+  <el-button type="success" round>圆角按钮</el-button>
+  <el-button type="info" icon="el-icon-search" circle>图标按钮按钮，icon放入映入的icon图标名称</el-button>
+  <el-button type="text">文字按钮</el-button>
+  <el-button disabled>禁用按钮</el-button>
+  <el-button size="medium">不同尺寸按钮</el-button>
+  <el-button :disabled="true/false">动态禁用</el-button>
+  <el-button type="primary">图标加文字按钮<i class="el-icon-upload el-icon--right"></i></el-button>
+  <el-button type="primary" :loading="true">加载中按钮</el-button></p>
+<p><el-button-group>
+  <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
+  <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+ </el-button-group>
+```</p>
+</li>
+<li>
+<p>event bus 事件总线</p>
+</li>
+<li>
+<p>父组件会通过<code>props</code>向下传数据给子组件，当子组件有事情要告诉父组件时会通过<code>$emit</code>事件告诉父组件。</p>
+<p><img alt="https://www.w3cplus.com/sites/default/files/blogs/2018/1809/1488038869_67673.png" src=""></p>
+</li>
+</ul>
+<p>```
+  //eventbus.js
+  import Vue from 'vue' 
+  export const EventBus = new Vue()</p>
+<p>// main.js Vue.prototype.$EventBus = new Vue()</p>
+<p>Bus.$emit('getTarget', event.target);   </p>
+<p>Bus.$on('getTarget', target =&gt; {<br>
+              console.log(target);<br>
+          });<br>
+  ```</p>
+<ul>
+<li>
+<p>vue-schart</p>
+</li>
+<li>
+<p>网络请求</p>
+</li>
+<li>
+<p>axios</p>
+<ul>
+<li>
+<p>安装注册使用：npm i axios</p>
+</li>
+<li>
+<p>拦截器</p>
+</li>
+</ul>
+<p>```
+  axios.interceptors.request.use(
+    config =&gt; {
+        if (localStorage.getItem('loginToken')) {
+            config.headers.Authorization = localStorage.getItem('loginToken');
+          }</p>
+<div class="highlight"><pre><span></span>    return config;
+},
+error =&gt; {
+  return Promise.reject(error);
+}
+</pre></div>
+
+
+<p>)</p>
+<p>```</p>
+</li>
+</ul>
+  </div>
+
+  <div class='zanshang'>
+      <button id='showpay'>赏</button>
+       <div id="payContent" class="payContent">
+
+           <div><img src='/theme/images/weixinpay.png'><br>微信扫一扫</div>
+           <div><img src='/theme/images/alipay.png'><br>支付宝扫一扫</div>
+
+         </div>
+   </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="https://www.imba.pub/authors.html">Authors</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
