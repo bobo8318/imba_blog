@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>flutter内容杂记 | imba吧
+</title>
+  <link rel="canonical" href="https://www.imba.pub/posts/yi-dong-kai-fa/flutternei-rong-za-ji/index.html">
+
+
+
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/style.css">
+
+
+<meta name="description" content="flutter内容杂记">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="https://www.imba.pub">imba吧</a></h1>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="http://www.openui.cn" target="_blank">openui</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>flutter内容杂记
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2019-08-19T00:00:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Mon 19 August 2019
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="https://www.imba.pub/category/yi-dong-kai-fa.html">移动开发</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-user-o"></i>
+        <a href="https://www.imba.pub/author/openui.html">openui</a>      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="https://www.imba.pub/tag/yi-dong-kai-fa.html">#移动开发</a>,         <a href="https://www.imba.pub/tag/android.html">#android</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <h3>flutter</h3>
+<ul>
+<li>常用命令</li>
+</ul>
+<p>```</p>
+<p>--version
+  查看Flutter版本</p>
+<p>-h或者--help</p>
+<p>打印所有命令行用法信息</p>
+<p>analyze
+  分析项目的Dart代码。</p>
+<p>build
+  Flutter构建命令。</p>
+<p>channel
+  列表或开关Flutter通道。</p>
+<p>clean
+  删除构建/目录。</p>
+<p>config
+  配置Flutter设置。</p>
+<p>create
+  创建一个新的Flutter项目。</p>
+<p>devices
+  列出所有连接的设备。</p>
+<p>doctor
+  展示了有关安装工具的信息。</p>
+<p>drive
+  为当前项目运行Flutter驱动程序测试。</p>
+<p>format
+  格式一个或多个Dart文件。</p>
+<p>fuchsia_reload
+  在Fuchsia上进行热重载。</p>
+<p>help
+  显示帮助信息的Flutter。</p>
+<p>install
+  在附加设备上安装Flutter应用程序。</p>
+<p>logs
+  显示用于运行Flutter应用程序的日志输出。</p>
+<p>packages
+  命令用于管理Flutter包。</p>
+<p>precache
+  填充了Flutter工具的二进制工件缓存。</p>
+<p>run
+  在附加设备上运行你的Flutter应用程序。</p>
+<p>screenshot
+  从一个连接的设备截图。</p>
+<p>stop
+  停止在附加设备上的Flutter应用。</p>
+<p>test
+  对当前项目的Flutter单元测试。</p>
+<p>trace
+  开始并停止跟踪运行的Flutter应用程序。</p>
+<p>upgrade
+  升级你的Flutter副本。
+  ```</p>
+<ul>
+<li>
+<p>快捷键</p>
+</li>
+<li>
+<p>常见问题</p>
+</li>
+<li>
+<p>更新国内镜像地址，设置环境变量</p>
+<blockquote>
+<p>export PUB_HOSTED_URL=https://pub.flutter-io.cn</p>
+<p>export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</p>
+</blockquote>
+</li>
+<li>
+<p>重要基础内容</p>
+</li>
+<li>
+<p>风格：material.dart   cupertino.dart</p>
+<blockquote>
+<p><code>import 'package:flutter/material.dart'</code></p>
+</blockquote>
+</li>
+<li>
+<p>组件:所有元素均为Widget 继承StatelessWidget StatefulWidget</p>
+<ul>
+<li>StatelessWidget  静态组件</li>
+</ul>
+<p>```
+  class MyApp extends StateLessWidget{
+      @overwrite
+      Widget build(BuildContext context){
+          return MaterialApp(
+          title:'',
+          theme:ThemeData.light(),
+          home:BottomNavigationWidget()
+          );
+      }</p>
+<p>}
+  ```</p>
+<ul>
+<li>StatefulWidget 动态组件</li>
+</ul>
+<p>```
+  class BottomNavigationWidget extends StatefulWidget{
+      _BottomNavigationWidget createState() =&gt; _BottomNavigationWidgetState();
+  }</p>
+<p>class _BottomNavigationWidgetState extends State<BottomNavigationWidget>{
+      int _curentindex = 0;</p>
+<div class="highlight"><pre><span></span>  @overwrite
+  Widget build(BuildContext context){
+      return Scaffold(
+      body:list[_curentindex],
+      bottomNavigationBar:BottomNavigationBar(
+          items:[
+              BottomNavigationBarItem(
+                  icon:Icon(Icons.home,color:blue),
+                  title:Text()
+              )
+          ],
+          currenIndex:_currentIndex,
+          onTap:(int index){
+              setState((){
+                  _currentIndex = index;
+              });
+          }
+      ));
+  }
+
+  @overwrite
+  void initState(){
+      list
+          ..add(Home())
+          ..add()
+          ..add();
+      super.initState();
+  }
+</pre></div>
+
+
+<p>}
+  ```</p>
+</li>
+<li>
+<h3>MaterialApp 代表使用纸墨设计（Material Design）风格的应用</h3>
+<p><code>title ： 在任务管理窗口中所显示的应用名字
+theme ： 应用各种 UI 所使用的主题颜色
+color ： 应用的主要颜色值（primary color），也就是安卓任务管理窗口中所显示的应用颜色
+home ： 应用默认所显示的界面 Widget
+routes ： 应用的顶级导航表格，这个是多页面应用用来控制页面跳转的，类似于网页的网址
+initialRoute ：第一个显示的路由名字，默认值为 Window.defaultRouteName
+onGenerateRoute ： 生成路由的回调函数，当导航的命名路由的时候，会使用这个来生成界面
+onLocaleChanged ： 当系统修改语言的时候，会触发å这个回调
+navigatorObservers ： 应用 Navigator 的监听器
+debugShowMaterialGrid ： 是否显示 纸墨设计 基础布局网格，用来调试 UI 的工具
+showPerformanceOverlay ： 显示性能标签，https://flutter.io/debugging/#performanceoverlay
+checkerboardRasterCacheImages 、showSemanticsDebugger、debugShowCheckedModeBanner 各种调试开关</code></p>
+</li>
+<li>
+<h3>Scaffold 单个页面的脚手架</h3>
+<p><code>appBar - 显示在界面顶部的一个 AppBar。
+body - 当前界面所显示的主要内容 Widget。
+floatingActionButton - Material 设计中所定义的 FAB，界面的主要功能按钮。
+persistentFooterButtons - 固定在下方显示的按钮，比如对话框下方的确定、取消按钮。
+drawer - 抽屉菜单控件。
+backgroundColor - 内容的背景颜色，默认使用的是 ThemeData.scaffoldBackgroundColor 的值。
+bottomNavigationBar - 显示在页面底部的导航栏。
+resizeToAvoidBottomPadding - 类似于 Android 中的 android:windowSoftInputMode='adjustResize'，控制界面内容 body 是否重新布局来避免底部被覆盖了，比如当键盘显示的时候，重新布局避免被键盘盖住内容。默认值为 true。</code></p>
+</li>
+<li>
+<p>网络请求</p>
+<ul>
+<li>
+<p>dio:https://pub.flutter-io.cn/packages/dio</p>
+</li>
+<li>
+<p>pubspec.yaml 文件中添加支持以来 </p>
+<blockquote>
+<p>denpendencies 添加依赖</p>
+<p>dio: ^2.0.9</p>
+</blockquote>
+</li>
+<li>
+<p>引入</p>
+<blockquote>
+<p>import 'package:dio/dio.dart';</p>
+</blockquote>
+</li>
+<li>
+<p>简单实用</p>
+<p>```
+void getHttp() async {// 异步
+  try {
+    Response response = await Dio().get("http://www.google.cn");
+    print(response);
+  } catch (e) {
+    print(e);
+  }
+}</p>
+<p>// post
+response = await dio.post("/test", data: {"id": 12, "name": "wendu"});
+// form
+FormData formData = new FormData.from({
+    "name": "wendux",
+    "age": 25,
+  });</p>
+<p>```</p>
+</li>
+<li>
+<p>伪造请求头</p>
+<p>```
+// httpdeader.dart
+const headers={</p>
+<p>}</p>
+<p>// home.dart 
+Future getHttp() async{
+    try{
+        Response response;
+        Dio dio = new Dio();
+        dio.options.headers = httpHeaders;
+        response = await dio.get("");
+        return response.data;
+    }catch(e){
+        return print(e);
+    }</p>
+<p>}</p>
+<p>void _jike(){
+    getHttp().then((val){
+        setStat((){
+            showtext=val
+        });
+    });
+}
+```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>常用示例</p>
+<ul>
+<li>
+<p>底部导航</p>
+</li>
+<li>
+<p>bottomNavigationBar</p>
+</li>
+<li>
+<p>布局</p>
+</li>
+<li>
+<p>Column 列布局</p>
+<p><code>Column(
+    children:&lt;widget[
+        Text(),
+        RaisedButton()
+    ]&gt;
+)</code></p>
+</li>
+<li>
+<p>Button</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>RaisedButton</th>
+<th>Material Design中的button， 一个凸起的材质矩形按钮。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FlatButton</td>
+<td>Material Design中的button，一个没有阴影的材质设计按钮。</td>
+</tr>
+<tr>
+<td>OutlineButton</td>
+<td>Material Design中的button，RaisedButton和FlatButton之间的交叉：一个带边框的背景透明的按钮，当按下按钮时，其高度增加，背景变得不透明。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>RaisedButton(onpress:(){},child:Text('finished'))</p>
+</li>
+<li>
+<p>showDialog()</p>
+</li>
+<li>
+<p>Future:<code>return await ...</code>的时候，实际上返回的是一个延迟计算的<code>Future</code>对象</p>
+</li>
+</ul>
+<blockquote>
+<p>Future.then(funA());</p>
+</blockquote>
+<ul>
+<li>TextField：输入文本框</li>
+</ul>
+<p><code>TextField(
+          controller: controller,
+          maxLength: 30,//最大长度，设置此项会让TextField右下角有一个输入数量的统计字符串
+          maxLines: 1,//最大行数
+          autocorrect: true,//是否自动更正
+          autofocus: true,//是否自动对焦
+          obscureText: true,//是否是密码
+          textAlign: TextAlign.center,//文本对齐方式
+          style: TextStyle(fontSize: 30.0, color: Colors.blue),//输入文本的样式
+          inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],//允许的输入格式
+          onChanged: (text) {//内容改变的回调
+            print('change $text');
+          },
+          onSubmitted: (text) {//内容提交(按回车)的回调
+            print('submit $text');
+          },
+          enabled: true,//是否禁用
+    );</code></p>
+<ul>
+<li>
+<p>监听变化</p>
+<p>```
+String value = "";
+TextField(
+  onChanged: (text) {
+    value = text;
+  },
+)</p>
+<p>// 使用controller
+TextEditingController controller = TextEditingController();
+TextField(
+  controller: controller,
+)
+//监听变化
+controller.addListener(() {
+  // Do something here
+});
+// 获取 设置 值
+print(controller.text); // Print current value
+controller.text = "Demo Text"; // Set new value
+```</p>
+<ul>
+<li>装饰 textfield</li>
+</ul>
+<p>```
+  decoration: InputDecoration(
+      icon: Icon(Icons.print),
+      contentPadding:EdgeInsets.all(10.0),
+      labelText:'hello',
+      helperText:'help me'
+  )</p>
+<p>TextField(
+    decoration: InputDecoration(
+      prefixIcon: Icon(Icons.print)
+    ),
+  ),
+  ```</p>
+</li>
+<li>
+<p>SingleChildScrollView 解决键盘弹起变形</p>
+</li>
+<li>
+<p>swiper:轮播效果插件</p>
+<blockquote>
+<p>dependencies</p>
+<p>​ flutter_swiper:^1.1.4</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+  </div>
+
+  <div class='zanshang'>
+      <button id='showpay'>赏</button>
+       <div id="payContent" class="payContent">
+
+           <div><img src='/theme/images/weixinpay.png'><br>微信扫一扫</div>
+           <div><img src='/theme/images/alipay.png'><br>支付宝扫一扫</div>
+
+         </div>
+   </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="https://www.imba.pub/authors.html">Authors</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

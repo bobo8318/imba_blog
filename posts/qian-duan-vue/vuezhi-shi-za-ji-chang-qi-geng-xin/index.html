@@ -63,6 +63,10 @@
   <div class="content">
     <h3>vue</h3>
 <ul>
+<li>原理</li>
+<li>
+<p>数据双向邦定:通过Object.defineProperty()</p>
+</li>
 <li>
 <p>vue-router</p>
 </li>
@@ -198,53 +202,126 @@ import store from 'Vuex'</p>
 ```</p>
 </li>
 <li>
-<p>element ui</p>
+<p>vue</p>
 </li>
 <li>
-<p>导航链接</p>
-<p><code>&lt;el-menu&gt; 
-&lt;/el-menu&gt;</code></p>
+<p>循环：</p>
+<p><code>v-for="(item, index) in list" :key="index"</code></p>
 </li>
 <li>
-<p>button</p>
-<p>```
- <el-button>鼠标滑过/点击背景变淡</el-button>
-  <el-button type="primary" plain>鼠标滑过/点击背景变深色调</el-button>
-  <el-button type="success" round>圆角按钮</el-button>
-  <el-button type="info" icon="el-icon-search" circle>图标按钮按钮，icon放入映入的icon图标名称</el-button>
-  <el-button type="text">文字按钮</el-button>
-  <el-button disabled>禁用按钮</el-button>
-  <el-button size="medium">不同尺寸按钮</el-button>
-  <el-button :disabled="true/false">动态禁用</el-button>
-  <el-button type="primary">图标加文字按钮<i class="el-icon-upload el-icon--right"></i></el-button>
-  <el-button type="primary" :loading="true">加载中按钮</el-button></p>
-<p><el-button-group>
-  <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
-  <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
- </el-button-group>
-```</p>
+<p>表单：</p>
+<p>```</p>
+<p>```</p>
 </li>
 <li>
 <p>event bus 事件总线</p>
-</li>
-<li>
-<p>父组件会通过<code>props</code>向下传数据给子组件，当子组件有事情要告诉父组件时会通过<code>$emit</code>事件告诉父组件。</p>
-<p><img alt="https://www.w3cplus.com/sites/default/files/blogs/2018/1809/1488038869_67673.png" src=""></p>
-</li>
+<ul>
+<li>父组件会通过<code>props</code>向下传数据给子组件，当子组件有事情要告诉父组件时会通过<code>$emit</code>事件告诉父组件。</li>
 </ul>
+<p><img alt="https://www.w3cplus.com/sites/default/files/blogs/2018/1809/1488038869_67673.png" src=""></p>
 <p>```
-  //eventbus.js
-  import Vue from 'vue' 
-  export const EventBus = new Vue()</p>
+//eventbus.js
+import Vue from 'vue' 
+export const EventBus = new Vue()</p>
 <p>// main.js Vue.prototype.$EventBus = new Vue()</p>
 <p>Bus.$emit('getTarget', event.target);   </p>
 <p>Bus.$on('getTarget', target =&gt; {<br>
-              console.log(target);<br>
-          });<br>
-  ```</p>
+            console.log(target);<br>
+        });<br>
+```</p>
+</li>
+<li>
+<p>slot 插槽</p>
+</li>
+<li>
+<p>将父组件放在子组件标签里的内容，放到想让他显示的地方,如下 如果子组件中没有slot 父组件的hello就不会显示出来。加入slot 父组件的包含内容 插到slot里</p>
+<p>```
+//子组件
+<template>
+  <div>
+        <h3>我是子组件</h3>
+        <slot></slot>//加了个slot标签，在父组件中，就可以让子组件标签内的内容显示啦
+    </div>
+</template></p>
+<p>//父组件
+<template>
+  <div>
+      //hello显示
+      <v-child>hello</v-child>
+  </div>
+</template>
+```</p>
+</li>
+<li>
+<p>具名slot 子组件在对应分发的位置的slot标签里, 没有具名的内容会放到一个 子组件的默认插槽中 如果没有默认插槽就不显示。</p>
+<p>```
+//子组件
+<template>
+    <div>
+        <h3>我是子组件</h3>
+        <p><slot name="header">父组件中没header的时候会显示</slot></p>
+        <p><slot name="footer">父组件中没footer的时候会显示</slot></p>
+    </div>
+</template></p>
+<p>//父组件
+<template>
+  <div>
+      <v-child>
+          <p>hello</p>
+          <h3 slot="header">header</h3>
+      </v-child>
+  </div>
+</template></p>
+<p>```</p>
+</li>
+<li>
+<p>slot-scope:作用域插槽，可以接收子组件传来的数据</p>
+<p>```
+  // 父组件中
+<slot-scope-child>
+    <template slot-scope="user">
+       <ul>
+            <li v-for="(item, index) in user.data" :key="index">{{item}}</li>
+       </ul>
+    </template>
+</slot-scope-child>
+// 子组件中
+<div class="child">
+    <h3>这里是子组件</h3>
+    <slot :data="data"></slot>
+</div></p>
+<p>数据在子组件，然后绑到父组件，父组件就可以使用了
+```</p>
+</li>
+<li>
+<p>父子组件间通信</p>
 <ul>
 <li>
-<p>vue-schart</p>
+<p>父到子</p>
+</li>
+<li>
+<p>子组件中 props:['msgFather'] 接收父组件</p>
+</li>
+<li>
+<p>父组件中 msg-father="dad无可奉告" 绑定数据</p>
+</li>
+<li>
+<p>子到父</p>
+</li>
+<li>
+<p>```
+    //子组件
+    this.$emit("sendiptVal", this.inputValue) 
+    //子组件发射自定义事件sendiptVal 并携带要传递给父组件的值，
+    // 如果要传递给父组件很多值，这些值要作为参数依次列出 如 this.$emit('valueUp', this.inputValue, this.mesFather); </p>
+<p>//父组件
+<accept-and-refuse @sendiptVal='showChildMsg'></accept-and-refuse></p>
+<p>```</p>
+</li>
+<li>
+<p>兄弟间</p>
+</li>
+</ul>
 </li>
 <li>
 <p>网络请求</p>
@@ -259,23 +336,28 @@ import store from 'Vuex'</p>
 <p>拦截器</p>
 </li>
 </ul>
+</li>
+</ul>
 <p>```
-  axios.interceptors.request.use(
-    config =&gt; {
-        if (localStorage.getItem('loginToken')) {
-            config.headers.Authorization = localStorage.getItem('loginToken');
-          }</p>
-<div class="highlight"><pre><span></span>    return config;
-},
-error =&gt; {
-  return Promise.reject(error);
-}
+      axios.interceptors.request.use(
+        config =&gt; {
+            if (localStorage.getItem('loginToken')) {
+                config.headers.Authorization = localStorage.getItem('loginToken');
+              }</p>
+<div class="highlight"><pre><span></span>        return config;
+    },
+    error =&gt; {
+      return Promise.reject(error);
+    }
+  )
 </pre></div>
 
 
-<p>)</p>
 <p>```</p>
-</li>
+<p>​      </p>
+<ul>
+<li>事件总线 Eventbus</li>
+<li></li>
 </ul>
   </div>
 

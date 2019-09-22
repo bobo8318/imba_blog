@@ -7,9 +7,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>一些有用的网址（长期更新） | imba吧
+  <title>linux知识记录 | imba吧
 </title>
-  <link rel="canonical" href="https://www.imba.pub/posts/gong-ju/yi-xie-you-yong-de-wang-zhi-chang-qi-geng-xin/index.html">
+  <link rel="canonical" href="https://www.imba.pub/posts/linux/linuxzhi-shi-ji-lu/index.html">
 
 
 
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://www.imba.pub/theme/css/style.css">
 
 
-<meta name="description" content="一些有用的网址汇总">
+<meta name="description" content="linux知识记录">
 </head>
 
 <body>
@@ -38,54 +38,89 @@
 
   <div class="main">
     <div class="container">
-      <h1>一些有用的网址（长期更新）
+      <h1>linux知识记录
 </h1>
       <hr>
 <article class="article">
   <header>
     <ul class="list-inline">
-      <li class="list-inline-item text-muted" title="2019-08-09T00:00:00+00:00">
+      <li class="list-inline-item text-muted" title="2019-09-22T00:00:00+00:00">
         <i class="fa fa-clock-o"></i>
-        Fri 09 August 2019
+        Sun 22 September 2019
       </li>
       <li class="list-inline-item">
         <i class="fa fa-folder-open-o"></i>
-        <a href="https://www.imba.pub/category/gong-ju.html">工具</a>
+        <a href="https://www.imba.pub/category/linux.html">linux</a>
       </li>
       <li class="list-inline-item">
         <i class="fa fa-user-o"></i>
         <a href="https://www.imba.pub/author/openui.html">openui</a>      </li>
       <li class="list-inline-item">
         <i class="fa fa-files-o"></i>
-        <a href="https://www.imba.pub/tag/gong-ju.html">#工具</a>,         <a href="https://www.imba.pub/tag/wang-zhi.html">#网址</a>      </li>
+        <a href="https://www.imba.pub/tag/linux.html">#linux</a>      </li>
     </ul>
   </header>
   <div class="content">
-    <h3>有用的网址</h3>
+    <h3>linux</h3>
 <ul>
-<li>前段</li>
-<li>一般<ul>
-<li>cdn: https://www.bootcdn.cn</li>
-<li>伪造前段数据：https://www.easy-mock.com/login</li>
-</ul>
+<li>
+<p>centos</p>
 </li>
-<li>js<ul>
-<li>web api 接口: https://developer.mozilla.org/zh-CN/docs/Web/API</li>
-</ul>
+<li>
+<p>环境变量设置</p>
+<blockquote>
+<p>sudo vi /etc/profile</p>
+<p>export BASE_PATH = /usr/local/bin</p>
+<p>export PATH=$PATH:$BASE_PATH </p>
+<p>source /etc/profile</p>
+</blockquote>
 </li>
-<li>框架<ul>
-<li>bootstrap: https://www.bootcss.com</li>
-</ul>
+<li>
+<p>开启防火墙及特定端口</p>
+<blockquote>
+<p>firewall-cmd --state //查看防火墙状态</p>
+<p>systemctl start firewalld.service //启动防火墙</p>
+<p>systemctl enable firewalld.service  //设置开机启动</p>
+<p>systemctl restart firewalld.service  //重启防火墙</p>
+<p>systemctl is-enabled firewalld.service;echo $? //查看防火墙设置开机自启是否成功</p>
+<p>// 开启端口</p>
+<p>firewall-cmd --zone=public --add-port=80/tcp --permanent</p>
+<p>--zone #作用域
+--add-port=80/tcp  #添加端口，格式为：端口/通讯协议
+--permanent   #永久生效，没有此参数重启后失效</p>
+<p>firewall-cmd --reload //重新加载防火墙策略</p>
+<p>netstat -ntlp
+或：firewall-cmd --list-ports //查看端口开放效果</p>
+</blockquote>
 </li>
-<li>后端</li>
-<li>java<ul>
-<li>仓库： http://mvnrepository.com</li>
-<li>构建工具</li>
-<li>gradle: http://services.gradle.org/distributions/</li>
-</ul>
+<li>
+<p>查看端口占用情况</p>
 </li>
-<li>在线工具</li>
-<li>在线加密解密: http://tool.oschina.net/encrypt</li>
+</ul>
+<blockquote>
+<p>netstat -lnp|grep 8080 
+netstat -antup |grep 2711 // 通过进程查看端口
+</p>
+</blockquote>
+<ul>
+<li>进程操作</li>
+</ul>
+<blockquote>
+<p>ps 1777 //查看进程信息
+kill -9 [PID]  #-9 表示强迫进程立即停止</p>
+<p>ps -ef|grep redis //知道服务名称</p>
+</blockquote>
+<ul>
+<li>
+<p>常见故障：</p>
+<ul>
+<li>su:鉴定故障</li>
+</ul>
+<blockquote>
+<p>sudo passwd root
+输入当前用户密码，然后输入设置的root密码</p>
+</blockquote>
+</li>
 </ul>
   </div>
 

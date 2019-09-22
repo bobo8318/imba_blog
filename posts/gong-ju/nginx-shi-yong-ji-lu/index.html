@@ -7,9 +7,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>一些有用的网址（长期更新） | imba吧
+  <title>nginx 使用记录 | imba吧
 </title>
-  <link rel="canonical" href="https://www.imba.pub/posts/gong-ju/yi-xie-you-yong-de-wang-zhi-chang-qi-geng-xin/index.html">
+  <link rel="canonical" href="https://www.imba.pub/posts/gong-ju/nginx-shi-yong-ji-lu/index.html">
 
 
 
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://www.imba.pub/theme/css/style.css">
 
 
-<meta name="description" content="一些有用的网址汇总">
+<meta name="description" content="nginx 使用记录">
 </head>
 
 <body>
@@ -38,15 +38,15 @@
 
   <div class="main">
     <div class="container">
-      <h1>一些有用的网址（长期更新）
+      <h1>nginx 使用记录
 </h1>
       <hr>
 <article class="article">
   <header>
     <ul class="list-inline">
-      <li class="list-inline-item text-muted" title="2019-08-09T00:00:00+00:00">
+      <li class="list-inline-item text-muted" title="2019-09-22T00:00:00+00:00">
         <i class="fa fa-clock-o"></i>
-        Fri 09 August 2019
+        Sun 22 September 2019
       </li>
       <li class="list-inline-item">
         <i class="fa fa-folder-open-o"></i>
@@ -57,36 +57,64 @@
         <a href="https://www.imba.pub/author/openui.html">openui</a>      </li>
       <li class="list-inline-item">
         <i class="fa fa-files-o"></i>
-        <a href="https://www.imba.pub/tag/gong-ju.html">#工具</a>,         <a href="https://www.imba.pub/tag/wang-zhi.html">#网址</a>      </li>
+        <a href="https://www.imba.pub/tag/gong-ju.html">#工具</a>,         <a href="https://www.imba.pub/tag/nginx.html">#nginx</a>      </li>
     </ul>
   </header>
   <div class="content">
-    <h3>有用的网址</h3>
+    <h3>nginx 使用</h3>
 <ul>
-<li>前段</li>
-<li>一般<ul>
-<li>cdn: https://www.bootcdn.cn</li>
-<li>伪造前段数据：https://www.easy-mock.com/login</li>
-</ul>
+<li>
+<p>下载地址：http://nginx.org/en/download.html</p>
 </li>
-<li>js<ul>
-<li>web api 接口: https://developer.mozilla.org/zh-CN/docs/Web/API</li>
-</ul>
+<li>
+<p>运行命令</p>
 </li>
-<li>框架<ul>
-<li>bootstrap: https://www.bootcss.com</li>
 </ul>
+<blockquote>
+<p>start nginx //运行</p>
+<p>nginx -t 查看配置状态</p>
+<p>nginx -s stop/quiet 快速/有序 停止</p>
+</blockquote>
+<ul>
+<li>
+<p>网站配置</p>
 </li>
-<li>后端</li>
-<li>java<ul>
-<li>仓库： http://mvnrepository.com</li>
-<li>构建工具</li>
-<li>gradle: http://services.gradle.org/distributions/</li>
-</ul>
+<li>
+<p>win下打包为服务</p>
 </li>
-<li>在线工具</li>
-<li>在线加密解密: http://tool.oschina.net/encrypt</li>
 </ul>
+<blockquote>
+<p>Windows Service Wrapper 小工具 下载地址如下：</p>
+<p>http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/1.18/winsw-1.18-bin.exe</p>
+<p>下载后放在nginx目录下，并修改名字为nginx-service.exe</p>
+<p>创建配置文件nginx-service.exe.config 和 nginx-service.xml</p>
+<p>nginx-service.xml的内容如下：</p>
+<p><service>
+  <id>nginx</id>
+  <name>Nginx Service</name>
+  <description>High Performance Nginx Service</description>
+  <logpath>C:\nginx-1.14.0\logs</logpath>
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>8</keepFiles>
+  </log>
+  <executable>C:\nginx-1.14.0\nginx.exe</executable>
+  <startarguments>-p C:\nginx-1.14.0</startarguments>
+  <stopexecutable>C:\nginx-1.14.0\nginx.exe</stopexecutable>
+  <stoparguments>-p C:\nginx-1.14.0 -s stop</stoparguments>
+</service></p>
+<p>nginx-service.exe.config内容如下：</p>
+<p><configuration>
+  <startup>
+    <supportedRuntime version="v2.0.50727" />
+    <supportedRuntime version="v4.0" />
+  </startup>
+  <runtime>
+    <generatePublisherEvidence enabled="false"/> 
+  </runtime>
+</configuration></p>
+</blockquote>
+<p>cmd命令输入 sc delete 服务名 可以删除这个服务</p>
   </div>
 
   <div class='zanshang'>
