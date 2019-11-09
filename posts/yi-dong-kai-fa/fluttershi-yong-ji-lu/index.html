@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>flutter使用记录 | imba吧
+</title>
+  <link rel="canonical" href="https://www.imba.pub/posts/yi-dong-kai-fa/fluttershi-yong-ji-lu/index.html">
+
+
+
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="https://www.imba.pub/theme/css/style.css">
+
+
+<meta name="description" content="flutter使用记录">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="title"><a href="https://www.imba.pub">imba吧</a></h1>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="http://www.openui.cn" target="_blank">openui</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>flutter使用记录
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2019-11-09T00:00:00+00:00">
+        <i class="fa fa-clock-o"></i>
+        Sat 09 November 2019
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="https://www.imba.pub/category/yi-dong-kai-fa.html">移动开发</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-user-o"></i>
+        <a href="https://www.imba.pub/author/openui.html">openui</a>      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="https://www.imba.pub/tag/flutter.html">#flutter</a>,         <a href="https://www.imba.pub/tag/yi-dong-kai-fa.html">#移动开发</a>,         <a href="https://www.imba.pub/tag/android.html">#android</a>,         <a href="https://www.imba.pub/tag/ios.html">#ios</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>重要基础内容</p>
+<ul>
+<li>风格：material.dart   cupertino.dart</li>
+</ul>
+<blockquote>
+<p><code>import 'package:flutter/material.dart'</code></p>
+</blockquote>
+<ul>
+<li>
+<p>组件:所有元素均为Widget 继承StatelessWidget StatefulWidget</p>
+</li>
+<li>
+<p>StatelessWidget  静态组件</p>
+<p>```
+class MyApp extends StateLessWidget{
+    @overwrite
+    Widget build(BuildContext context){
+        return MaterialApp(
+        title:'',
+        theme:ThemeData.light(),
+        home:BottomNavigationWidget()
+        );
+    }</p>
+<p>}
+```</p>
+</li>
+<li>
+<p>StatefulWidget 动态组件</p>
+<p>```
+class BottomNavigationWidget extends StatefulWidget{
+    _BottomNavigationWidget createState() =&gt; _BottomNavigationWidgetState();
+}</p>
+<p>class _BottomNavigationWidgetState extends State<BottomNavigationWidget>{
+    int _curentindex = 0;</p>
+<div class="highlight"><pre><span></span>@overwrite
+Widget build(BuildContext context){
+    return Scaffold(
+    body:list[_curentindex],
+    bottomNavigationBar:BottomNavigationBar(
+        items:[
+            BottomNavigationBarItem(
+                icon:Icon(Icons.home,color:blue),
+                title:Text()
+            )
+        ],
+        currenIndex:_currentIndex,
+        onTap:(int index){
+            setState((){
+                _currentIndex = index;
+            });
+        }
+    ));
+}
+
+@overwrite
+void initState(){
+    list
+        ..add(Home())
+        ..add()
+        ..add();
+    super.initState();
+}
+</pre></div>
+
+
+<p>}
+```</p>
+</li>
+<li>
+<h3>MaterialApp 代表使用纸墨设计（Material Design）风格的应用</h3>
+</li>
+</ul>
+<p><code>title ： 在任务管理窗口中所显示的应用名字
+  theme ： 应用各种 UI 所使用的主题颜色
+  color ： 应用的主要颜色值（primary color），也就是安卓任务管理窗口中所显示的应用颜色
+  home ： 应用默认所显示的界面 Widget
+  routes ： 应用的顶级导航表格，这个是多页面应用用来控制页面跳转的，类似于网页的网址
+  initialRoute ：第一个显示的路由名字，默认值为 Window.defaultRouteName
+  onGenerateRoute ： 生成路由的回调函数，当导航的命名路由的时候，会使用这个来生成界面
+  onLocaleChanged ： 当系统修改语言的时候，会触发å这个回调
+  navigatorObservers ： 应用 Navigator 的监听器
+  debugShowMaterialGrid ： 是否显示 纸墨设计 基础布局网格，用来调试 UI 的工具
+  showPerformanceOverlay ： 显示性能标签，https://flutter.io/debugging/#performanceoverlay
+  checkerboardRasterCacheImages 、showSemanticsDebugger、debugShowCheckedModeBanner 各种调试开关</code></p>
+<ul>
+<li>
+<h3>Scaffold 单个页面的脚手架</h3>
+</li>
+</ul>
+<p><code>appBar - 显示在界面顶部的一个 AppBar。
+  body - 当前界面所显示的主要内容 Widget。
+  floatingActionButton - Material 设计中所定义的 FAB，界面的主要功能按钮。
+  persistentFooterButtons - 固定在下方显示的按钮，比如对话框下方的确定、取消按钮。
+  drawer - 抽屉菜单控件。
+  backgroundColor - 内容的背景颜色，默认使用的是 ThemeData.scaffoldBackgroundColor 的值。
+  bottomNavigationBar - 显示在页面底部的导航栏。
+  resizeToAvoidBottomPadding - 类似于 Android 中的 android:windowSoftInputMode='adjustResize'，控制界面内容 body 是否重新布局来避免底部被覆盖了，比如当键盘显示的时候，重新布局避免被键盘盖住内容。默认值为 true。</code></p>
+<ul>
+<li>
+<p>网络请求</p>
+</li>
+<li>
+<p>dio:https://pub.flutter-io.cn/packages/dio</p>
+<ul>
+<li>pubspec.yaml 文件中添加支持以来 </li>
+</ul>
+<blockquote>
+<p>denpendencies 添加依赖</p>
+<p>dio: ^2.0.9</p>
+</blockquote>
+<ul>
+<li>引入</li>
+</ul>
+<blockquote>
+<p>import 'package:dio/dio.dart';</p>
+</blockquote>
+<ul>
+<li>简单实用</li>
+</ul>
+<p>```
+  void getHttp() async {// 异步
+    try {
+      Response response = await Dio().get("http://www.google.cn");
+      print(response);
+    } catch (e) {
+      print(e);
+    }
+  }</p>
+<p>// post
+  response = await dio.post("/test", data: {"id": 12, "name": "wendu"});
+  // form
+  FormData formData = new FormData.from({
+      "name": "wendux",
+      "age": 25,
+    });</p>
+<p>```</p>
+<ul>
+<li>伪造请求头</li>
+</ul>
+<p>```
+  // httpdeader.dart
+  const headers={</p>
+<p>}</p>
+<p>// home.dart 
+  Future getHttp() async{
+    try{
+        Response response;
+        Dio dio = new Dio();
+        dio.options.headers = httpHeaders;
+        response = await dio.get("");
+        return response.data;
+    }catch(e){
+        return print(e);
+    }</p>
+<p>}</p>
+<p>void _jike(){
+    getHttp().then((val){
+        setStat((){
+            showtext=val
+        });
+    });
+  }
+  ```</p>
+</li>
+<li>
+<p>常用示例</p>
+</li>
+<li>
+<p>客户端打包</p>
+<ul>
+<li>生成 keystore</li>
+</ul>
+<blockquote>
+<p>keytool -genkey -v -keystore ~/key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key</p>
+</blockquote>
+</li>
+<li>
+<p>静态文件引入</p>
+<blockquote>
+<p>pubspec.yaml文件中声明</p>
+<p>assets ：</p>
+<p>​ -images/index.jpg</p>
+<p>// 使用</p>
+<p>Image.asset('images/index.jpg')
+</p>
+</blockquote>
+</li>
+<li>
+<p>布局</p>
+<ul>
+<li>Row</li>
+</ul>
+<p>```text
+  import 'package:flutter/material.dart';
+  void main () =&gt; runApp(MyApp());</p>
+<p>class MyApp extends StatelessWidget{
+    @override
+    Widget build(BuildContext context ){
+        return MaterialApp(
+          title:'ListView widget',</p>
+<div class="highlight"><pre><span></span>      home:Scaffold(
+        appBar:new AppBar(
+          title:new Text(&#39;水平方向布局&#39;),
+        ),
+        body:new Row(
+          children: &lt;Widget&gt;[
+           new RaisedButton(
+              onPressed: (){
+
+              },
+              color:Colors.redAccent,
+              child:new Text(&#39;红色按钮&#39;)
+          ),
+          Expanded(child:new RaisedButton(
+              onPressed: (){
+
+                },
+                color:Colors.orangeAccent,
+                child: new Text(&#39;黄色按钮&#39;),
+              )
+
+            ),
+          new RaisedButton(
+              onPressed: (){
+              },
+              color:Colors.pinkAccent,
+              child:new Text(&#39;粉色按钮&#39;)
+            )
+          ],
+        )
+      ),
+    );
+}
+</pre></div>
+
+
+<p>}
+  ```</p>
+<ul>
+<li>Column</li>
+</ul>
+<p>```text
+  import 'package:flutter/material.dart';
+  void main () =&gt; runApp(MyApp());</p>
+<p>class MyApp extends StatelessWidget{
+    @override
+    Widget build(BuildContext context ){
+        return MaterialApp(
+          title:'ListView widget',</p>
+<div class="highlight"><pre><span></span>      home:Scaffold(
+        appBar:new AppBar(
+          title:new Text(&#39;垂直方向布局&#39;),
+        ),
+        body:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: &lt;Widget&gt;[
+           Center(child:Text(&#39;I am JSPang&#39;)),
+           Center(child:Text(&#39;my website is jspang.com&#39;)),
+           Center(child:Text(&#39;I love coding&#39;))
+          ],
+        )
+      ),
+    );
+}
+</pre></div>
+
+
+<p>}
+  CrossAxisAlignment.star：居左对齐。
+  CrossAxisAlignment.end：居右对齐。
+  CrossAxisAlignment.center：居中对齐。
+  ```</p>
+<ul>
+<li>Stack</li>
+</ul>
+<p>```text
+  import 'package:flutter/material.dart';
+  void main () =&gt; runApp(MyApp());</p>
+<p>class MyApp extends StatelessWidget{
+    @override
+    Widget build(BuildContext context ){
+        var stack = new Stack(</p>
+<div class="highlight"><pre><span></span>      children: &lt;Widget&gt;[
+        new CircleAvatar(
+          backgroundImage: new NetworkImage(&#39;http://jspang.com/static//myimg/blogtouxiang.jpg&#39;),
+          radius: 100.0,
+        ),
+        new Positioned(
+          top:10.0,
+          left:10.0,
+          child: new Text(&#39;JSPang.com&#39;),
+        ),
+        new Positioned(
+          bottom:10.0,
+          right:10.0,
+          child: new Text(&#39;技术胖&#39;),
+        )
+      ],
+    );
+
+    return MaterialApp(
+      title:&#39;ListView widget&#39;,
+      home:Scaffold(
+        appBar:new AppBar(
+          title:new Text(&#39;层叠布局&#39;),
+        ),
+        body:Center(child:stack),
+      ),
+    );
+}
+</pre></div>
+
+
+<p>}
+  ```</p>
+<ul>
+<li>ListTitle</li>
+</ul>
+<p>```text
+  import 'package:flutter/material.dart';
+  void main () =&gt; runApp(MyApp());</p>
+<p>class MyApp extends StatelessWidget{
+    @override
+    Widget build(BuildContext context ){
+        var card = new Card(
+           child: Column(
+             children: <Widget>[
+               ListTile(
+                 title:new Text('吉林省吉林市昌邑区',style: TextStyle(fontWeight: FontWeight.w500),),
+                 subtitle: new Text('技术胖:1513938888'),
+                 leading: new Icon(Icons.account_box,color: Colors.lightBlue,),
+               ),
+               new Divider(),
+                ListTile(
+                 title:new Text('北京市海淀区中国科技大学',style: TextStyle(fontWeight: FontWeight.w500),),
+                 subtitle: new Text('胜宏宇:1513938888'),
+                 leading: new Icon(Icons.account_box,color: Colors.lightBlue,),
+               ),
+               new Divider(),
+                ListTile(
+                 title:new Text('河南省濮阳市百姓办公楼',style: TextStyle(fontWeight: FontWeight.w500),),
+                 subtitle: new Text('JSPang:1513938888'),
+                 leading: new Icon(Icons.account_box,color: Colors.lightBlue,),
+               ),
+               new Divider(),</p>
+<div class="highlight"><pre><span></span>         ],
+       ),
+
+    );
+
+    return MaterialApp(
+      title:&#39;ListView widget&#39;,
+      home:Scaffold(
+        appBar:new AppBar(
+          title:new Text(&#39;卡片布局&#39;),
+        ),
+        body:Center(child:card),
+      ),
+    );
+}
+</pre></div>
+
+
+<p>}
+  ```</p>
+</li>
+<li>
+<p>导航</p>
+<ul>
+<li>一般导航</li>
+</ul>
+</li>
+</ul>
+<p>```
+    Navigator.push(context,new  MaterialPageRoute(
+                  builder:(context) =&gt;new SecondScreen())
+                );</p>
+<div class="highlight"><pre><span></span>Navigator.pop(context);
+</pre></div>
+
+
+<p>```</p>
+<div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="nt">MaterialPageRoute</span><span class="err">：</span><span class="nt">MaterialPageRoute</span> <span class="nt">是Material组件库的一个Widget</span><span class="err">，</span><span class="nt">承自PageRoute类</span><span class="err">，</span><span class="nt">它可以针对不同平台</span><span class="err">，</span><span class="nt">实现与平台页面切换动画风格一致的路由切换动画</span>
+
+<span class="err">```</span>
+    <span class="nt">MaterialPageRoute</span><span class="o">(</span><span class="p">{</span>
+        <span class="err">@required</span> <span class="err">this.builder,//构建路由页面的具体内容，返回值是一个widget</span>
+        <span class="err">RouteSettings</span> <span class="err">settings,//包含路由的配置信息，如路由名称、是否初始路由（首页）</span>
+        <span class="err">this.maintainState</span> <span class="err">=</span> <span class="err">true,//默认情况下，当入栈一个新路由时，原来的路由仍然会被保存在内存中，如果想在路由没用的时候释放其所占用的所有资源，可以设置maintainState为false。</span>
+        <span class="err">bool</span> <span class="err">fullscreenDialog</span> <span class="err">=</span> <span class="err">false,//表示新的路由页面是否是一个全屏的模态对话框，在iOS中，如果fullscreenDialog为true，新页面将会从屏幕底部滑入（而不是水平方向）。</span>
+      <span class="p">}</span><span class="o">)</span>
+
+<span class="err">```</span>
+
+<span class="o">*</span> <span class="nt">Navigator</span><span class="p">:</span><span class="nd">是一个路由管理的widget</span><span class="err">，</span><span class="nt">它通过一个栈来管理一个路由widget集合</span><span class="err">。</span><span class="nt">通常当前屏幕显示的页面就是栈顶的路由</span><span class="err">。</span><span class="o">**</span><span class="nt">Navigator</span><span class="o">**</span><span class="nt">提供了一系列方法来管理路由栈</span><span class="err">，</span><span class="nt">在此我们只介绍其最常用的两个方法</span><span class="err">：</span>
+
+  <span class="o">*</span> <span class="err">###</span> <span class="nt">Future</span> <span class="nt">push</span><span class="o">(</span><span class="nt">BuildContext</span> <span class="nt">context</span><span class="o">,</span> <span class="nt">Route</span> <span class="nt">route</span><span class="o">)</span>
+
+  <span class="o">*</span> <span class="err">###</span> <span class="nt">bool</span> <span class="nt">pop</span><span class="o">(</span><span class="nt">BuildContext</span> <span class="nt">context</span><span class="o">,</span> <span class="cp">[</span> <span class="nx">result</span> <span class="cp">]</span><span class="o">)</span>
+
+<span class="o">*</span> <span class="nt">路由表</span><span class="err">：</span><span class="nt">Map</span><span class="o">&lt;</span><span class="nt">String</span><span class="o">,</span>  <span class="nt">WidgetBuidler</span><span class="o">&gt;</span> <span class="nt">routes</span><span class="o">;</span>
+
+  <span class="o">*</span> <span class="nt">注册</span><span class="err">：</span>
+
+    <span class="o">&gt;</span> <span class="nt">return</span> <span class="nt">new</span> <span class="nt">MaterialApp</span><span class="o">(</span>
+    <span class="o">&gt;</span> <span class="nt">title</span><span class="o">:</span> <span class="s1">&#39;Flutter Demo&#39;</span><span class="o">,</span>
+    <span class="o">&gt;</span> <span class="nt">theme</span><span class="o">:</span> <span class="nt">new</span> <span class="nt">ThemeData</span><span class="o">(</span>
+    <span class="o">&gt;</span>  <span class="nt">primarySwatch</span><span class="o">:</span> <span class="nt">Colors</span><span class="p">.</span><span class="nc">blue</span><span class="o">,</span>
+    <span class="o">&gt;</span> <span class="o">),</span>
+    <span class="o">&gt;</span> <span class="o">//</span><span class="nt">注册路由表</span><span class="p">:</span><span class="nd">Map</span><span class="o">&lt;</span><span class="nt">String</span><span class="o">,</span><span class="nt">WidgetBuilder</span><span class="o">&gt;</span> <span class="nt">通过命名路由进行注册</span>
+    <span class="o">&gt;</span> <span class="nt">routes</span><span class="o">:</span><span class="p">{</span>
+    <span class="err">&gt;</span> <span class="err">&quot;new_page&quot;:(context)=&gt;NewRoute(),</span>
+    <span class="err">&gt;</span> <span class="p">}</span> <span class="o">,</span>
+    <span class="o">&gt;</span> <span class="nt">home</span><span class="o">:</span> <span class="nt">new</span> <span class="nt">MyHomePage</span><span class="o">(</span><span class="nt">title</span><span class="o">:</span> <span class="s1">&#39;Flutter Demo Home Page&#39;</span><span class="o">),</span>
+    <span class="o">&gt;</span> <span class="o">);</span>
+    <span class="o">&gt;</span>
+    <span class="o">&gt;</span> <span class="o">//</span> <span class="nt">使用</span>
+    <span class="o">&gt;</span>
+    <span class="o">&gt;</span> 
+    <span class="o">&gt;</span>  <span class="nt">Navigator</span><span class="p">.</span><span class="nc">pushNamed</span><span class="o">(</span><span class="nt">context</span><span class="o">,</span> <span class="s2">&quot;new_page&quot;</span><span class="o">);</span>
+    <span class="o">&gt;</span>
+
+
+<span class="o">*</span> <span class="nt">底部导航</span>
+
+  <span class="o">&gt;</span> <span class="o">//</span> <span class="nt">底部导航</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="nt">BottomNavigationBar</span><span class="err">：</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="nt">BottomNavigationBar</span><span class="o">(</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="err">​</span>        <span class="nt">type</span><span class="o">:</span> <span class="nt">BottomNavigationBarType</span><span class="p">.</span><span class="nc">fixed</span><span class="o">,</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="err">​</span>        <span class="nt">items</span><span class="p">:</span><span class="nd">itemlist</span><span class="o">,</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="err">​</span>        <span class="nt">currentIndex</span><span class="o">:</span> <span class="nt">currentIndex</span><span class="o">,</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="err">​</span>        <span class="nt">onTap</span><span class="o">:</span> <span class="o">(</span><span class="nt">index</span><span class="o">)</span><span class="p">{</span>
+  <span class="err">&gt;</span>
+  <span class="err">&gt;</span> <span class="err">​</span>          <span class="err">setState(()</span> <span class="err">{</span>
+  <span class="err">&gt;</span>
+  <span class="err">&gt;</span> <span class="err">​</span>            <span class="err">currentIndex</span> <span class="err">=</span> <span class="err">index</span><span class="p">;</span>
+  <span class="err">&gt;</span>
+  <span class="err">&gt;</span> <span class="err">​</span>            <span class="err">currentPage</span> <span class="err">=</span> <span class="err">pagelist</span><span class="cp">[</span><span class="nx">currentIndex</span><span class="cp">]</span><span class="p">;</span>
+  <span class="err">&gt;</span>
+  <span class="err">&gt;</span> <span class="err">​</span>          <span class="p">}</span><span class="o">);</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="err">​</span>        <span class="err">}</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="err">​</span>      <span class="o">)</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="nt">BottomAppBar</span> <span class="err">：</span><span class="nt">这个要比BottomNavigationBar</span> <span class="nt">widget灵活很多</span><span class="err">，</span><span class="nt">可以放置文字和图标</span><span class="err">，</span><span class="nt">当然也可以放置容器</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> 
+  <span class="o">&gt;</span> <span class="nt">BottomAppBar</span><span class="o">(</span>
+  <span class="o">&gt;</span>         <span class="nt">color</span><span class="o">:</span> <span class="nt">Colors</span><span class="p">.</span><span class="nc">lightBlue</span><span class="o">,</span> <span class="o">//</span><span class="nt">底部工具栏的颜色</span><span class="err">。</span>
+  <span class="o">&gt;</span>         <span class="nt">shape</span><span class="o">:</span> <span class="nt">CircularNotchedRectangle</span><span class="o">(),</span>
+  <span class="o">&gt;</span>         <span class="o">//</span><span class="nt">设置底栏的形状</span><span class="err">，</span><span class="nt">一般使用这个都是为了和floatingActionButton融合</span><span class="err">，</span>
+  <span class="o">&gt;</span>         <span class="o">//</span> <span class="nt">所以使用的值都是CircularNotchedRectangle</span><span class="o">(),</span><span class="nt">有缺口的圆形矩形</span><span class="err">。</span>
+  <span class="o">&gt;</span>         <span class="nt">child</span><span class="o">:</span> <span class="nt">Row</span><span class="o">(</span>
+  <span class="o">&gt;</span>           <span class="o">//</span><span class="nt">里边可以放置大部分Widget</span><span class="err">，</span><span class="nt">让我们随心所欲的设计底栏</span>
+  <span class="o">&gt;</span>           <span class="nt">mainAxisAlignment</span><span class="o">:</span> <span class="nt">MainAxisAlignment</span><span class="p">.</span><span class="nc">spaceAround</span><span class="o">,</span>
+  <span class="o">&gt;</span>           <span class="nt">mainAxisSize</span><span class="o">:</span> <span class="nt">MainAxisSize</span><span class="p">.</span><span class="nc">max</span><span class="o">,</span>
+  <span class="o">&gt;</span>           <span class="nt">children</span><span class="o">:</span> <span class="o">&lt;</span><span class="nt">Widget</span><span class="o">&gt;</span><span class="cp">[</span>
+  <span class="o">&gt;</span>             <span class="nx">IconButton</span><span class="p">(</span>
+  <span class="o">&gt;</span>               <span class="nx">icon</span><span class="p">:</span> <span class="nx">Icon</span><span class="p">(</span>
+  <span class="o">&gt;</span>                 <span class="nx">Icons.home</span><span class="p">,</span>
+  <span class="o">&gt;</span>                 <span class="nx">color</span><span class="p">:</span> <span class="nx">Colors.white</span><span class="p">,</span>
+  <span class="o">&gt;</span>               <span class="p">),</span>
+  <span class="o">&gt;</span>               <span class="nx">color</span><span class="p">:</span> <span class="nx">Colors.white</span><span class="p">,</span>
+  <span class="o">&gt;</span>               <span class="nx">onPressed</span><span class="p">:</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="o">&gt;</span>                 <span class="nx">setState</span><span class="p">(()</span> <span class="p">{</span>
+  <span class="o">&gt;</span>                   <span class="n">_index</span><span class="o"> =</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="o">&gt;</span>                 <span class="p">});</span>
+  <span class="o">&gt;</span>               <span class="p">},</span>
+  <span class="o">&gt;</span>             <span class="p">),</span>
+  <span class="o">&gt;</span>             <span class="nx">IconButton</span><span class="p">(</span>
+  <span class="o">&gt;</span>               <span class="nx">icon</span><span class="p">:</span> <span class="nx">Icon</span><span class="p">(</span><span class="nx">Icons.access_alarms</span><span class="p">,</span> <span class="nx">color</span><span class="p">:</span> <span class="nx">Colors.white</span><span class="p">),</span>
+  <span class="o">&gt;</span>               <span class="nx">color</span><span class="p">:</span> <span class="nx">Colors.white</span><span class="p">,</span>
+  <span class="o">&gt;</span>               <span class="nx">onPressed</span><span class="p">:</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="o">&gt;</span>                 <span class="nx">setState</span><span class="p">(()</span> <span class="p">{</span>
+  <span class="o">&gt;</span>                   <span class="n">_index</span><span class="o"> =</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="o">&gt;</span>                 <span class="p">});</span>
+  <span class="o">&gt;</span>               <span class="p">},</span>
+  <span class="o">&gt;</span>             <span class="p">),</span>
+  <span class="o">&gt;</span>           <span class="cp">]</span><span class="o">,</span>
+  <span class="o">&gt;</span>         <span class="o">),</span>
+  <span class="o">&gt;</span>       <span class="o">)</span>
+  <span class="o">&gt;</span>
+
+<span class="o">*</span> <span class="nt">浮动按钮</span><span class="err">：</span><span class="nt">floatingActionButton</span>
+
+  <span class="o">&gt;</span> <span class="nt">floatingActionButton</span><span class="o">:</span> <span class="nt">FloatingActionButton</span><span class="o">(</span>
+  <span class="o">&gt;</span>  <span class="nt">onPressed</span><span class="o">:</span> <span class="o">()</span><span class="p">{</span>
+  <span class="err">&gt;</span>    <span class="err">Navigator.of(context).push(MaterialPageRoute(</span><span class="n">builder</span><span class="p">:(</span><span class="n">BuildContext</span> <span class="n">context</span><span class="p">)</span><span class="err">{</span>
+  <span class="o">&gt;</span>      <span class="n">return</span> <span class="nf">EachView</span><span class="p">(</span><span class="s1">&#39;New Page&#39;</span><span class="p">);</span>
+  <span class="err">&gt;</span>    <span class="p">}</span><span class="o">));</span>
+<span class="o">&gt;</span>  <span class="err">}</span><span class="o">,</span>
+  <span class="o">&gt;</span>  <span class="nt">tooltip</span><span class="o">:</span> <span class="s1">&#39;Increment&#39;</span><span class="o">,</span>
+  <span class="o">&gt;</span>  <span class="nt">child</span><span class="o">:</span> <span class="nt">Icon</span><span class="o">(</span>
+  <span class="o">&gt;</span>    <span class="nt">Icons</span><span class="p">.</span><span class="nc">add</span><span class="o">,</span>
+  <span class="o">&gt;</span>    <span class="nt">color</span><span class="o">:</span> <span class="nt">Colors</span><span class="p">.</span><span class="nc">white</span><span class="o">,</span>
+  <span class="o">&gt;</span>  <span class="o">),</span>
+  <span class="o">&gt;</span> <span class="o">),</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="o">//</span> <span class="nt">与底部融合</span>
+  <span class="o">&gt;</span>
+  <span class="o">&gt;</span> <span class="nt">floatingActionButtonLocation</span><span class="o">:</span> <span class="nt">FloatingActionButtonLocation</span><span class="p">.</span><span class="nc">centerDocked</span>
+
+<span class="o">*</span> <span class="nt">带参数跳转</span>
+
+  <span class="o">&gt;</span><span class="nt">_navigateToXiaoJieJie</span><span class="o">(</span><span class="nt">BuildContext</span> <span class="nt">context</span><span class="o">)</span> <span class="nt">async</span><span class="p">{</span> <span class="err">//async是启用异步方法</span>
+  <span class="err">&gt;</span> <span class="err">final</span> <span class="err">result</span> <span class="err">=</span> <span class="err">await</span> <span class="err">Navigator.push(//等待</span>
+  <span class="err">&gt;</span>     <span class="err">context,</span> 
+  <span class="err">&gt;</span>     <span class="err">MaterialPageRoute(</span><span class="n">builder</span><span class="p">:</span> <span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="o">=&gt;</span> <span class="nf">XiaoJieJie</span><span class="p">())</span>
+  <span class="o">&gt;</span> <span class="p">);</span>
+  <span class="err">&gt;</span> <span class="err">Scaffold.of(context).showSnackBar(SnackBar(</span><span class="k">content</span><span class="p">:</span><span class="nf">Text</span><span class="p">(</span><span class="s1">&#39;$result&#39;</span><span class="p">)));</span>
+</pre></div>
+
+
+<blockquote>
+<p>}</p>
+<div class="highlight"><pre><span></span>  <span class="o">&gt;</span><span class="err">}</span>
+
+  <span class="o">&gt;//</span> <span class="nt">返回数据</span>
+
+  <span class="o">&gt;</span><span class="nt">Navigator</span><span class="p">.</span><span class="nc">pop</span><span class="o">(</span><span class="nt">context</span><span class="o">,</span><span class="s1">&#39;大长腿:1511009999&#39;</span><span class="o">);</span>
+</pre></div>
+
+
+</blockquote>
+<ul>
+<li>
+<p>布局</p>
+<ul>
+<li>Column 列布局</li>
+</ul>
+<p><code>Column(
+    children:&lt;widget[
+        Text(),
+        RaisedButton()
+    ]&gt;
+  )</code></p>
+</li>
+<li>
+<p>Button</p>
+<table>
+<thead>
+<tr>
+<th>RaisedButton</th>
+<th>Material Design中的button， 一个凸起的材质矩形按钮。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FlatButton</td>
+<td>Material Design中的button，一个没有阴影的材质设计按钮。</td>
+</tr>
+<tr>
+<td>OutlineButton</td>
+<td>Material Design中的button，RaisedButton和FlatButton之间的交叉：一个带边框的背景透明的按钮，当按下按钮时，其高度增加，背景变得不透明。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>RaisedButton(onpress:(){},child:Text('finished'))</li>
+</ul>
+</li>
+<li>
+<p>showDialog()</p>
+</li>
+<li>
+<p>SnackBar:</p>
+<blockquote>
+<p>Scaffold.of(context).showSnackBar(SnackBar(content:Text('$result')));
+</p>
+</blockquote>
+</li>
+<li>
+<p>Future:<code>return await ...</code>的时候，实际上返回的是一个延迟计算的<code>Future</code>对象</p>
+<blockquote>
+<p>Future.then(funA());</p>
+</blockquote>
+</li>
+<li>
+<p>TextField：输入文本框</p>
+<p><code>TextField(
+        controller: controller,
+        maxLength: 30,//最大长度，设置此项会让TextField右下角有一个输入数量的统计字符串
+        maxLines: 1,//最大行数
+        autocorrect: true,//是否自动更正
+        autofocus: true,//是否自动对焦
+        obscureText: true,//是否是密码
+        textAlign: TextAlign.center,//文本对齐方式
+        style: TextStyle(fontSize: 30.0, color: Colors.blue),//输入文本的样式
+        inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],//允许的输入格式
+        onChanged: (text) {//内容改变的回调
+          print('change $text');
+        },
+        onSubmitted: (text) {//内容提交(按回车)的回调
+          print('submit $text');
+        },
+        enabled: true,//是否禁用
+  );</code></p>
+<ul>
+<li>监听变化</li>
+</ul>
+<p>```
+  String value = "";
+  TextField(
+    onChanged: (text) {
+      value = text;
+    },
+  )</p>
+<p>// 使用controller
+  TextEditingController controller = TextEditingController();
+  TextField(
+    controller: controller,
+  )
+  //监听变化
+  controller.addListener(() {
+    // Do something here
+  });
+  // 获取 设置 值
+  print(controller.text); // Print current value
+  controller.text = "Demo Text"; // Set new value
+  ```</p>
+<ul>
+<li>
+<p>装饰 textfield</p>
+<p>```
+decoration: InputDecoration(
+    icon: Icon(Icons.print),
+    contentPadding:EdgeInsets.all(10.0),
+    labelText:'hello',
+    helperText:'help me'
+)</p>
+<p>TextField(
+  decoration: InputDecoration(
+    prefixIcon: Icon(Icons.print)
+  ),
+),
+```</p>
+</li>
+<li>
+<p>SingleChildScrollView 解决键盘弹起变形</p>
+</li>
+<li>
+<p>swiper:轮播效果插件</p>
+</li>
+</ul>
+<blockquote>
+<p>dependencies</p>
+<div class="highlight"><pre><span></span>flutter_swiper:^1.1.4
+</pre></div>
+
+
+</blockquote>
+</li>
+</ul>
+  </div>
+
+  <div class='zanshang'>
+      <button id='showpay'>赏</button>
+       <div id="payContent" class="payContent">
+
+           <div><img src='/theme/images/weixinpay.png'><br>微信扫一扫</div>
+           <div><img src='/theme/images/alipay.png'><br>支付宝扫一扫</div>
+
+         </div>
+   </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="https://www.imba.pub/authors.html">Authors</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="https://www.imba.pub/tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
