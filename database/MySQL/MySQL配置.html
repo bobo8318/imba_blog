@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL配置 | IMBAPUB</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="这真的很imba">
+    <link rel="preload" href="/assets/css/0.styles.471cf497.css" as="style"><link rel="preload" href="/assets/js/app.95d022f7.js" as="script"><link rel="preload" href="/assets/js/2.3a46498f.js" as="script"><link rel="preload" href="/assets/js/79.f083c4ed.js" as="script"><link rel="prefetch" href="/assets/js/10.2018e9fd.js"><link rel="prefetch" href="/assets/js/100.ab12de60.js"><link rel="prefetch" href="/assets/js/101.583cee00.js"><link rel="prefetch" href="/assets/js/102.fdf7f15c.js"><link rel="prefetch" href="/assets/js/103.50a42b70.js"><link rel="prefetch" href="/assets/js/104.df2eaa11.js"><link rel="prefetch" href="/assets/js/105.a9ee9f5b.js"><link rel="prefetch" href="/assets/js/106.41810fd1.js"><link rel="prefetch" href="/assets/js/107.e57d210f.js"><link rel="prefetch" href="/assets/js/108.a467b44e.js"><link rel="prefetch" href="/assets/js/109.e9c99e12.js"><link rel="prefetch" href="/assets/js/11.823d6f8d.js"><link rel="prefetch" href="/assets/js/110.0640c39f.js"><link rel="prefetch" href="/assets/js/111.705c2200.js"><link rel="prefetch" href="/assets/js/112.9a19d341.js"><link rel="prefetch" href="/assets/js/12.ef380254.js"><link rel="prefetch" href="/assets/js/13.697ff2be.js"><link rel="prefetch" href="/assets/js/14.d9443a9c.js"><link rel="prefetch" href="/assets/js/15.344d8e75.js"><link rel="prefetch" href="/assets/js/16.853a732c.js"><link rel="prefetch" href="/assets/js/17.e3862510.js"><link rel="prefetch" href="/assets/js/18.5871cfb3.js"><link rel="prefetch" href="/assets/js/19.c55a149a.js"><link rel="prefetch" href="/assets/js/20.7aab1c7d.js"><link rel="prefetch" href="/assets/js/21.5372c147.js"><link rel="prefetch" href="/assets/js/22.6e9ff47a.js"><link rel="prefetch" href="/assets/js/23.4176bb24.js"><link rel="prefetch" href="/assets/js/24.b7f8575c.js"><link rel="prefetch" href="/assets/js/25.8f5b4ea3.js"><link rel="prefetch" href="/assets/js/26.f296e447.js"><link rel="prefetch" href="/assets/js/27.9a4e430a.js"><link rel="prefetch" href="/assets/js/28.1868bb3c.js"><link rel="prefetch" href="/assets/js/29.c83b0c3a.js"><link rel="prefetch" href="/assets/js/3.a0918208.js"><link rel="prefetch" href="/assets/js/30.35fa5fba.js"><link rel="prefetch" href="/assets/js/31.34fd8625.js"><link rel="prefetch" href="/assets/js/32.0437cf42.js"><link rel="prefetch" href="/assets/js/33.021d9ee8.js"><link rel="prefetch" href="/assets/js/34.a063ad66.js"><link rel="prefetch" href="/assets/js/35.c3adff0b.js"><link rel="prefetch" href="/assets/js/36.af37ef5c.js"><link rel="prefetch" href="/assets/js/37.4bbd540e.js"><link rel="prefetch" href="/assets/js/38.d2348311.js"><link rel="prefetch" href="/assets/js/39.91cb2501.js"><link rel="prefetch" href="/assets/js/4.606cd99c.js"><link rel="prefetch" href="/assets/js/40.1445f188.js"><link rel="prefetch" href="/assets/js/41.59c89272.js"><link rel="prefetch" href="/assets/js/42.f1c3bf6d.js"><link rel="prefetch" href="/assets/js/43.62c14b97.js"><link rel="prefetch" href="/assets/js/44.4f8a4c9e.js"><link rel="prefetch" href="/assets/js/45.f6c272ae.js"><link rel="prefetch" href="/assets/js/46.81e29f75.js"><link rel="prefetch" href="/assets/js/47.6b11caa9.js"><link rel="prefetch" href="/assets/js/48.4db0cc53.js"><link rel="prefetch" href="/assets/js/49.6747ab5a.js"><link rel="prefetch" href="/assets/js/5.09079429.js"><link rel="prefetch" href="/assets/js/50.e5e8b53c.js"><link rel="prefetch" href="/assets/js/51.6d41569c.js"><link rel="prefetch" href="/assets/js/52.9f684a44.js"><link rel="prefetch" href="/assets/js/53.1fb124a5.js"><link rel="prefetch" href="/assets/js/54.94191d1f.js"><link rel="prefetch" href="/assets/js/55.8f63ccfb.js"><link rel="prefetch" href="/assets/js/56.7f2ef3fa.js"><link rel="prefetch" href="/assets/js/57.e0e55bd4.js"><link rel="prefetch" href="/assets/js/58.8b9bbcc6.js"><link rel="prefetch" href="/assets/js/59.a3a3fe01.js"><link rel="prefetch" href="/assets/js/6.3c4b6517.js"><link rel="prefetch" href="/assets/js/60.47f5455b.js"><link rel="prefetch" href="/assets/js/61.55dccf8c.js"><link rel="prefetch" href="/assets/js/62.25c52188.js"><link rel="prefetch" href="/assets/js/63.3584d76c.js"><link rel="prefetch" href="/assets/js/64.490d018b.js"><link rel="prefetch" href="/assets/js/65.e5e6c765.js"><link rel="prefetch" href="/assets/js/66.9718a4fe.js"><link rel="prefetch" href="/assets/js/67.29af663e.js"><link rel="prefetch" href="/assets/js/68.51122fa7.js"><link rel="prefetch" href="/assets/js/69.f16d243b.js"><link rel="prefetch" href="/assets/js/7.5dcc397c.js"><link rel="prefetch" href="/assets/js/70.39a7658f.js"><link rel="prefetch" href="/assets/js/71.eba1a8e2.js"><link rel="prefetch" href="/assets/js/72.3ff88419.js"><link rel="prefetch" href="/assets/js/73.45ff0234.js"><link rel="prefetch" href="/assets/js/74.51e7d3b1.js"><link rel="prefetch" href="/assets/js/75.2fbd2e4c.js"><link rel="prefetch" href="/assets/js/76.a2a0d747.js"><link rel="prefetch" href="/assets/js/77.d594f05b.js"><link rel="prefetch" href="/assets/js/78.22ea4811.js"><link rel="prefetch" href="/assets/js/8.cd10b72e.js"><link rel="prefetch" href="/assets/js/80.a39506a7.js"><link rel="prefetch" href="/assets/js/81.36e1981f.js"><link rel="prefetch" href="/assets/js/82.7fe0ea1b.js"><link rel="prefetch" href="/assets/js/83.ea15296a.js"><link rel="prefetch" href="/assets/js/84.3029f850.js"><link rel="prefetch" href="/assets/js/85.795c3724.js"><link rel="prefetch" href="/assets/js/86.5121e878.js"><link rel="prefetch" href="/assets/js/87.17471d31.js"><link rel="prefetch" href="/assets/js/88.efcb3215.js"><link rel="prefetch" href="/assets/js/89.8a6e7508.js"><link rel="prefetch" href="/assets/js/9.9f4472b7.js"><link rel="prefetch" href="/assets/js/90.6b8c7246.js"><link rel="prefetch" href="/assets/js/91.7d30ab2b.js"><link rel="prefetch" href="/assets/js/92.130b4b9d.js"><link rel="prefetch" href="/assets/js/93.28ebba80.js"><link rel="prefetch" href="/assets/js/94.61b822d8.js"><link rel="prefetch" href="/assets/js/95.e3c10163.js"><link rel="prefetch" href="/assets/js/96.b5bcd2a4.js"><link rel="prefetch" href="/assets/js/97.1ddae833.js"><link rel="prefetch" href="/assets/js/98.48bbeec7.js"><link rel="prefetch" href="/assets/js/99.affd3259.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.471cf497.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">IMBAPUB</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link router-link-active">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link router-link-active">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>MYSQL</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/database/MySQL/mysql-udf安装.html" class="sidebar-link">mysql-udf安装</a></li><li><a href="/database/MySQL/mysql.html" class="sidebar-link">Mysql 添加字段 修改字段 删除字段</a></li><li><a href="/database/MySQL/MySQL主从同步.html" class="sidebar-link">MySQL主从同步</a></li><li><a href="/database/MySQL/MySQL事件.html" class="sidebar-link">MySQL事件</a></li><li><a href="/database/MySQL/MySQL备份恢复数据.html" class="sidebar-link">MySQL备份恢复数据</a></li><li><a href="/database/MySQL/MySQL存储过程.html" class="sidebar-link">MySQL存储过程</a></li><li><a href="/database/MySQL/MySQL常见问题.html" class="sidebar-link">MySQL常见问题</a></li><li><a href="/database/MySQL/MySQL笔记.html" class="sidebar-link">MySQL笔记</a></li><li><a href="/database/MySQL/MySQL配置.html" class="active sidebar-link">MySQL配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL配置.html#配置my-cnf" class="sidebar-link">配置my.cnf</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL配置.html#yum安装配置" class="sidebar-link">yum安装配置</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL配置.html#宝塔面板安装配置" class="sidebar-link">宝塔面板安装配置</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mysql配置"><a href="#mysql配置" class="header-anchor">#</a> MySQL配置</h1> <h2 id="配置my-cnf"><a href="#配置my-cnf" class="header-anchor">#</a> 配置my.cnf</h2> <blockquote><p>从5.7.17后mysql就没有默认的my_default.cnf文件，需要手动创建</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">vi</span> /etc/my.cnf
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>按<code>i</code>后输入以下内容</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token comment"># sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </span>
+
+<span class="token comment"># 一般配置选项</span>
+basedir <span class="token operator">=</span> /usr/local/mysql/
+datadir <span class="token operator">=</span> /usr/local/mysql/data
+port <span class="token operator">=</span> <span class="token number">3306</span>
+character-set-server <span class="token operator">=</span> utf8
+explicit_defaults_for_timestamp <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment"># socket = /var/run/mysqld/mysqld.sock</span>
+<span class="token comment"># 0：区分大小写，1：不区分大小写</span>
+lower_case_table_names <span class="token operator">=</span><span class="token number">1</span>
+
+<span class="token comment">#下面是可选项，要不要都行，如果出现启动错误，则全部注释掉，</span>
+<span class="token comment">#保留最基本的配置选项，然后尝试添加某些配置项后启动，检测配置项是否有误</span>
+back_log <span class="token operator">=</span> <span class="token number">300</span>
+max_connections <span class="token operator">=</span> <span class="token number">3000</span>
+max_connect_errors <span class="token operator">=</span> <span class="token number">50</span>
+table_open_cache <span class="token operator">=</span> <span class="token number">4096</span>
+max_allowed_packet <span class="token operator">=</span> 32M
+<span class="token comment">#binlog_cache_size = 4M</span>
+
+max_heap_table_size <span class="token operator">=</span> 128M
+read_rnd_buffer_size <span class="token operator">=</span> 16M
+sort_buffer_size <span class="token operator">=</span> 16M
+join_buffer_size <span class="token operator">=</span> 16M
+thread_cache_size <span class="token operator">=</span> <span class="token number">16</span>
+query_cache_size <span class="token operator">=</span> 128M
+query_cache_limit <span class="token operator">=</span> 4M
+ft_min_word_len <span class="token operator">=</span> <span class="token number">8</span>
+
+<span class="token comment"># 默认开启事件调度器ON或者是1</span>
+<span class="token assign-left variable">event_scheduler</span><span class="token operator">=</span>ON
+thread_stack <span class="token operator">=</span> 512K
+<span class="token comment">#默认是REPEATABLE-READ，改成读已提交</span>
+transaction-isolation<span class="token operator">=</span>READ-COMMITTED
+<span class="token comment">#永久设置手动提交事务</span>
+<span class="token comment">#autocommit=0</span>
+tmp_table_size <span class="token operator">=</span> 128M
+<span class="token comment">#log-bin=mysql-bin</span>
+long_query_time <span class="token operator">=</span> <span class="token number">6</span>
+
+<span class="token assign-left variable">server_id</span><span class="token operator">=</span><span class="token number">1</span>
+
+innodb_buffer_pool_size <span class="token operator">=</span> 1G
+innodb_thread_concurrency <span class="token operator">=</span> <span class="token number">16</span>
+innodb_log_buffer_size <span class="token operator">=</span> 16M
+
+innodb_log_file_size <span class="token operator">=</span> 512M
+innodb_log_files_in_group <span class="token operator">=</span> <span class="token number">3</span>
+innodb_max_dirty_pages_pct <span class="token operator">=</span> <span class="token number">90</span>
+innodb_lock_wait_timeout <span class="token operator">=</span> <span class="token number">120</span>
+innodb_file_per_table <span class="token operator">=</span> on
+
+<span class="token punctuation">[</span>mysqldump<span class="token punctuation">]</span>
+quick
+max_allowed_packet <span class="token operator">=</span> 32M
+
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+no-auto-rehash
+default-character-set<span class="token operator">=</span>utf8
+safe-updates
+
+<span class="token punctuation">[</span>myisamchk<span class="token punctuation">]</span>
+key_buffer <span class="token operator">=</span> 16M
+sort_buffer_size <span class="token operator">=</span> 16M
+read_buffer <span class="token operator">=</span> 8M
+write_buffer <span class="token operator">=</span> 8M
+
+<span class="token punctuation">[</span>mysqlhotcopy<span class="token punctuation">]</span>
+interactive-timeout
+
+<span class="token punctuation">[</span>mysqld_safe<span class="token punctuation">]</span>
+open-files-limit <span class="token operator">=</span> <span class="token number">8192</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br></div></div><h2 id="yum安装配置"><a href="#yum安装配置" class="header-anchor">#</a> yum安装配置</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+<span class="token comment">#password   = your_password</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /var/lib/mysql/mysql.sock
+
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /var/lib/mysql/mysql.sock
+datadir <span class="token operator">=</span> /var/lib/mysql
+symbolic-links<span class="token operator">=</span> <span class="token number">0</span>
+log-error<span class="token operator">=</span> /var/log/mysqld.log
+pid-file<span class="token operator">=</span> /var/run/mysqld/mysqld.pid
+skip-external-locking
+<span class="token assign-left variable">performance_schema_max_table_instances</span><span class="token operator">=</span><span class="token number">400</span>
+<span class="token assign-left variable">table_definition_cache</span><span class="token operator">=</span><span class="token number">400</span>
+key_buffer_size <span class="token operator">=</span> 32M
+max_allowed_packet <span class="token operator">=</span> 100G
+table_open_cache <span class="token operator">=</span> <span class="token number">128</span>
+sort_buffer_size <span class="token operator">=</span> 768K
+net_buffer_length <span class="token operator">=</span> 8K
+read_buffer_size <span class="token operator">=</span> 768K
+read_rnd_buffer_size <span class="token operator">=</span> 512K
+myisam_sort_buffer_size <span class="token operator">=</span> 8M
+thread_cache_size <span class="token operator">=</span> <span class="token number">16</span>
+query_cache_size <span class="token operator">=</span> 16M
+tmp_table_size <span class="token operator">=</span> 32M
+sql-mode<span class="token operator">=</span>NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment">#skip-networking</span>
+max_connections <span class="token operator">=</span> <span class="token number">500</span>
+max_connect_errors <span class="token operator">=</span> <span class="token number">100</span>
+open_files_limit <span class="token operator">=</span> <span class="token number">65535</span>
+
+<span class="token comment"># 0：区分大小写，1：不区分大小写</span>
+lower_case_table_names <span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># 默认开启事件调度器ON或者是1</span>
+<span class="token assign-left variable">event_scheduler</span><span class="token operator">=</span>ON
+
+thread_stack <span class="token operator">=</span> 512K
+<span class="token comment">#默认是REPEATABLE-READ，改成读已提交</span>
+transaction-isolation<span class="token operator">=</span>READ-COMMITTED
+<span class="token comment">#永久设置手动提交事务</span>
+<span class="token comment">#autocommit=0</span>
+tmp_table_size <span class="token operator">=</span> 128M
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+log-bin<span class="token operator">=</span>mysql-bin
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+<span class="token assign-left variable">binlog_format</span><span class="token operator">=</span>mixed
+
+<span class="token comment"># 数据库ID号,为1时表示为Master,其中master_id必须为1到232–1</span>
+<span class="token comment"># 之间的一个正整数值，主从server-id不能一样;</span>
+server-id <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">#自动删除5天前的日志。默认值为0，表示从不删除。</span>
+expire_logs_days <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token assign-left variable">slow_query_log</span><span class="token operator">=</span><span class="token number">1</span>
+slow-query-log-file<span class="token operator">=</span>/var/lib/mysql/mysql-slow.log
+<span class="token assign-left variable">long_query_time</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment">#log_queries_not_using_indexes=on</span>
+
+<span class="token comment"># MySQL5.7.11拥有，默认值为keyring_file，</span>
+<span class="token comment"># InnoDB表空间在初始化InnoDB之前需要此插件来加密，</span>
+<span class="token comment"># MySQL5.7.12及以后此参数默认为空</span>
+<span class="token comment">#early-plugin-load = &quot;&quot;</span>
+
+<span class="token comment">#loose-innodb-trx=0</span>
+<span class="token comment">#loose-innodb-locks=0</span>
+<span class="token comment">#loose-innodb-lock-waits=0</span>
+<span class="token comment">#loose-innodb-cmp=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index-reset=0</span>
+<span class="token comment">#loose-innodb-cmp-reset=0</span>
+<span class="token comment">#loose-innodb-cmpmem=0</span>
+<span class="token comment">#loose-innodb-cmpmem-reset=0</span>
+<span class="token comment">#loose-innodb-buffer-page=0</span>
+<span class="token comment">#loose-innodb-buffer-page-lru=0</span>
+<span class="token comment">#loose-innodb-buffer-pool-stats=0</span>
+<span class="token comment">#loose-innodb-metrics=0</span>
+<span class="token comment">#loose-innodb-ft-default-stopword=0</span>
+<span class="token comment">#loose-innodb-ft-inserted=0</span>
+<span class="token comment">#loose-innodb-ft-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-being-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-config=0</span>
+<span class="token comment">#loose-innodb-ft-index-cache=0</span>
+<span class="token comment">#loose-innodb-ft-index-table=0</span>
+<span class="token comment">#loose-innodb-sys-tables=0</span>
+<span class="token comment">#loose-innodb-sys-tablestats=0</span>
+<span class="token comment">#loose-innodb-sys-indexes=0</span>
+<span class="token comment">#loose-innodb-sys-columns=0</span>
+<span class="token comment">#loose-innodb-sys-fields=0</span>
+<span class="token comment">#loose-innodb-sys-foreign=0</span>
+<span class="token comment">#loose-innodb-sys-foreign-cols=0</span>
+
+default_storage_engine <span class="token operator">=</span> InnoDB
+innodb_data_home_dir <span class="token operator">=</span> /var/lib/mysql
+innodb_data_file_path <span class="token operator">=</span> ibdata1:10M:autoextend
+innodb_log_group_home_dir <span class="token operator">=</span> /var/lib/mysql
+innodb_buffer_pool_size <span class="token operator">=</span> 128M
+innodb_log_file_size <span class="token operator">=</span> 64M
+innodb_log_buffer_size <span class="token operator">=</span> 16M
+innodb_flush_log_at_trx_commit <span class="token operator">=</span> <span class="token number">1</span>
+innodb_lock_wait_timeout <span class="token operator">=</span> <span class="token number">120</span>
+innodb_max_dirty_pages_pct <span class="token operator">=</span> <span class="token number">90</span>
+innodb_read_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+innodb_write_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+
+<span class="token punctuation">[</span>mysqldump<span class="token punctuation">]</span>
+quick
+max_allowed_packet <span class="token operator">=</span> 16M
+
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+no-auto-rehash
+
+<span class="token punctuation">[</span>myisamchk<span class="token punctuation">]</span>
+key_buffer_size <span class="token operator">=</span> 32M
+sort_buffer_size <span class="token operator">=</span> 768K
+read_buffer <span class="token operator">=</span> 2M
+write_buffer <span class="token operator">=</span> 2M
+
+<span class="token punctuation">[</span>mysqlhotcopy<span class="token punctuation">]</span>
+interactive-timeout
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br></div></div><h2 id="宝塔面板安装配置"><a href="#宝塔面板安装配置" class="header-anchor">#</a> 宝塔面板安装配置</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
+<span class="token comment">#password   = your_password</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /tmp/mysql.sock
+
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+port        <span class="token operator">=</span> <span class="token number">3306</span>
+socket      <span class="token operator">=</span> /tmp/mysql.sock
+datadir <span class="token operator">=</span> /usr/local/mysql/data
+skip-external-locking
+<span class="token assign-left variable">performance_schema_max_table_instances</span><span class="token operator">=</span><span class="token number">400</span>
+<span class="token assign-left variable">table_definition_cache</span><span class="token operator">=</span><span class="token number">400</span>
+key_buffer_size <span class="token operator">=</span> 32M
+max_allowed_packet <span class="token operator">=</span> 100G
+table_open_cache <span class="token operator">=</span> <span class="token number">128</span>
+sort_buffer_size <span class="token operator">=</span> 768K
+net_buffer_length <span class="token operator">=</span> 8K
+read_buffer_size <span class="token operator">=</span> 768K
+read_rnd_buffer_size <span class="token operator">=</span> 512K
+myisam_sort_buffer_size <span class="token operator">=</span> 8M
+thread_cache_size <span class="token operator">=</span> <span class="token number">16</span>
+query_cache_size <span class="token operator">=</span> 16M
+tmp_table_size <span class="token operator">=</span> 32M
+sql-mode<span class="token operator">=</span>NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment">#skip-networking</span>
+max_connections <span class="token operator">=</span> <span class="token number">500</span>
+max_connect_errors <span class="token operator">=</span> <span class="token number">100</span>
+open_files_limit <span class="token operator">=</span> <span class="token number">65535</span>
+
+<span class="token comment"># 0：区分大小写，1：不区分大小写</span>
+lower_case_table_names <span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># 默认开启事件调度器ON或者是1</span>
+<span class="token assign-left variable">event_scheduler</span><span class="token operator">=</span>ON
+
+thread_stack <span class="token operator">=</span> 512K
+<span class="token comment">#默认是REPEATABLE-READ，改成读已提交</span>
+transaction-isolation<span class="token operator">=</span>READ-COMMITTED
+<span class="token comment">#永久设置手动提交事务</span>
+<span class="token comment">#autocommit=0</span>
+tmp_table_size <span class="token operator">=</span> 128M
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+log-bin<span class="token operator">=</span>mysql-bin
+<span class="token comment">#注释掉之后，会关闭binlog日志</span>
+<span class="token assign-left variable">binlog_format</span><span class="token operator">=</span>mixed
+server-id <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">#自动删除5天前的日志。默认值为0，表示从不删除。</span>
+expire_logs_days <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token assign-left variable">slow_query_log</span><span class="token operator">=</span><span class="token number">1</span>
+slow-query-log-file<span class="token operator">=</span>/usr/local/mysql/data/mysql-slow.log
+<span class="token assign-left variable">long_query_time</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token comment">#log_queries_not_using_indexes=on</span>
+<span class="token comment"># MySQL5.7.11拥有，默认值为keyring_file，</span>
+<span class="token comment"># InnoDB表空间在初始化InnoDB之前需要此插件来加密，</span>
+<span class="token comment"># MySQL5.7.12及以后此参数默认为空</span>
+<span class="token comment">#early-plugin-load = &quot;&quot;</span>
+
+<span class="token comment">#loose-innodb-trx=0</span>
+<span class="token comment">#loose-innodb-locks=0</span>
+<span class="token comment">#loose-innodb-lock-waits=0</span>
+<span class="token comment">#loose-innodb-cmp=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index=0</span>
+<span class="token comment">#loose-innodb-cmp-per-index-reset=0</span>
+<span class="token comment">#loose-innodb-cmp-reset=0</span>
+<span class="token comment">#loose-innodb-cmpmem=0</span>
+<span class="token comment">#loose-innodb-cmpmem-reset=0</span>
+<span class="token comment">#loose-innodb-buffer-page=0</span>
+<span class="token comment">#loose-innodb-buffer-page-lru=0</span>
+<span class="token comment">#loose-innodb-buffer-pool-stats=0</span>
+<span class="token comment">#loose-innodb-metrics=0</span>
+<span class="token comment">#loose-innodb-ft-default-stopword=0</span>
+<span class="token comment">#loose-innodb-ft-inserted=0</span>
+<span class="token comment">#loose-innodb-ft-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-being-deleted=0</span>
+<span class="token comment">#loose-innodb-ft-config=0</span>
+<span class="token comment">#loose-innodb-ft-index-cache=0</span>
+<span class="token comment">#loose-innodb-ft-index-table=0</span>
+<span class="token comment">#loose-innodb-sys-tables=0</span>
+<span class="token comment">#loose-innodb-sys-tablestats=0</span>
+<span class="token comment">#loose-innodb-sys-indexes=0</span>
+<span class="token comment">#loose-innodb-sys-columns=0</span>
+<span class="token comment">#loose-innodb-sys-fields=0</span>
+<span class="token comment">#loose-innodb-sys-foreign=0</span>
+<span class="token comment">#loose-innodb-sys-foreign-cols=0</span>
+
+default_storage_engine <span class="token operator">=</span> InnoDB
+innodb_data_home_dir <span class="token operator">=</span> /usr/local/mysql/data
+innodb_data_file_path <span class="token operator">=</span> ibdata1:10M:autoextend
+innodb_log_group_home_dir <span class="token operator">=</span> /usr/local/mysql/data
+innodb_buffer_pool_size <span class="token operator">=</span> 128M
+innodb_log_file_size <span class="token operator">=</span> 64M
+innodb_log_buffer_size <span class="token operator">=</span> 16M
+innodb_flush_log_at_trx_commit <span class="token operator">=</span> <span class="token number">1</span>
+innodb_lock_wait_timeout <span class="token operator">=</span> <span class="token number">120</span>
+innodb_max_dirty_pages_pct <span class="token operator">=</span> <span class="token number">90</span>
+innodb_read_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+innodb_write_io_threads <span class="token operator">=</span> <span class="token number">3</span>
+
+<span class="token punctuation">[</span>mysqldump<span class="token punctuation">]</span>
+quick
+max_allowed_packet <span class="token operator">=</span> 16M
+
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+no-auto-rehash
+
+<span class="token punctuation">[</span>myisamchk<span class="token punctuation">]</span>
+key_buffer_size <span class="token operator">=</span> 32M
+sort_buffer_size <span class="token operator">=</span> 768K
+read_buffer <span class="token operator">=</span> 2M
+write_buffer <span class="token operator">=</span> 2M
+
+<span class="token punctuation">[</span>mysqlhotcopy<span class="token punctuation">]</span>
+interactive-timeout
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br></div></div><blockquote><p>按<code>ESC</code>后输入<code>:wq</code>退出</p></blockquote> <h1 id="返回顶部"><a href="#返回顶部" class="header-anchor">#</a> <a href="#readme">返回顶部</a></h1></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/database/MySQL/MySQL笔记.html" class="prev">
+        MySQL笔记
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.95d022f7.js" defer></script><script src="/assets/js/2.3a46498f.js" defer></script><script src="/assets/js/79.f083c4ed.js" defer></script>
+  </body>
+</html>

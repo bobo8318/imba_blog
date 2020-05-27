@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quartz定时器API | IMBAPUB</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="这真的很imba">
+    <link rel="preload" href="/assets/css/0.styles.471cf497.css" as="style"><link rel="preload" href="/assets/js/app.95d022f7.js" as="script"><link rel="preload" href="/assets/js/2.3a46498f.js" as="script"><link rel="preload" href="/assets/js/87.17471d31.js" as="script"><link rel="prefetch" href="/assets/js/10.2018e9fd.js"><link rel="prefetch" href="/assets/js/100.ab12de60.js"><link rel="prefetch" href="/assets/js/101.583cee00.js"><link rel="prefetch" href="/assets/js/102.fdf7f15c.js"><link rel="prefetch" href="/assets/js/103.50a42b70.js"><link rel="prefetch" href="/assets/js/104.df2eaa11.js"><link rel="prefetch" href="/assets/js/105.a9ee9f5b.js"><link rel="prefetch" href="/assets/js/106.41810fd1.js"><link rel="prefetch" href="/assets/js/107.e57d210f.js"><link rel="prefetch" href="/assets/js/108.a467b44e.js"><link rel="prefetch" href="/assets/js/109.e9c99e12.js"><link rel="prefetch" href="/assets/js/11.823d6f8d.js"><link rel="prefetch" href="/assets/js/110.0640c39f.js"><link rel="prefetch" href="/assets/js/111.705c2200.js"><link rel="prefetch" href="/assets/js/112.9a19d341.js"><link rel="prefetch" href="/assets/js/12.ef380254.js"><link rel="prefetch" href="/assets/js/13.697ff2be.js"><link rel="prefetch" href="/assets/js/14.d9443a9c.js"><link rel="prefetch" href="/assets/js/15.344d8e75.js"><link rel="prefetch" href="/assets/js/16.853a732c.js"><link rel="prefetch" href="/assets/js/17.e3862510.js"><link rel="prefetch" href="/assets/js/18.5871cfb3.js"><link rel="prefetch" href="/assets/js/19.c55a149a.js"><link rel="prefetch" href="/assets/js/20.7aab1c7d.js"><link rel="prefetch" href="/assets/js/21.5372c147.js"><link rel="prefetch" href="/assets/js/22.6e9ff47a.js"><link rel="prefetch" href="/assets/js/23.4176bb24.js"><link rel="prefetch" href="/assets/js/24.b7f8575c.js"><link rel="prefetch" href="/assets/js/25.8f5b4ea3.js"><link rel="prefetch" href="/assets/js/26.f296e447.js"><link rel="prefetch" href="/assets/js/27.9a4e430a.js"><link rel="prefetch" href="/assets/js/28.1868bb3c.js"><link rel="prefetch" href="/assets/js/29.c83b0c3a.js"><link rel="prefetch" href="/assets/js/3.a0918208.js"><link rel="prefetch" href="/assets/js/30.35fa5fba.js"><link rel="prefetch" href="/assets/js/31.34fd8625.js"><link rel="prefetch" href="/assets/js/32.0437cf42.js"><link rel="prefetch" href="/assets/js/33.021d9ee8.js"><link rel="prefetch" href="/assets/js/34.a063ad66.js"><link rel="prefetch" href="/assets/js/35.c3adff0b.js"><link rel="prefetch" href="/assets/js/36.af37ef5c.js"><link rel="prefetch" href="/assets/js/37.4bbd540e.js"><link rel="prefetch" href="/assets/js/38.d2348311.js"><link rel="prefetch" href="/assets/js/39.91cb2501.js"><link rel="prefetch" href="/assets/js/4.606cd99c.js"><link rel="prefetch" href="/assets/js/40.1445f188.js"><link rel="prefetch" href="/assets/js/41.59c89272.js"><link rel="prefetch" href="/assets/js/42.f1c3bf6d.js"><link rel="prefetch" href="/assets/js/43.62c14b97.js"><link rel="prefetch" href="/assets/js/44.4f8a4c9e.js"><link rel="prefetch" href="/assets/js/45.f6c272ae.js"><link rel="prefetch" href="/assets/js/46.81e29f75.js"><link rel="prefetch" href="/assets/js/47.6b11caa9.js"><link rel="prefetch" href="/assets/js/48.4db0cc53.js"><link rel="prefetch" href="/assets/js/49.6747ab5a.js"><link rel="prefetch" href="/assets/js/5.09079429.js"><link rel="prefetch" href="/assets/js/50.e5e8b53c.js"><link rel="prefetch" href="/assets/js/51.6d41569c.js"><link rel="prefetch" href="/assets/js/52.9f684a44.js"><link rel="prefetch" href="/assets/js/53.1fb124a5.js"><link rel="prefetch" href="/assets/js/54.94191d1f.js"><link rel="prefetch" href="/assets/js/55.8f63ccfb.js"><link rel="prefetch" href="/assets/js/56.7f2ef3fa.js"><link rel="prefetch" href="/assets/js/57.e0e55bd4.js"><link rel="prefetch" href="/assets/js/58.8b9bbcc6.js"><link rel="prefetch" href="/assets/js/59.a3a3fe01.js"><link rel="prefetch" href="/assets/js/6.3c4b6517.js"><link rel="prefetch" href="/assets/js/60.47f5455b.js"><link rel="prefetch" href="/assets/js/61.55dccf8c.js"><link rel="prefetch" href="/assets/js/62.25c52188.js"><link rel="prefetch" href="/assets/js/63.3584d76c.js"><link rel="prefetch" href="/assets/js/64.490d018b.js"><link rel="prefetch" href="/assets/js/65.e5e6c765.js"><link rel="prefetch" href="/assets/js/66.9718a4fe.js"><link rel="prefetch" href="/assets/js/67.29af663e.js"><link rel="prefetch" href="/assets/js/68.51122fa7.js"><link rel="prefetch" href="/assets/js/69.f16d243b.js"><link rel="prefetch" href="/assets/js/7.5dcc397c.js"><link rel="prefetch" href="/assets/js/70.39a7658f.js"><link rel="prefetch" href="/assets/js/71.eba1a8e2.js"><link rel="prefetch" href="/assets/js/72.3ff88419.js"><link rel="prefetch" href="/assets/js/73.45ff0234.js"><link rel="prefetch" href="/assets/js/74.51e7d3b1.js"><link rel="prefetch" href="/assets/js/75.2fbd2e4c.js"><link rel="prefetch" href="/assets/js/76.a2a0d747.js"><link rel="prefetch" href="/assets/js/77.d594f05b.js"><link rel="prefetch" href="/assets/js/78.22ea4811.js"><link rel="prefetch" href="/assets/js/79.f083c4ed.js"><link rel="prefetch" href="/assets/js/8.cd10b72e.js"><link rel="prefetch" href="/assets/js/80.a39506a7.js"><link rel="prefetch" href="/assets/js/81.36e1981f.js"><link rel="prefetch" href="/assets/js/82.7fe0ea1b.js"><link rel="prefetch" href="/assets/js/83.ea15296a.js"><link rel="prefetch" href="/assets/js/84.3029f850.js"><link rel="prefetch" href="/assets/js/85.795c3724.js"><link rel="prefetch" href="/assets/js/86.5121e878.js"><link rel="prefetch" href="/assets/js/88.efcb3215.js"><link rel="prefetch" href="/assets/js/89.8a6e7508.js"><link rel="prefetch" href="/assets/js/9.9f4472b7.js"><link rel="prefetch" href="/assets/js/90.6b8c7246.js"><link rel="prefetch" href="/assets/js/91.7d30ab2b.js"><link rel="prefetch" href="/assets/js/92.130b4b9d.js"><link rel="prefetch" href="/assets/js/93.28ebba80.js"><link rel="prefetch" href="/assets/js/94.61b822d8.js"><link rel="prefetch" href="/assets/js/95.e3c10163.js"><link rel="prefetch" href="/assets/js/96.b5bcd2a4.js"><link rel="prefetch" href="/assets/js/97.1ddae833.js"><link rel="prefetch" href="/assets/js/98.48bbeec7.js"><link rel="prefetch" href="/assets/js/99.affd3259.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.471cf497.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">IMBAPUB</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>构建工具</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/java/build/gradle.html" class="sidebar-link">gradle</a></li><li><a href="/java/build/maven.html" class="sidebar-link">maven</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="quartz定时器api"><a href="#quartz定时器api" class="header-anchor">#</a> Quartz定时器API</h1> <h4 id="参考：https-blog-csdn-net-qxc1281-article-details-68924140"><a href="#参考：https-blog-csdn-net-qxc1281-article-details-68924140" class="header-anchor">#</a> 参考：https://blog.csdn.net/QXC1281/article/details/68924140</h4> <h2 id="quartz-api核心接口有："><a href="#quartz-api核心接口有：" class="header-anchor">#</a> Quartz API核心接口有：</h2> <blockquote><p>Scheduler – (调度器)与scheduler交互的主要API；</p> <p>Job – (作业)你通过scheduler执行任务，你的任务类需要实现的接口；</p> <p>JobDetail – (作业实例)定义Job的实例；</p> <p>Trigger – (触发器)触发Job的执行；</p> <p>JobBuilder – 定义和创建JobDetail实例的接口;</p> <p>TriggerBuilder – 定义和创建Trigger实例的接口；</p></blockquote> <h2 id="_1-触发器接口基本介绍"><a href="#_1-触发器接口基本介绍" class="header-anchor">#</a> 1.触发器接口基本介绍</h2> <h3 id="trigger触发器方法介绍"><a href="#trigger触发器方法介绍" class="header-anchor">#</a> Trigger触发器方法介绍</h3> <div class="language-diff line-numbers-mode"><pre class="language-diff"><code>// 触发器状态  
+TriggerState  
+<span class="token unchanged">    |-public enum TriggerState { NONE, NORMAL, PAUSED, COMPLETE, ERROR, BLOCKED }  
+        |-NONE 无  
+        |-NORMAL 正常状态  
+        |-PAUSED 暂停状态   
+        |-COMPLETE 完成  
+        |-ERROR 错误  
+        |-BLOCKED 堵塞   
+</span>
+// 执行完成时状态  
+CompletedExecutionInstruction
+<span class="token unchanged">    |-    public enum CompletedExecutionInstruction { 
+            NOOP, RE_EXECUTE_JOB, SET_TRIGGER_COMPLETE, DELETE_TRIGGER, 
+            SET_ALL_JOB_TRIGGERS_COMPLETE, SET_TRIGGER_ERROR, SET_ALL_JOB_TRIGGERS_ERROR }   
+        |-NOOP 无   
+        |-RE_EXECUTE_JOB 重复执行   
+        |-SET_TRIGGER_COMPLETE 触发器执行完成  
+        |-DELETE_TRIGGER 删除触发器  
+        |-SET_ALL_JOB_TRIGGERS_COMPLETE 所有作业和触发器执行完成    
+        |-SET_TRIGGER_ERROR 触发器执行错误  
+        |-SET_ALL_JOB_TRIGGERS_ERROR 设置所有都是错误的  
+</span>
+
+TriggerTimeComparator  
+getKey 获取触发器key值   
+getJobKey  获取作业key 
+getDescription 获取面熟  
+getCalendarName 获取日历名称  
+getJobDataMap 获取作业数据map  
+getPriority 获取优先级  
+mayFireAgain 是否重复执行  
+getStartTime 开始时间  
+getEndTime 结束时间  
+getNextFireTime 下一次执行时间  
+getPreviousFireTime 上一执行时间  
+getFireTimeAfter(Date afterTime) 获取某个时间后的运行时间     
+getFinalFireTime 获取最后执行时间  
+getMisfireInstruction 获取失败策略  
+getTriggerBuilder 获取触发器建造者    
+getScheduleBuilder 获取调度类建造者 
+equals   
+compareTo    
+
+// 失败策略   
+MISFIRE_INSTRUCTION_SMART_POLICY   
+MISFIRE_INSTRUCTION_IGNORE_MISFIRE_POLICY   
+DEFAULT_PRIORITY
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><h2 id="_2-触发器实现类"><a href="#_2-触发器实现类" class="header-anchor">#</a> 2.触发器实现类</h2> <div class="language-diff line-numbers-mode"><pre class="language-diff"><code>Trigger (org.quartz)    
+<span class="token unchanged">    |-CalendarIntervalTrigger (org.quartz) 日期触发器   
+    |   |-CalendarIntervalTriggerImpl (org.quartz.impl.triggers)   
+    |-MutableTrigger (org.quartz.spi)   
+    |   |-OperableTrigger (org.quartz.spi)    
+    |       |-AbstractTrigger (org.quartz.impl.triggers)    
+    |           |-CalendarIntervalTriggerImpl (org.quartz.impl.triggers)   
+    |           |-SimpleTriggerImpl (org.quartz.impl.triggers)   
+    |           |-DailyTimeIntervalTriggerImpl (org.quartz.impl.triggers)   
+    |           |-CronTriggerImpl (org.quartz.impl.triggers)
+    |-SimpleTrigger (org.quartz) 简单触发器  
+    |   |-SimpleTriggerImpl (org.quartz.impl.triggers)  
+    |-CoreTrigger (org.quartz.impl.triggers)  
+    |   |-CalendarIntervalTriggerImpl (org.quartz.impl.triggers)   
+    |   |-SimpleTriggerImpl (org.quartz.impl.triggers)   
+    |   |-DailyTimeIntervalTriggerImpl (org.quartz.impl.triggers)  
+    |   |-CronTriggerImpl (org.quartz.impl.triggers)
+    |-CronTrigger (org.quartz) cron表达式   
+    |   |-CronTriggerImpl (org.quartz.impl.triggers)  
+    |-DailyTimeIntervalTrigger (org.quartz)日期触发类(日)    
+        |-DailyTimeIntervalTriggerImpl (org.quartz.impl.triggers)
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><blockquote><p>常用</p> <blockquote><ol><li><p>SimpleTrigger :简单触发器</p></li> <li><p>CalendarIntervalTrigger:日历触发器</p></li> <li><p>CronTrigger:Cron表达式触发器</p></li> <li><p>DailyTimeIntervalTrigger:日期触发器</p></li></ol></blockquote></blockquote> <h2 id="_3-调度器建造者"><a href="#_3-调度器建造者" class="header-anchor">#</a> 3.调度器建造者</h2> <div class="language-diff line-numbers-mode"><pre class="language-diff"><code>// 用于创建各个调度器  
+ScheduleBuilder (org.quartz)   
+<span class="token unchanged">    |-CalendarIntervalScheduleBuilder (org.quartz)    
+    |-DailyTimeIntervalScheduleBuilder (org.quartz)   
+    |-SimpleScheduleBuilder (org.quartz)       
+    |-CronScheduleBuilder (org.quartz)
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_4-触发器建造者"><a href="#_4-触发器建造者" class="header-anchor">#</a> 4.触发器建造者</h2> <h4 id="简单触发器器源码分析-利用了建造者模式"><a href="#简单触发器器源码分析-利用了建造者模式" class="header-anchor">#</a> 简单触发器器源码分析,利用了建造者模式</h4> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">private</span> <span class="token class-name">TriggerBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 构造函数私有  
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Trigger</span><span class="token punctuation">&gt;</span></span> <span class="token function">newTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  创建一个建造者
+<span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 创建触发器  
+<span class="token comment">// 根据name和默认的group(即&quot;DEFAULT_GROUP&quot;)创建trigger的key</span>
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> 
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">String</span> group<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token class-name">TriggerKey</span> triggerKey<span class="token punctuation">)</span>
+
+
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">withDescription</span><span class="token punctuation">(</span><span class="token class-name">String</span> triggerDescription<span class="token punctuation">)</span> 描述  
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">withPriority</span><span class="token punctuation">(</span><span class="token keyword">int</span> triggerPriority<span class="token punctuation">)</span> 优先级
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">modifiedByCalendar</span><span class="token punctuation">(</span><span class="token class-name">String</span> calName<span class="token punctuation">)</span> 日期
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">startAt</span><span class="token punctuation">(</span><span class="token class-name">Date</span> triggerStartTime<span class="token punctuation">)</span> 开始时间
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">startNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 立即执行
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">endAt</span><span class="token punctuation">(</span><span class="token class-name">Date</span> triggerEndTime<span class="token punctuation">)</span> 结束时间
+<span class="token keyword">public</span> <span class="token generics"><span class="token punctuation">&lt;</span>SBT <span class="token keyword">extends</span> <span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span>SBT<span class="token punctuation">&gt;</span></span> <span class="token function">withSchedule</span><span class="token punctuation">(</span><span class="token class-name">ScheduleBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span>SBT<span class="token punctuation">&gt;</span></span> schedBuilder<span class="token punctuation">)</span> 调度器
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">forJob</span><span class="token punctuation">(</span><span class="token class-name">JobKey</span> keyOfJobToFire<span class="token punctuation">)</span> 设置作业
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">forJob</span><span class="token punctuation">(</span><span class="token class-name">String</span> jobName<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">forJob</span><span class="token punctuation">(</span><span class="token class-name">String</span> jobName<span class="token punctuation">,</span> <span class="token class-name">String</span> jobGroup<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">TriggerBuilder</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">forJob</span><span class="token punctuation">(</span><span class="token class-name">JobDetail</span> jobDetail<span class="token punctuation">)</span>
+<span class="token function">usingJobData</span><span class="token punctuation">(</span><span class="token operator">--</span><span class="token operator">--</span><span class="token punctuation">,</span><span class="token operator">--</span><span class="token operator">--</span><span class="token punctuation">)</span> 设置作业内容
+
+
+key
+description
+startTime
+endTime
+priority <span class="token class-name">Trigger</span><span class="token punctuation">.</span>DEFAULT_PRIORITY 
+calendarName
+jobKey
+jobDataMap
+scheduleBuilder
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><h2 id="_5-simpletrigger-简单触发器"><a href="#_5-simpletrigger-简单触发器" class="header-anchor">#</a> 5.SimpleTrigger-简单触发器</h2> <h3 id="_5-1-简单调度器建造者"><a href="#_5-1-简单调度器建造者" class="header-anchor">#</a> 5.1.简单调度器建造者</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//构造函数私有化</span>
+<span class="token keyword">protected</span> <span class="token class-name">SimpleScheduleBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token comment">//获取简单调度器</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">simpleSchedule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">/***********************/</span>
+<span class="token comment">// 1分钟执行(一直执行)   </span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatMinutelyForever</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token comment">//每隔几分钟执行(一直执行)   </span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatMinutelyForever</span><span class="token punctuation">(</span><span class="token keyword">int</span> minutes<span class="token punctuation">)</span> 
+<span class="token comment">// 1秒执行(一直执行)      </span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatSecondlyForever</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token comment">//每隔几秒钟执行(一直执行)   </span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatSecondlyForever</span><span class="token punctuation">(</span><span class="token keyword">int</span> seconds<span class="token punctuation">)</span> 
+<span class="token comment">// 1小时执行(一直执行)   </span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatHourlyForever</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token comment">//每隔几小时钟执行(一直执行) </span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatHourlyForever</span><span class="token punctuation">(</span><span class="token keyword">int</span> hours<span class="token punctuation">)</span>   
+<span class="token comment">/***********************/</span>
+<span class="token punctuation">)</span><span class="token comment">//间隔时间为1分钟，总的执行次数为count</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatMinutelyForTotalCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> count   
+<span class="token comment">//间隔时间为几分钟，总的执行次数为count   .............</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatMinutelyForTotalCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">,</span> <span class="token keyword">int</span> minutes<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatSecondlyForTotalCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatSecondlyForTotalCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">,</span> <span class="token keyword">int</span> seconds<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatHourlyForTotalCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">repeatHourlyForTotalCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">,</span> <span class="token keyword">int</span> hours<span class="token punctuation">)</span>
+<span class="token comment">/***********************/</span>
+<span class="token keyword">public</span> <span class="token class-name">MutableTrigger</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 创建一个<span class="token class-name">Trigger</span>
+<span class="token comment">/***********************/</span>
+<span class="token comment">// 几秒钟重复执行   </span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withIntervalInMilliseconds</span><span class="token punctuation">(</span><span class="token keyword">long</span> intervalInMillis<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withIntervalInSeconds</span><span class="token punctuation">(</span><span class="token keyword">int</span> intervalInSeconds<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withIntervalInMinutes</span><span class="token punctuation">(</span><span class="token keyword">int</span> intervalInMinutes<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withIntervalInHours</span><span class="token punctuation">(</span><span class="token keyword">int</span> intervalInHours<span class="token punctuation">)</span>
+<span class="token comment">/***********************/</span>
+ <span class="token comment">// 重复执行册数  </span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withRepeatCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> triggerRepeatCount<span class="token punctuation">)</span>
+<span class="token comment">/***********************/</span>
+参考地址  
+http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>blog<span class="token punctuation">.</span>sina<span class="token punctuation">.</span>com<span class="token punctuation">.</span>cn<span class="token operator">/</span>s<span class="token operator">/</span>blog_56d8ea900101eu45<span class="token punctuation">.</span>html
+
+<span class="token comment">//以错过的第一个频率时间立刻开始执行</span>
+<span class="token comment">//重做错过的所有频率周期后</span>
+<span class="token comment">//当下一次触发频率发生时间大于当前时间后，再按照正常的Cron频率依次执行</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionIgnoreMisfires</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//以当前时间为触发频率立即触发执行</span>
+<span class="token comment">//执行至FinalTIme的剩余周期次数</span>
+<span class="token comment">//以调度或恢复调度的时刻为基准的周期频率，FinalTime根据剩余次数和当前时间计算得到</span>
+<span class="token comment">//调整后的FinalTime会略大于根据starttime计算的到的FinalTime值</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionFireNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//不触发立即执行</span>
+<span class="token comment">//等待下次触发频率周期时刻，执行至FinalTime的剩余周期次数</span>
+<span class="token comment">//以startTime为基准计算周期频率，并得到FinalTime</span>
+<span class="token comment">//即使中间出现pause，resume以后保持FinalTime时间不变</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionNextWithExistingCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//不触发立即执行</span>
+<span class="token comment">//等待下次触发频率周期时刻，执行至FinalTime的剩余周期次数</span>
+<span class="token comment">//以startTime为基准计算周期频率，并得到FinalTime</span>
+<span class="token comment">//即使中间出现pause，resume以后保持FinalTime时间不变</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionNextWithRemainingCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//以当前时间为触发频率立即触发执行</span>
+<span class="token comment">//执行至FinalTIme的剩余周期次数</span>
+<span class="token comment">//以调度或恢复调度的时刻为基准的周期频率，FinalTime根据剩余次数和当前时间计算得到</span>
+<span class="token comment">//调整后的FinalTime会略大于根据starttime计算的到的FinalTime值</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionNowWithExistingCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//以当前时间为触发频率立即触发执行</span>
+<span class="token comment">//执行至FinalTIme的剩余周期次数</span>
+<span class="token comment">//以调度或恢复调度的时刻为基准的周期频率，FinalTime根据剩余次数和当前时间计算得到</span>
+<span class="token keyword">public</span> <span class="token class-name">SimpleScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionNowWithRemainingCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+interval 时间间隔
+repeatCount 重复时间
+misfireInstruction
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br></div></div><h3 id="_5-2-simpletrigger"><a href="#_5-2-simpletrigger" class="header-anchor">#</a> 5.2.SimpleTrigger</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>quartz</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>text</span><span class="token punctuation">.</span><span class="token class-name">SimpleDateFormat</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Date</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleTriggerMain</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">SchedulerException</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 获取一个调度工厂</span>
+        <span class="token class-name">SchedulerFactory</span> schedFact <span class="token operator">=</span> <span class="token keyword">new</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>impl<span class="token punctuation">.</span><span class="token class-name">StdSchedulerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 获取一个调度器</span>
+        <span class="token class-name">Scheduler</span> sched <span class="token operator">=</span> schedFact<span class="token punctuation">.</span><span class="token function">getScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">SimpleDateFormat</span> sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">&quot;yyyy-MM-dd hh:mm:ss&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">JobDetail</span> job <span class="token operator">=</span> <span class="token class-name">JobBuilder</span><span class="token punctuation">.</span><span class="token function">newJob</span><span class="token punctuation">(</span><span class="token class-name">HelloJob</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;job1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 在当前时间15秒后运行</span>
+        <span class="token class-name">Date</span> startTime <span class="token operator">=</span> <span class="token class-name">DateBuilder</span><span class="token punctuation">.</span><span class="token function">nextGivenSecondDate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 创建一个SimpleTrigger实例，指定该Trigger在Scheduler中所属组及名称。</span>
+        <span class="token comment">// 接着设置调度的时间规则.当前时间15秒后运行，每10秒运行一次，共运行5次</span>
+        <span class="token class-name">SimpleTrigger</span> trigger <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SimpleTrigger</span><span class="token punctuation">)</span> <span class="token class-name">TriggerBuilder</span><span class="token punctuation">.</span><span class="token function">newTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;trigger1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">startAt</span><span class="token punctuation">(</span>startTime<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withSchedule</span><span class="token punctuation">(</span><span class="token class-name">SimpleScheduleBuilder</span><span class="token punctuation">.</span><span class="token function">simpleSchedule</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">withIntervalInSeconds</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">withRepeatCount</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+                <span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sched<span class="token punctuation">.</span><span class="token function">scheduleJob</span><span class="token punctuation">(</span>job<span class="token punctuation">,</span> trigger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调度启动</span>
+        sched<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h2 id="_6-crontriger-cron触发器"><a href="#_6-crontriger-cron触发器" class="header-anchor">#</a> 6.CronTriger-Cron触发器</h2> <h3 id="_6-1-cron调度器建造者"><a href="#_6-1-cron调度器建造者" class="header-anchor">#</a> 6.1.Cron调度器建造者</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 构造函数私有化</span>
+<span class="token keyword">protected</span> <span class="token class-name">CronScheduleBuilder</span><span class="token punctuation">(</span><span class="token class-name">CronExpression</span> cronExpression<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">MutableTrigger</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 根据cron表达式建造</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">cronSchedule</span><span class="token punctuation">(</span><span class="token class-name">String</span> cronExpression<span class="token punctuation">)</span>
+<span class="token comment">// 核查表达式是否正确</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">cronScheduleNonvalidatedExpression</span><span class="token punctuation">(</span>
+            <span class="token class-name">String</span> cronExpression<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">ParseException</span>
+<span class="token comment">//表达式异常</span>
+cronScheduleNoParseException
+<span class="token comment">// 利用CronExpression建造</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">cronSchedule</span><span class="token punctuation">(</span><span class="token class-name">CronExpression</span> cronExpression<span class="token punctuation">)</span>
+<span class="token comment">//每天在指定的时间执行，根据这个调度创建一个cron表达式</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">dailyAtHourAndMinute</span><span class="token punctuation">(</span><span class="token keyword">int</span> hour<span class="token punctuation">,</span> <span class="token keyword">int</span> minute<span class="token punctuation">)</span>
+
+<span class="token comment">// 通过`分钟`、`小时`、`周`创建一个CronScheduleBuilder实例，即在某一天的给定时刻</span>
+<span class="token comment">// (通过`分钟`、`小时`指定)执行，，而天数由`周`确定，如果“周二、周四的10:05“等；</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">atHourAndMinuteOnGivenDaysOfWeek</span><span class="token punctuation">(</span>
+            <span class="token keyword">int</span> hour<span class="token punctuation">,</span> <span class="token keyword">int</span> minute<span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> daysOfWeek<span class="token punctuation">)</span>
+<span class="token comment">//调度计划：每周的某一天，在指定的时间（小时和分钟）执行</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">weeklyOnDayAndHourAndMinute</span><span class="token punctuation">(</span>
+            <span class="token keyword">int</span> dayOfWeek<span class="token punctuation">,</span> <span class="token keyword">int</span> hour<span class="token punctuation">,</span> <span class="token keyword">int</span> minute<span class="token punctuation">)</span>
+<span class="token comment">//调度计划：每月的某一天，在指定的时间（小时和分钟）执行</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">monthlyOnDayAndHourAndMinute</span><span class="token punctuation">(</span>
+            <span class="token keyword">int</span> dayOfMonth<span class="token punctuation">,</span> <span class="token keyword">int</span> hour<span class="token punctuation">,</span> <span class="token keyword">int</span> minute<span class="token punctuation">)</span>
+
+<span class="token comment">//设置时区</span>
+<span class="token keyword">public</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">inTimeZone</span><span class="token punctuation">(</span><span class="token class-name">TimeZone</span> timezone<span class="token punctuation">)</span>
+<span class="token comment">// 设置处理办法</span>
+<span class="token keyword">public</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionIgnoreMisfires</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+
+<span class="token keyword">public</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionDoNothing</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">public</span> <span class="token class-name">CronScheduleBuilder</span> <span class="token function">withMisfireHandlingInstructionFireAndProceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+cronExpression
+misfireInstruction
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h3 id="_6-2-cron应用"><a href="#_6-2-cron应用" class="header-anchor">#</a> 6.2.Cron应用</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>quartz</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>text</span><span class="token punctuation">.</span><span class="token class-name">SimpleDateFormat</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CronTriggerMain</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">SchedulerException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SchedulerFactory</span> schedFact <span class="token operator">=</span> <span class="token keyword">new</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>impl<span class="token punctuation">.</span><span class="token class-name">StdSchedulerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 获取一个调度器</span>
+        <span class="token class-name">Scheduler</span> sched <span class="token operator">=</span> schedFact<span class="token punctuation">.</span><span class="token function">getScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">JobDetail</span> job <span class="token operator">=</span> <span class="token class-name">JobBuilder</span><span class="token punctuation">.</span><span class="token function">newJob</span><span class="token punctuation">(</span><span class="token class-name">HelloJob</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;job1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 每两秒执行</span>
+        <span class="token class-name">CronTrigger</span> trigger <span class="token operator">=</span> <span class="token class-name">TriggerBuilder</span><span class="token punctuation">.</span><span class="token function">newTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;trigger1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withSchedule</span><span class="token punctuation">(</span>
+                <span class="token class-name">CronScheduleBuilder</span><span class="token punctuation">.</span><span class="token function">cronSchedule</span><span class="token punctuation">(</span><span class="token string">&quot;/2 * * * * ?&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sched<span class="token punctuation">.</span><span class="token function">scheduleJob</span><span class="token punctuation">(</span>job<span class="token punctuation">,</span> trigger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调度启动</span>
+        sched<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="_6-3-cron表达式介绍"><a href="#_6-3-cron表达式介绍" class="header-anchor">#</a> 6.3.cron表达式介绍</h3> <blockquote><p>字符</p> <blockquote><ol><li><p><code>*</code> 每一(每一分)</p></li> <li><p><code>?</code> 表示不关心,任意</p></li> <li><p><code>-</code> 范围 (小时:1-12,1到12点运行)</p></li> <li><p><code>,</code> 标示多个值 (小时 1,2,3 1点2点3点运行)</p></li> <li><p><code>/</code> 递增触发(0/15,从0开始每15秒运行一次)</p></li> <li><p><code>L</code> 最后(日L,当月最后一天,周L周六)</p></li> <li><p><code>W</code> 指定日期最近的工作日(周一到周五)</p></li> <li><p><code>##</code> 序号(表示每月的第几个周几)</p></li></ol></blockquote> <p>CronTrigger配置格式: [秒] [分] [小时] [日] [月] [周] [年]</p></blockquote> <table><thead><tr><th>序号</th> <th>说明</th> <th>是否必填</th> <th>允许填写的值</th> <th>允许的通配符</th></tr></thead> <tbody><tr><td>1</td> <td>秒</td> <td>是</td> <td>0-59</td> <td>, - * /</td></tr> <tr><td>2</td> <td>分</td> <td>是</td> <td>0-59</td> <td>, - * /</td></tr> <tr><td>3</td> <td>小时</td> <td>是</td> <td>0-23</td> <td>, - * /</td></tr> <tr><td>4</td> <td>日</td> <td>是</td> <td>1-31</td> <td>, - * ? / L W</td></tr> <tr><td>5</td> <td>月</td> <td>是</td> <td>1-12 or JAN-DEC</td> <td>, - * /</td></tr> <tr><td>6</td> <td>周</td> <td>是</td> <td>1-7 or SUN-SAT</td> <td>, - * ? / L ##</td></tr> <tr><td>7</td> <td>年</td> <td>是</td> <td>empty或1970-2099</td> <td>, - * /</td></tr></tbody></table> <h2 id="_7-dailytimeintervaltrigger-日期触发"><a href="#_7-dailytimeintervaltrigger-日期触发" class="header-anchor">#</a> 7.DailyTimeIntervalTrigger-日期触发</h2> <h3 id="_7-1-dailytime调度器建造者"><a href="#_7-1-dailytime调度器建造者" class="header-anchor">#</a> 7.1.DailyTime调度器建造者</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">// 建造者模式 </span>
+<span class="token class-name">DailyTimeIntervalScheduleBuilder</span> 
+dailyTimeIntervalSchedule 
+build
+
+<span class="token comment">//执行时间间隔触发执行,unit时间单位 </span>
+<span class="token keyword">public</span> <span class="token class-name">DailyTimeIntervalScheduleBuilder</span> <span class="token function">withInterval</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeInterval<span class="token punctuation">,</span> <span class="token class-name">IntervalUnit</span> unit<span class="token punctuation">)</span> 
+<span class="token comment">//秒 </span>
+withIntervalInSeconds 
+<span class="token comment">//分钟 </span>
+withIntervalInMinutes 
+<span class="token comment">//小时 </span>
+withIntervalInHours 
+<span class="token comment">// 周几执行 </span>
+<span class="token keyword">public</span> <span class="token class-name">DailyTimeIntervalScheduleBuilder</span> <span class="token function">onDaysOfTheWeek</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> … onDaysOfWeek<span class="token punctuation">)</span> 
+onDaysOfTheWeek 
+onMondayThroughFriday 
+onSaturdayAndSunday 
+onEveryDay 
+<span class="token comment">// 开始触发时间 </span>
+startingDailyAt 
+<span class="token comment">//结束时间 </span>
+endingDailyAt 
+<span class="token comment">//支持次数 </span>
+endingDailyAfterCount 
+withMisfireHandlingInstructionIgnoreMisfires 
+withMisfireHandlingInstructionDoNothing 
+withMisfireHandlingInstructionFireAndProceed 
+<span class="token comment">//重复次数 </span>
+withRepeatCount 
+validateInterval
+
+<span class="token comment">// 常量等 </span>
+interval 
+intervalUnit 
+daysOfWeek 
+startTimeOfDay 
+endTimeOfDay 
+repeatCount 
+misfireInstruction 
+ALL_DAYS_OF_THE_WEEK 
+MONDAY_THROUGH_FRIDAY 
+SATURDAY_AND_SUNDAY
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h3 id="_7-2-应用"><a href="#_7-2-应用" class="header-anchor">#</a> 7.2.应用</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>quartz</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DailyTimeIntervalTriggerMain</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">SchedulerException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SchedulerFactory</span> schedFact <span class="token operator">=</span> <span class="token keyword">new</span> org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>impl<span class="token punctuation">.</span><span class="token class-name">StdSchedulerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 获取一个调度器</span>
+        <span class="token class-name">Scheduler</span> sched <span class="token operator">=</span> schedFact<span class="token punctuation">.</span><span class="token function">getScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">JobDetail</span> job <span class="token operator">=</span> <span class="token class-name">JobBuilder</span><span class="token punctuation">.</span><span class="token function">newJob</span><span class="token punctuation">(</span><span class="token class-name">HelloJob</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;job1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 每两秒执行</span>
+        <span class="token class-name">DailyTimeIntervalTrigger</span> trigger <span class="token operator">=</span> <span class="token class-name">TriggerBuilder</span><span class="token punctuation">.</span><span class="token function">newTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;trigger1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withSchedule</span><span class="token punctuation">(</span>
+                <span class="token class-name">DailyTimeIntervalScheduleBuilder</span><span class="token punctuation">.</span><span class="token function">dailyTimeIntervalSchedule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withInterval</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token class-name">DateBuilder</span><span class="token punctuation">.</span><span class="token class-name">IntervalUnit</span><span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sched<span class="token punctuation">.</span><span class="token function">scheduleJob</span><span class="token punctuation">(</span>job<span class="token punctuation">,</span> trigger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调度启动</span>
+        sched<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="_8-calendarintervaltrigger-日历触发"><a href="#_8-calendarintervaltrigger-日历触发" class="header-anchor">#</a> 8.CalendarIntervalTrigger-日历触发</h2> <h3 id="_8-1-calendar调度器建造者"><a href="#_8-1-calendar调度器建造者" class="header-anchor">#</a> 8.1.Calendar调度器建造者</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">CalendarIntervalScheduleBuilder</span>
+calendarIntervalSchedule
+build
+<span class="token comment">// 和DailyTimeIntervalScheduleBuilder差不多</span>
+<span class="token keyword">public</span> <span class="token class-name">CalendarIntervalScheduleBuilder</span> <span class="token function">withInterval</span><span class="token punctuation">(</span><span class="token keyword">int</span> timeInterval<span class="token punctuation">,</span> <span class="token class-name">IntervalUnit</span> unit<span class="token punctuation">)</span>
+withIntervalInSeconds
+withIntervalInMinutes
+withIntervalInHours
+withIntervalInDays
+withIntervalInWeeks
+withIntervalInMonths
+withIntervalInYears
+
+withMisfireHandlingInstructionIgnoreMisfires
+withMisfireHandlingInstructionDoNothing
+withMisfireHandlingInstructionFireAndProceed
+inTimeZone
+
+preserveHourOfDayAcrossDaylightSavings
+skipDayIfHourDoesNotExist
+validateInterval
+interval
+intervalUnit
+misfireInstruction
+timeZone
+preserveHourOfDayAcrossDaylightSavings
+skipDayIfHourDoesNotExist
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h3 id="_8-1应用"><a href="#_8-1应用" class="header-anchor">#</a> 8.1应用</h3> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>quartz</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>quartz<span class="token punctuation">.</span>impl</span><span class="token punctuation">.</span><span class="token class-name">StdSchedulerFactory</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CalendarIntervalMain</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">SchedulerException</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SchedulerFactory</span> schedFact <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StdSchedulerFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 获取一个调度器</span>
+        <span class="token class-name">Scheduler</span> sched <span class="token operator">=</span> schedFact<span class="token punctuation">.</span><span class="token function">getScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">JobDetail</span> job <span class="token operator">=</span> <span class="token class-name">JobBuilder</span><span class="token punctuation">.</span><span class="token function">newJob</span><span class="token punctuation">(</span><span class="token class-name">HelloJob</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;job1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 每两秒执行</span>
+        <span class="token class-name">CalendarIntervalTrigger</span> trigger <span class="token operator">=</span> <span class="token class-name">TriggerBuilder</span><span class="token punctuation">.</span><span class="token function">newTrigger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withIdentity</span><span class="token punctuation">(</span><span class="token string">&quot;trigger1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;group1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withSchedule</span><span class="token punctuation">(</span>
+                <span class="token class-name">CalendarIntervalScheduleBuilder</span><span class="token punctuation">.</span><span class="token function">calendarIntervalSchedule</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withInterval</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token class-name">DateBuilder</span><span class="token punctuation">.</span><span class="token class-name">IntervalUnit</span><span class="token punctuation">.</span>SECOND<span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sched<span class="token punctuation">.</span><span class="token function">scheduleJob</span><span class="token punctuation">(</span>job<span class="token punctuation">,</span> trigger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 调度启动</span>
+        sched<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.95d022f7.js" defer></script><script src="/assets/js/2.3a46498f.js" defer></script><script src="/assets/js/87.17471d31.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue知识杂记（长期更新） | IMBAPUB</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="这真的很imba">
+    <link rel="preload" href="/assets/css/0.styles.471cf497.css" as="style"><link rel="preload" href="/assets/js/app.95d022f7.js" as="script"><link rel="preload" href="/assets/js/2.3a46498f.js" as="script"><link rel="preload" href="/assets/js/106.41810fd1.js" as="script"><link rel="prefetch" href="/assets/js/10.2018e9fd.js"><link rel="prefetch" href="/assets/js/100.ab12de60.js"><link rel="prefetch" href="/assets/js/101.583cee00.js"><link rel="prefetch" href="/assets/js/102.fdf7f15c.js"><link rel="prefetch" href="/assets/js/103.50a42b70.js"><link rel="prefetch" href="/assets/js/104.df2eaa11.js"><link rel="prefetch" href="/assets/js/105.a9ee9f5b.js"><link rel="prefetch" href="/assets/js/107.e57d210f.js"><link rel="prefetch" href="/assets/js/108.a467b44e.js"><link rel="prefetch" href="/assets/js/109.e9c99e12.js"><link rel="prefetch" href="/assets/js/11.823d6f8d.js"><link rel="prefetch" href="/assets/js/110.0640c39f.js"><link rel="prefetch" href="/assets/js/111.705c2200.js"><link rel="prefetch" href="/assets/js/112.9a19d341.js"><link rel="prefetch" href="/assets/js/12.ef380254.js"><link rel="prefetch" href="/assets/js/13.697ff2be.js"><link rel="prefetch" href="/assets/js/14.d9443a9c.js"><link rel="prefetch" href="/assets/js/15.344d8e75.js"><link rel="prefetch" href="/assets/js/16.853a732c.js"><link rel="prefetch" href="/assets/js/17.e3862510.js"><link rel="prefetch" href="/assets/js/18.5871cfb3.js"><link rel="prefetch" href="/assets/js/19.c55a149a.js"><link rel="prefetch" href="/assets/js/20.7aab1c7d.js"><link rel="prefetch" href="/assets/js/21.5372c147.js"><link rel="prefetch" href="/assets/js/22.6e9ff47a.js"><link rel="prefetch" href="/assets/js/23.4176bb24.js"><link rel="prefetch" href="/assets/js/24.b7f8575c.js"><link rel="prefetch" href="/assets/js/25.8f5b4ea3.js"><link rel="prefetch" href="/assets/js/26.f296e447.js"><link rel="prefetch" href="/assets/js/27.9a4e430a.js"><link rel="prefetch" href="/assets/js/28.1868bb3c.js"><link rel="prefetch" href="/assets/js/29.c83b0c3a.js"><link rel="prefetch" href="/assets/js/3.a0918208.js"><link rel="prefetch" href="/assets/js/30.35fa5fba.js"><link rel="prefetch" href="/assets/js/31.34fd8625.js"><link rel="prefetch" href="/assets/js/32.0437cf42.js"><link rel="prefetch" href="/assets/js/33.021d9ee8.js"><link rel="prefetch" href="/assets/js/34.a063ad66.js"><link rel="prefetch" href="/assets/js/35.c3adff0b.js"><link rel="prefetch" href="/assets/js/36.af37ef5c.js"><link rel="prefetch" href="/assets/js/37.4bbd540e.js"><link rel="prefetch" href="/assets/js/38.d2348311.js"><link rel="prefetch" href="/assets/js/39.91cb2501.js"><link rel="prefetch" href="/assets/js/4.606cd99c.js"><link rel="prefetch" href="/assets/js/40.1445f188.js"><link rel="prefetch" href="/assets/js/41.59c89272.js"><link rel="prefetch" href="/assets/js/42.f1c3bf6d.js"><link rel="prefetch" href="/assets/js/43.62c14b97.js"><link rel="prefetch" href="/assets/js/44.4f8a4c9e.js"><link rel="prefetch" href="/assets/js/45.f6c272ae.js"><link rel="prefetch" href="/assets/js/46.81e29f75.js"><link rel="prefetch" href="/assets/js/47.6b11caa9.js"><link rel="prefetch" href="/assets/js/48.4db0cc53.js"><link rel="prefetch" href="/assets/js/49.6747ab5a.js"><link rel="prefetch" href="/assets/js/5.09079429.js"><link rel="prefetch" href="/assets/js/50.e5e8b53c.js"><link rel="prefetch" href="/assets/js/51.6d41569c.js"><link rel="prefetch" href="/assets/js/52.9f684a44.js"><link rel="prefetch" href="/assets/js/53.1fb124a5.js"><link rel="prefetch" href="/assets/js/54.94191d1f.js"><link rel="prefetch" href="/assets/js/55.8f63ccfb.js"><link rel="prefetch" href="/assets/js/56.7f2ef3fa.js"><link rel="prefetch" href="/assets/js/57.e0e55bd4.js"><link rel="prefetch" href="/assets/js/58.8b9bbcc6.js"><link rel="prefetch" href="/assets/js/59.a3a3fe01.js"><link rel="prefetch" href="/assets/js/6.3c4b6517.js"><link rel="prefetch" href="/assets/js/60.47f5455b.js"><link rel="prefetch" href="/assets/js/61.55dccf8c.js"><link rel="prefetch" href="/assets/js/62.25c52188.js"><link rel="prefetch" href="/assets/js/63.3584d76c.js"><link rel="prefetch" href="/assets/js/64.490d018b.js"><link rel="prefetch" href="/assets/js/65.e5e6c765.js"><link rel="prefetch" href="/assets/js/66.9718a4fe.js"><link rel="prefetch" href="/assets/js/67.29af663e.js"><link rel="prefetch" href="/assets/js/68.51122fa7.js"><link rel="prefetch" href="/assets/js/69.f16d243b.js"><link rel="prefetch" href="/assets/js/7.5dcc397c.js"><link rel="prefetch" href="/assets/js/70.39a7658f.js"><link rel="prefetch" href="/assets/js/71.eba1a8e2.js"><link rel="prefetch" href="/assets/js/72.3ff88419.js"><link rel="prefetch" href="/assets/js/73.45ff0234.js"><link rel="prefetch" href="/assets/js/74.51e7d3b1.js"><link rel="prefetch" href="/assets/js/75.2fbd2e4c.js"><link rel="prefetch" href="/assets/js/76.a2a0d747.js"><link rel="prefetch" href="/assets/js/77.d594f05b.js"><link rel="prefetch" href="/assets/js/78.22ea4811.js"><link rel="prefetch" href="/assets/js/79.f083c4ed.js"><link rel="prefetch" href="/assets/js/8.cd10b72e.js"><link rel="prefetch" href="/assets/js/80.a39506a7.js"><link rel="prefetch" href="/assets/js/81.36e1981f.js"><link rel="prefetch" href="/assets/js/82.7fe0ea1b.js"><link rel="prefetch" href="/assets/js/83.ea15296a.js"><link rel="prefetch" href="/assets/js/84.3029f850.js"><link rel="prefetch" href="/assets/js/85.795c3724.js"><link rel="prefetch" href="/assets/js/86.5121e878.js"><link rel="prefetch" href="/assets/js/87.17471d31.js"><link rel="prefetch" href="/assets/js/88.efcb3215.js"><link rel="prefetch" href="/assets/js/89.8a6e7508.js"><link rel="prefetch" href="/assets/js/9.9f4472b7.js"><link rel="prefetch" href="/assets/js/90.6b8c7246.js"><link rel="prefetch" href="/assets/js/91.7d30ab2b.js"><link rel="prefetch" href="/assets/js/92.130b4b9d.js"><link rel="prefetch" href="/assets/js/93.28ebba80.js"><link rel="prefetch" href="/assets/js/94.61b822d8.js"><link rel="prefetch" href="/assets/js/95.e3c10163.js"><link rel="prefetch" href="/assets/js/96.b5bcd2a4.js"><link rel="prefetch" href="/assets/js/97.1ddae833.js"><link rel="prefetch" href="/assets/js/98.48bbeec7.js"><link rel="prefetch" href="/assets/js/99.affd3259.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.471cf497.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">IMBAPUB</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link router-link-active">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link router-link-active">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>安装</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue/node vue 安装.html" class="sidebar-link">node vue 安装使用</a></li><li><a href="/vue/vue.html" aria-current="page" class="active sidebar-link">vue知识杂记（长期更新）</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/vue/vuepress.html" class="sidebar-link">vuepress</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>实例学习</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue知识杂记（长期更新）"><a href="#vue知识杂记（长期更新）" class="header-anchor">#</a> vue知识杂记（长期更新）</h1> <h3 id="vue"><a href="#vue" class="header-anchor">#</a> vue</h3> <ul><li><p>ide ：vscode 插件 vutr</p></li> <li><p>非脚手架使用</p> <ul><li><p>引用</p> <blockquote><p>cdn 上下载vue.js https://www.bootcdn.cn/
+创建index.html 引入vue.js
+引入main.js</p></blockquote></li> <li><p>使用</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//main.js
+    let app = new Vue({
+    	components:{
+          piechart
+         },
+        el:&quot;#app&quot;,
+        data:{
+           title:&quot;hello&quot; 
+        },
+        methods:{
+        	method0(msg){
+        		console.info(msg);
+        	},
+        	method1: function(){
+        	
+        	}
+        },
+        mounted() {
+        	this.methon0(this.title)
+        }
+    });
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></li> <li><p>自定义组件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>全局组件：-----------------------------------------------------------
+let like = Vue.extend({
+    template: `
+        &lt;div&gt;
+            &lt;h2&gt;全局组件定义方法一&lt;/h2&gt;
+            &lt;p&gt;全局组件定义方法一内容&lt;/p&gt;
+        &lt;/div&gt;
+    `
+});
+Vue.component('like-com', like);
+
+局部组件：----------------------------------------------------------
+let like = Vue.extend({
+    template: `
+        &lt;div&gt;
+            &lt;h2&gt;局部组件定义方法一&lt;/h2&gt;
+            &lt;p&gt;局部组件定义方法一内容&lt;/p&gt;
+        &lt;/div&gt;
+    `
+});
+new Vue({
+    el: '#app1',
+    components: {
+        'like-com': like 或者 直接写 like
+    }
+});
+
+使用template定义---------------------------------------------------------
+&lt;div id=&quot;app1&quot;&gt;
+    &lt;my-love&gt;&lt;/my-love&gt;
+&lt;/div&gt;
+
+&lt;template id=&quot;temp-com&quot;&gt;
+    &lt;div&gt;
+        &lt;h3&gt;使用template定义的组件&lt;/h3&gt;
+        &lt;p&gt;使用template定义的组件的内容！&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+Vue.component('my-love', {
+    template: '#temp-com'
+});
+
+使用script定义---------------------------------------------------------------
+
+&lt;div id=&quot;app1&quot;&gt;
+    &lt;my-love&gt;&lt;/my-love&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/template&quot; id=&quot;temp-com&quot;&gt;
+    &lt;div&gt;
+        &lt;h3&gt;使用template定义的组件&lt;/h3&gt;
+        &lt;p&gt;使用template定义的组件的内容！&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div></li> <li><p>父子组件通信:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>父向子传递数据 通过props----------------------------------------------------------
+&lt;div id=&quot;app&quot;&gt;
+    &lt;my-comp :username=&quot;nickname&quot;&gt;&lt;/my-comp&gt;
+&lt;/div&gt;
+
+Vue.component('my-comp', {
+    props: ['username'],
+    template: '&lt;h3&gt;{{ username }}&lt;/h3&gt;'
+});
+
+new Vue({
+    el: '#app',
+    data: {
+        nickname: '小七'
+    }
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li> <li><p>使用</p> <blockquote><p><!----></p></blockquote></li> <li><p>过滤器</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>filters:{
+        watchFilter: function(value){
+            if(value == 1){
+                return &quot;已收藏&quot;;
+            }else{
+                return &quot;收藏&quot;;
+            }
+        },
+        isActiveFitlter: (value)=&gt;{
+            return value===1?'激活':'冻结'
+        }
+    },
+    
+/ 双花括号中
+{{ isActive | isActiveFitlter}}
+
+// 在v-bind 中
+&lt;div v-bind:id=&quot; isActive | isActiveFitlter&quot;&gt;&lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><ul><li><p>全局 Filter</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/filters.js
+let isActiveFitlter = value =&gt; {
+    return value===1?'激活':'冻结'
+}
+export { isActiveFitlter }
+
+
+//main.js 引入 filters.js
+import * as filters from './assets/common/filters'
+Object.keys(filters).forEach(key =&gt; {
+    Vue.filter(key, filters[key])
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div></li> <li><p>注意在table中使用需要借助 <strong><strong>*插槽*</strong></strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;el-table-column prop=&quot;isActive&quot; label=&quot;状态&quot;&gt;
+     &lt;template slot-scope=&quot;scope&quot;&gt;
+          {{scope.row.isActive | isActiveFitlter}}
+     &lt;/template&gt;
+&lt;/el-table-column&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li></ul></li> <li><p>列表排序</p></li></ul></li> <li><p>原理</p></li> <li><p>数据双向邦定:通过Object.defineProperty()</p></li> <li><p>vue-router</p> <ul><li><p>安装：npm install vue-router  --save-dev</p></li> <li><p>使用： src 下新建 router 文件件 新建index.js</p></li> <li><p>@ 相当于 src目录</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import Vue from 'vue'
+import Router from 'vue-router'
+import HelloWorld from '@/component/helloworld.vue'
+Vue.use(Router)
+
+export default new Router({
+	route:[
+		{
+			path:'/',
+			name:'helloworld',
+			component:Helloworld,
+			redirect:'/index',
+			alias:'hello'
+		},
+		{
+		//动态路由带参数 ：开头
+		path:'/list/:id',
+		//可以不通过this.$router获取：id
+		//直接当组件的props使用
+		props:true,
+		//通过name跳转
+		name:'listdata',
+		component: () =&gt; import('@/component/listdata.vue')
+		}
+	
+	]
+})
+
+export default{
+	name:'hello',
+	props:['id'],
+	mounted(){
+		console.log(this.id);
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div></li> <li><p>引用： main.js import router from './router'</p></li> <li><p>导航使用：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;keep-alive&gt;&lt;router-view&gt;&lt;/keep-alive&gt;//缓存页面
+
+&lt;router-link tag=&quot;li&quot; to=&quot;/hello&quot;&gt;go hello&lt;/router-link&gt;
+
+&lt;router-link :to=&quot;{name:'view1'}&quot;&gt;go hello&lt;/router-link&gt;
+
+&lt;div @click=&quot;goto&quot;&gt;function jump&lt;/div&gt;
+
+methods:{
+	goto(){
+		this.$router.push('/hello2')
+	}
+}，
+mounted(){
+	//获取路由参数
+	console.log(this.$router.param.id)
+}
+
+//vue 自带的css选中样式
+li.router-link-active:{}
+// 错误路由地址重定向
+{
+	path:&quot;/*&quot;
+	redirect: &quot;index&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div></li> <li><p>路由导航守卫</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 导航守卫
+// 使用 router.beforeEach 注册一个全局前置守卫，判断用户是否登陆
+router.beforeEach((to, from, next) =&gt; {
+  if (to.path === '/login') {
+    next();
+  } else {
+    let token = localStorage.getItem('Authorization');
+ 
+    if (token === 'null' || token === '') {
+      next('/login');
+    } else {
+      next();
+    }
+  }
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></li></ul></li> <li><p>vuex</p> <ul><li><p>安装：npm install vuex -s</p></li> <li><p>使用：新建文件夹 store 新建index.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import Vue from 'vue';
+import Vuex from 'vuex';
+Vue.use(Vuex);
+export default new Vuex.Store({
+	plugin:[createLogger()],
+	state:{
+		x:1
+	},
+	getters:{//类似 compute 属性  this.$store.getters.showName
+		showName: state =&gt;{
+			return state.logininfo.showName;
+		}
+	}
+	//唯一修改state的方法
+	mutation:{
+		increment(state){
+			state.x++;
+		}
+	},
+	actions:{ //注册actions 类似 vue里的method this.$store.dispatch(&quot;loginfun&quot;, param);
+		loginfun(context, param){
+			context.commit(&quot;login&quot;, param);//调用mutation中定义的方法
+		}
+	
+	}
+})
+
+Index.vue
+import store from 'Vuex'
+
+export default{
+    	methods:{
+    		add(){
+    			this.$store.commit('increment');
+    		},
+    		getx(){
+    			return this.$store.state.x
+    		}	
+    	}
+    }
+
+
+// mapMutations
+
+import { mapMutations } from 'vuex'
+
+ methods:{
+     ...mapMutations( [ 'add','reduce' ] )
+ }
+ 
+ // 直接调用即可
+ &lt;button @click='add'&gt;加&lt;/button&gt;
+&lt;button @click='reduce'&gt;减&lt;/button&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div></li></ul></li> <li><p>vue</p> <ul><li><p>条件渲染</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;div v-if=&quot;type === 'A'&quot;&gt;
+      A
+    &lt;/div&gt;
+    &lt;div v-else-if=&quot;type === 'B'&quot;&gt;
+      B
+    &lt;/div&gt;
+    &lt;div v-else-if=&quot;type === 'C'&quot;&gt;
+    C
+    &lt;/div&gt;
+  &lt;div v-else&gt;
+      Not A/B/C
+  &lt;/div&gt;
+  
+    &lt;template v-if=&quot;ok&quot;&gt;
+      &lt;h1&gt;Title&lt;/h1&gt;
+      &lt;p&gt;Paragraph 1&lt;/p&gt;
+      &lt;p&gt;Paragraph 2&lt;/p&gt;
+    &lt;/template&gt;
+    // v-sow
+  &lt;h1 v-show=&quot;ok&quot;&gt;Hello!&lt;/h1&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div></li> <li><p>循环：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code></code></pre> <div class="line-numbers-wrapper"></div></div></li></ul> <p>v-for=&quot;(item, index) in list&quot; :key=&quot;index&quot;</p></li>
+  ```
+<ul><li><p>VUE列表的搜索和排序：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;demo&quot;&gt;
+        &lt;input type=&quot;text&quot; v-model=&quot;searchName&quot;&gt;
+        &lt;ul&gt;
+            &lt;li v-for=&quot;(p,index) in filterPersons&quot;:key=&quot;index&quot;&gt;
+                {{index}}---{{p.name}}---{{p.age}}
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button @click=&quot;setOrderType(1)&quot;&gt;年龄升序&lt;/button&gt;
+        &lt;button @click=&quot;setOrderType(2)&quot;&gt;年龄降序&lt;/button&gt;
+        &lt;button @click=&quot;setOrderType(0)&quot;&gt;原本顺序&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    new Vue({
+        el:'#demo',
+        data:{
+            searchName:'',
+            orderType:0,//0代表原本顺序，1代表升序，2代表降序
+            persons:[
+                {name:'Tom',age: 18},
+                {name:'coc',age: 16},
+                {name:'jjj',age: 17},
+                {name:'xxx',age: 19},
+            ]
+        },
+      computed:{
+
+            filterPersons(){
+                //取出相关的数据
+                const {searchName,persons,orderType} = this
+                //最终需要显示的数组
+                let fPersons;
+                //对persons进行过滤
+                fPersons=persons.filter(p =&gt; p.name.indexOf(searchName)!== -1)
+                //排序
+                if (orderType!==0){
+                    fPersons.sort(function (p1,p2) { //如果返回负数，p1在前，返回正数，p2在前
+                        //1代表升序，2代表降序
+                        if (orderType===2){
+                            return p2.age-p1.age;
+                        } else {
+                            return p1.age-p2.age;
+                        }
+    
+                    })
+                }
+                return fPersons;
+            }
+        },
+        methods:{
+            setOrderType(orderType){
+                this.orderType = orderType;
+            }
+        }
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br></div></div></li> <li><p>event bus 事件总线</p> <ul><li><p>父组件会通过<code>props</code>向下传数据给子组件，当子组件有事情要告诉父组件时会通过<code>$emit</code>事件告诉父组件。</p> <p><img src="" alt="https://www.w3cplus.com/sites/default/files/blogs/2018/1809/1488038869_67673.png"></p></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>//eventbus.js
+    import Vue from 'vue' 
+export const EventBus = new Vue()
+  
+    // main.js Vue.prototype.$EventBus = new Vue()
+   
+
+
+    Bus.$emit('getTarget', event.target);   
+    
+    Bus.$on('getTarget', target =&gt; {  
+                console.log(target);  
+            });  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div></li> <li><p>css 控制</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;div :style = &quot;margin: length+'px' &quot;&gt;&lt;/div&gt;   
+    data(){
+        return {
+            length: 1,
+        }
+    }
+    -------------------------------------------------------------------------------
+    &lt;div :class=&quot;{'youClass': isShow}&quot;&gt;&lt;/div&gt;
+    data(){
+      return {
+            isShow: true ,
+        }
+    }
+    -------------------------------------------------------------------------------
+    :style=&quot;(currentGames.list[2].id==3)?'display:none':'display:flex'&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></li></ul> <li><p>slot 插槽</p> <ul><li>将父组件放在子组件标签里的内容，放到想让他显示的地方,如下 如果子组件中没有slot 父组件的hello就不会显示出来。加入slot 父组件的包含内容 插到slot里</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>  //子组件
+  &lt;template&gt;
+    &lt;div&gt;
+          &lt;h3&gt;我是子组件&lt;/h3&gt;
+          &lt;slot&gt;&lt;/slot&gt;//加了个slot标签，在父组件中，就可以让子组件标签内的内容显示啦
+      &lt;/div&gt;
+  &lt;/template&gt;
+   //父组件
+    &lt;template&gt;
+     &lt;div&gt;
+        //hello显示
+         &lt;v-child&gt;hello&lt;/v-child&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></li></ul> <p>​    ​</p> <ul><li><p>具名slot 子组件在对应分发的位置的slot标签里, 没有具名的内容会放到一个 子组件的默认插槽中 如果没有默认插槽就不显示。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//子组件
+&lt;template&gt;
+    &lt;div&gt;
+        &lt;h3&gt;我是子组件&lt;/h3&gt;
+        &lt;p&gt;&lt;slot name=&quot;header&quot;&gt;父组件中没header的时候会显示&lt;/slot&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;slot name=&quot;footer&quot;&gt;父组件中没footer的时候会显示&lt;/slot&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+//父组件
+&lt;template&gt;
+  &lt;div&gt;
+      &lt;v-child&gt;
+          &lt;p&gt;hello&lt;/p&gt;
+          &lt;h3 slot=&quot;header&quot;&gt;header&lt;/h3&gt;
+      &lt;/v-child&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div></li> <li><p>slot-scope:作用域插槽，可以接收子组件传来的数据</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 父组件中
+&lt;slot-scope-child&gt;
+    &lt;template slot-scope=&quot;user&quot;&gt;
+       &lt;ul&gt;
+        	&lt;li v-for=&quot;(item, index) in user.data&quot; :key=&quot;index&quot;&gt;{{item}}&lt;/li&gt;
+       &lt;/ul&gt;
+    &lt;/template&gt;
+&lt;/slot-scope-child&gt;
+// 子组件中
+&lt;div class=&quot;child&quot;&gt;
+    &lt;h3&gt;这里是子组件&lt;/h3&gt;
+    &lt;slot :data=&quot;data&quot;&gt;&lt;/slot&gt;
+&lt;/div&gt;
+
+数据在子组件，然后绑到父组件，父组件就可以使用了
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li> <li><p>父子组件间通信</p> <ul><li><p>父到子</p> <ul><li>子组件中 props:['msgFather'] 接收父组件</li> <li>父组件中 msg-father=&quot;dad无可奉告&quot; 绑定数据</li></ul></li> <li><p>子到父</p> <ul><li><div class="language- line-numbers-mode"><pre class="language-text"><code>//子组件
+this.$emit(&quot;sendiptVal&quot;, this.inputValue) 
+//子组件发射自定义事件sendiptVal 并携带要传递给父组件的值，
+// 如果要传递给父组件很多值，这些值要作为参数依次列出 如 this.$emit('valueUp', this.inputValue, this.mesFather); 
+
+//父组件
+&lt;accept-and-refuse @sendiptVal='showChildMsg'&gt;&lt;/accept-and-refuse&gt;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li></ul></li> <li><p>兄弟间</p></li></ul></li> <li><p>网络请求</p> <ul><li><p>axios</p> <ul><li><p>安装注册使用：npm i axios</p></li> <li><p>拦截器</p></li></ul></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>    axios.interceptors.request.use(
+    	config =&gt; {
+    		if (localStorage.getItem('loginToken')) {
+              config.headers.Authorization = localStorage.getItem('loginToken');
+            }
+    		
+    		return config;
+    	},
+    	error =&gt; {
+        return Promise.reject(error);
+      }
+    )
+    
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div></li> <li><p>事件总线 Eventbus</p></li> <li></li> <li><p>一些问题</p> <ul><li><p>watch无法监听变化</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>watch: {
+    option: {
+        handler(newVal) {
+            console.log(newVal);
+        },
+        deep: true,
+        immediate: true
+    }
+},
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></li> <li><p>$emit传入的事件名称<strong>只能使用小写，不能使用大写</strong>的驼峰规则命名</p></li></ul></li> <li><p>数组变化操作</p> <blockquote><p>push()//末尾添加</p> <p>pop()//末尾删除</p> <p>shift()//开头删除</p> <p>unshift()//开头添加</p> <p>splice()//添加splice(start,0, newitem) 删除splice(start, length) 替换splice(start, length, newitem)</p> <p>sort()//排序</p> <p>reverse()</p> <p>控制台中操作数组</p> <p>exmples.items.push({message:&quot;hello&quot;})</p> <p>可以触发界面更新数组操作</p> <p>example.items.$set(0, {message:'change'})</p> <p>$remove(item)</p></blockquote></li> <li><p>过滤器       //返回新数组 原数组不变</p> <blockquote><p>var arr_filter = arr.filter(function(element,  index, self){</p> <p>​	return self.indexOf(element) == index;</p> <p>});</p></blockquote></li> <li><p>拼接 concat</p> <blockquote><p>arr.concat([&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]);</p></blockquote></li> <li><p>every &amp; some 返回boolean 值</p> <blockquote><p>every 找到不符合的停止</p> <p>some  找到符合的停止</p> <p>arr.some(function(item, index, array){</p></blockquote></li> <li><p>vue-cli关闭/禁用/使用ESLint语法检测功能</p> <blockquote><p>在项目的本目录下面config—index.js 文件夹中配置一下就可以禁用useEslint设为false</p></blockquote></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue/node vue 安装.html" class="prev">
+        node vue 安装使用
+      </a></span> <span class="next"><a href="/vue/vuepress.html">
+        vuepress
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.95d022f7.js" defer></script><script src="/assets/js/2.3a46498f.js" defer></script><script src="/assets/js/106.41810fd1.js" defer></script>
+  </body>
+</html>

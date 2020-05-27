@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MySQL备份恢复数据 | IMBAPUB</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="这真的很imba">
+    <link rel="preload" href="/assets/css/0.styles.471cf497.css" as="style"><link rel="preload" href="/assets/js/app.95d022f7.js" as="script"><link rel="preload" href="/assets/js/2.3a46498f.js" as="script"><link rel="preload" href="/assets/js/75.2fbd2e4c.js" as="script"><link rel="prefetch" href="/assets/js/10.2018e9fd.js"><link rel="prefetch" href="/assets/js/100.ab12de60.js"><link rel="prefetch" href="/assets/js/101.583cee00.js"><link rel="prefetch" href="/assets/js/102.fdf7f15c.js"><link rel="prefetch" href="/assets/js/103.50a42b70.js"><link rel="prefetch" href="/assets/js/104.df2eaa11.js"><link rel="prefetch" href="/assets/js/105.a9ee9f5b.js"><link rel="prefetch" href="/assets/js/106.41810fd1.js"><link rel="prefetch" href="/assets/js/107.e57d210f.js"><link rel="prefetch" href="/assets/js/108.a467b44e.js"><link rel="prefetch" href="/assets/js/109.e9c99e12.js"><link rel="prefetch" href="/assets/js/11.823d6f8d.js"><link rel="prefetch" href="/assets/js/110.0640c39f.js"><link rel="prefetch" href="/assets/js/111.705c2200.js"><link rel="prefetch" href="/assets/js/112.9a19d341.js"><link rel="prefetch" href="/assets/js/12.ef380254.js"><link rel="prefetch" href="/assets/js/13.697ff2be.js"><link rel="prefetch" href="/assets/js/14.d9443a9c.js"><link rel="prefetch" href="/assets/js/15.344d8e75.js"><link rel="prefetch" href="/assets/js/16.853a732c.js"><link rel="prefetch" href="/assets/js/17.e3862510.js"><link rel="prefetch" href="/assets/js/18.5871cfb3.js"><link rel="prefetch" href="/assets/js/19.c55a149a.js"><link rel="prefetch" href="/assets/js/20.7aab1c7d.js"><link rel="prefetch" href="/assets/js/21.5372c147.js"><link rel="prefetch" href="/assets/js/22.6e9ff47a.js"><link rel="prefetch" href="/assets/js/23.4176bb24.js"><link rel="prefetch" href="/assets/js/24.b7f8575c.js"><link rel="prefetch" href="/assets/js/25.8f5b4ea3.js"><link rel="prefetch" href="/assets/js/26.f296e447.js"><link rel="prefetch" href="/assets/js/27.9a4e430a.js"><link rel="prefetch" href="/assets/js/28.1868bb3c.js"><link rel="prefetch" href="/assets/js/29.c83b0c3a.js"><link rel="prefetch" href="/assets/js/3.a0918208.js"><link rel="prefetch" href="/assets/js/30.35fa5fba.js"><link rel="prefetch" href="/assets/js/31.34fd8625.js"><link rel="prefetch" href="/assets/js/32.0437cf42.js"><link rel="prefetch" href="/assets/js/33.021d9ee8.js"><link rel="prefetch" href="/assets/js/34.a063ad66.js"><link rel="prefetch" href="/assets/js/35.c3adff0b.js"><link rel="prefetch" href="/assets/js/36.af37ef5c.js"><link rel="prefetch" href="/assets/js/37.4bbd540e.js"><link rel="prefetch" href="/assets/js/38.d2348311.js"><link rel="prefetch" href="/assets/js/39.91cb2501.js"><link rel="prefetch" href="/assets/js/4.606cd99c.js"><link rel="prefetch" href="/assets/js/40.1445f188.js"><link rel="prefetch" href="/assets/js/41.59c89272.js"><link rel="prefetch" href="/assets/js/42.f1c3bf6d.js"><link rel="prefetch" href="/assets/js/43.62c14b97.js"><link rel="prefetch" href="/assets/js/44.4f8a4c9e.js"><link rel="prefetch" href="/assets/js/45.f6c272ae.js"><link rel="prefetch" href="/assets/js/46.81e29f75.js"><link rel="prefetch" href="/assets/js/47.6b11caa9.js"><link rel="prefetch" href="/assets/js/48.4db0cc53.js"><link rel="prefetch" href="/assets/js/49.6747ab5a.js"><link rel="prefetch" href="/assets/js/5.09079429.js"><link rel="prefetch" href="/assets/js/50.e5e8b53c.js"><link rel="prefetch" href="/assets/js/51.6d41569c.js"><link rel="prefetch" href="/assets/js/52.9f684a44.js"><link rel="prefetch" href="/assets/js/53.1fb124a5.js"><link rel="prefetch" href="/assets/js/54.94191d1f.js"><link rel="prefetch" href="/assets/js/55.8f63ccfb.js"><link rel="prefetch" href="/assets/js/56.7f2ef3fa.js"><link rel="prefetch" href="/assets/js/57.e0e55bd4.js"><link rel="prefetch" href="/assets/js/58.8b9bbcc6.js"><link rel="prefetch" href="/assets/js/59.a3a3fe01.js"><link rel="prefetch" href="/assets/js/6.3c4b6517.js"><link rel="prefetch" href="/assets/js/60.47f5455b.js"><link rel="prefetch" href="/assets/js/61.55dccf8c.js"><link rel="prefetch" href="/assets/js/62.25c52188.js"><link rel="prefetch" href="/assets/js/63.3584d76c.js"><link rel="prefetch" href="/assets/js/64.490d018b.js"><link rel="prefetch" href="/assets/js/65.e5e6c765.js"><link rel="prefetch" href="/assets/js/66.9718a4fe.js"><link rel="prefetch" href="/assets/js/67.29af663e.js"><link rel="prefetch" href="/assets/js/68.51122fa7.js"><link rel="prefetch" href="/assets/js/69.f16d243b.js"><link rel="prefetch" href="/assets/js/7.5dcc397c.js"><link rel="prefetch" href="/assets/js/70.39a7658f.js"><link rel="prefetch" href="/assets/js/71.eba1a8e2.js"><link rel="prefetch" href="/assets/js/72.3ff88419.js"><link rel="prefetch" href="/assets/js/73.45ff0234.js"><link rel="prefetch" href="/assets/js/74.51e7d3b1.js"><link rel="prefetch" href="/assets/js/76.a2a0d747.js"><link rel="prefetch" href="/assets/js/77.d594f05b.js"><link rel="prefetch" href="/assets/js/78.22ea4811.js"><link rel="prefetch" href="/assets/js/79.f083c4ed.js"><link rel="prefetch" href="/assets/js/8.cd10b72e.js"><link rel="prefetch" href="/assets/js/80.a39506a7.js"><link rel="prefetch" href="/assets/js/81.36e1981f.js"><link rel="prefetch" href="/assets/js/82.7fe0ea1b.js"><link rel="prefetch" href="/assets/js/83.ea15296a.js"><link rel="prefetch" href="/assets/js/84.3029f850.js"><link rel="prefetch" href="/assets/js/85.795c3724.js"><link rel="prefetch" href="/assets/js/86.5121e878.js"><link rel="prefetch" href="/assets/js/87.17471d31.js"><link rel="prefetch" href="/assets/js/88.efcb3215.js"><link rel="prefetch" href="/assets/js/89.8a6e7508.js"><link rel="prefetch" href="/assets/js/9.9f4472b7.js"><link rel="prefetch" href="/assets/js/90.6b8c7246.js"><link rel="prefetch" href="/assets/js/91.7d30ab2b.js"><link rel="prefetch" href="/assets/js/92.130b4b9d.js"><link rel="prefetch" href="/assets/js/93.28ebba80.js"><link rel="prefetch" href="/assets/js/94.61b822d8.js"><link rel="prefetch" href="/assets/js/95.e3c10163.js"><link rel="prefetch" href="/assets/js/96.b5bcd2a4.js"><link rel="prefetch" href="/assets/js/97.1ddae833.js"><link rel="prefetch" href="/assets/js/98.48bbeec7.js"><link rel="prefetch" href="/assets/js/99.affd3259.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.471cf497.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">IMBAPUB</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link router-link-active">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link router-link-active">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>MYSQL</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/database/MySQL/mysql-udf安装.html" class="sidebar-link">mysql-udf安装</a></li><li><a href="/database/MySQL/mysql.html" class="sidebar-link">Mysql 添加字段 修改字段 删除字段</a></li><li><a href="/database/MySQL/MySQL主从同步.html" class="sidebar-link">MySQL主从同步</a></li><li><a href="/database/MySQL/MySQL事件.html" class="sidebar-link">MySQL事件</a></li><li><a href="/database/MySQL/MySQL备份恢复数据.html" class="active sidebar-link">MySQL备份恢复数据</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#通过binlog2sql恢复数据" class="sidebar-link">通过binlog2sql恢复数据</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#mysql必须设置参数" class="sidebar-link">MySQL必须设置参数</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#user需要的最小权限集合" class="sidebar-link">user需要的最小权限集合</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#查看目前的binlog文件" class="sidebar-link">查看目前的binlog文件</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#定位误操作sql的binlog位置" class="sidebar-link">定位误操作SQL的binlog位置</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#生成sql文件回滚" class="sidebar-link">生成sql文件回滚</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#不生成sql文件回滚" class="sidebar-link">不生成sql文件回滚</a></li></ul></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#mysqldump备份恢复" class="sidebar-link">mysqldump备份恢复</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#参数说明" class="sidebar-link">参数说明</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#导出" class="sidebar-link">导出</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#导入" class="sidebar-link">导入</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#mysqldump两台主机同步备份" class="sidebar-link">mysqldump两台主机同步备份</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#mysqldump其他命令" class="sidebar-link">mysqldump其他命令</a></li></ul></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#脚本" class="sidebar-link">脚本</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#备份并删除历史" class="sidebar-link">备份并删除历史</a></li><li class="sidebar-sub-header"><a href="/database/MySQL/MySQL备份恢复数据.html#同步远程数据库到本地" class="sidebar-link">同步远程数据库到本地</a></li></ul></li></ul></li><li><a href="/database/MySQL/MySQL存储过程.html" class="sidebar-link">MySQL存储过程</a></li><li><a href="/database/MySQL/MySQL常见问题.html" class="sidebar-link">MySQL常见问题</a></li><li><a href="/database/MySQL/MySQL笔记.html" class="sidebar-link">MySQL笔记</a></li><li><a href="/database/MySQL/MySQL配置.html" class="sidebar-link">MySQL配置</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mysql备份恢复数据"><a href="#mysql备份恢复数据" class="header-anchor">#</a> MySQL备份恢复数据</h1> <ul><li><a href="#%E9%80%9A%E8%BF%87binlog2sql%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE">通过binlog2sql恢复数据</a> <ul><li><a href="#mysql%E5%BF%85%E9%A1%BB%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0">MySQL必须设置参数</a></li> <li><a href="#user%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%80%E5%B0%8F%E6%9D%83%E9%99%90%E9%9B%86%E5%90%88">user需要的最小权限集合</a></li> <li><a href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%89%8D%E7%9A%84binlog%E6%96%87%E4%BB%B6">查看目前的binlog文件</a> <ul><li><a href="#%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C">查询结果：</a></li></ul></li> <li><a href="#%E5%AE%9A%E4%BD%8D%E8%AF%AF%E6%93%8D%E4%BD%9Csql%E7%9A%84binlog%E4%BD%8D%E7%BD%AE">定位误操作SQL的binlog位置</a></li> <li><a href="#%E7%94%9F%E6%88%90sql%E6%96%87%E4%BB%B6%E5%9B%9E%E6%BB%9A">生成<code>sql</code>文件回滚</a></li> <li><a href="#%E4%B8%8D%E7%94%9F%E6%88%90sql%E6%96%87%E4%BB%B6%E5%9B%9E%E6%BB%9A">不生成<code>sql</code>文件回滚</a></li></ul></li> <li><a href="#mysqldump%E5%A4%87%E4%BB%BD%E6%81%A2%E5%A4%8D"><code>mysqldump</code>备份恢复</a> <ul><li><a href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E">参数说明</a></li> <li><a href="#%E5%AF%BC%E5%87%BA">导出</a></li> <li><a href="#%E5%AF%BC%E5%85%A5">导入</a></li> <li><a href="#mysqldump%E4%B8%A4%E5%8F%B0%E4%B8%BB%E6%9C%BA%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD"><code>mysqldump</code>两台主机同步备份</a></li> <li><a href="#mysqldump%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><code>mysqldump</code>其他命令</a></li></ul></li> <li><a href="#%E8%84%9A%E6%9C%AC">脚本</a> <ul><li><a href="#%E5%A4%87%E4%BB%BD%E5%B9%B6%E5%88%A0%E9%99%A4%E5%8E%86%E5%8F%B2">备份并删除历史</a></li> <li><a href="#%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0">同步远程数据库到本地</a></li></ul></li></ul> <h2 id="通过binlog2sql恢复数据"><a href="#通过binlog2sql恢复数据" class="header-anchor">#</a> 通过binlog2sql恢复数据</h2> <blockquote><p>使用此方式之前一定是MySQL开启了bin-log的才可行</p> <blockquote><p>如果没有安装开源工具<code>binlog2sql</code>那么请安装。</p></blockquote> <p>binlog2sql的使用详情：https://github.com/danfengcao/binlog2sql</p> <p>binlog2sql是一款简单易用的binlog解析工具，其中一个功能就是生成回滚SQL。</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/danfengcao/binlog2sql.git
+<span class="token builtin class-name">cd</span> binlog2sql/
+pip <span class="token function">install</span> -r requirements.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="mysql必须设置参数"><a href="#mysql必须设置参数" class="header-anchor">#</a> MySQL必须设置参数</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+server_id <span class="token operator">=</span> <span class="token number">1</span>
+log_bin <span class="token operator">=</span> /var/log/mysql/mysql-bin.log
+max_binlog_size <span class="token operator">=</span> 1G
+binlog_format <span class="token operator">=</span> row
+binlog_row_image <span class="token operator">=</span> full
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="user需要的最小权限集合"><a href="#user需要的最小权限集合" class="header-anchor">#</a> user需要的最小权限集合</h3> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">select</span><span class="token punctuation">,</span> super<span class="token operator">/</span><span class="token keyword">replication</span> client<span class="token punctuation">,</span> <span class="token keyword">replication</span> slave
+<span class="token comment">#建议授权</span>
+<span class="token keyword">GRANT</span> <span class="token keyword">SELECT</span><span class="token punctuation">,</span> <span class="token keyword">REPLICATION</span> SLAVE<span class="token punctuation">,</span> <span class="token keyword">REPLICATION</span> CLIENT <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="查看目前的binlog文件"><a href="#查看目前的binlog文件" class="header-anchor">#</a> 查看目前的binlog文件</h3> <div class="language-sql line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">show</span> master logs<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="查询结果"><a href="#查询结果" class="header-anchor">#</a> 查询结果</h4> <table><thead><tr><th>Log_name</th> <th>File_size</th></tr></thead> <tbody><tr><td>mysql-bin.000001</td> <td>177</td></tr> <tr><td>mysql-bin.000002</td> <td>437</td></tr> <tr><td>mysql-bin.000003</td> <td>685</td></tr> <tr><td>mysql-bin.000004</td> <td>1702399</td></tr> <tr><td>mysql-bin.000005</td> <td>963964</td></tr> <tr><td>mysql-bin.000006</td> <td>13118637</td></tr> <tr><td>mysql-bin.000007</td> <td>26765043</td></tr></tbody></table> <h3 id="定位误操作sql的binlog位置"><a href="#定位误操作sql的binlog位置" class="header-anchor">#</a> 定位误操作SQL的binlog位置</h3> <blockquote><p>可以看到最新的binlog文件是mysql-bin.000007，我们再定位误操作SQL的binlog位置</p> <p><code>binlog2sql.py</code>文件在<code>binlog2sql/binlog2sql/</code>文件夹下</p> <p>如果命令最后不加时间可输出最近操作的SQL命令</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>python binlog2sql/binlog2sql.py -h127.0.0.1 -P端口 -u账号 -p<span class="token string">'密码'</span> -d数据库 -t表 --start-file<span class="token operator">=</span><span class="token string">'binlog文件'</span> --start-datetime<span class="token operator">=</span><span class="token string">'之前误操作的SQL执行开始时间'</span> --stop-datetime<span class="token operator">=</span><span class="token string">'之前误操作的SQL执行结束时间'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>当程序跑完之后看最后一条数据最末尾：</p> <blockquote><p><code>#start 5117865 end 13679060 time 2018-06-12 10:07:53</code></p> <p>开始位置（start 5117865）和结束位置（end 13679060）</p></blockquote></blockquote> <p><img src="/images/MySQL_binlog.png" alt=""></p> <h3 id="生成sql文件回滚"><a href="#生成sql文件回滚" class="header-anchor">#</a> 生成<code>sql</code>文件回滚</h3> <blockquote><p>生成<code>rollback.sql</code>文件，并检查回滚SQL是否正确</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>python binlog2sql/binlog2sql.py -h127.0.0.1 -P端口 -u账号 -p<span class="token string">'密码'</span> -d数据库 -t表 --start-file<span class="token operator">=</span><span class="token string">'binlog文件'</span> --start-position<span class="token operator">=</span>开始位置 --stop-position<span class="token operator">=</span>结束位置 -B <span class="token operator">&gt;</span> rollback.sql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>查看当前文件夹下是否生成了rollback.sql文件,确认回滚SQL正确，如果有就执行回滚</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>mysql -h127.0.0.1 -P端口 -u账号 -p<span class="token string">'密码'</span> <span class="token operator">&lt;</span> rollback.sql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="不生成sql文件回滚"><a href="#不生成sql文件回滚" class="header-anchor">#</a> 不生成<code>sql</code>文件回滚</h3> <blockquote><p>不生成rollback.sql文件，执行命令后在输出中检查回滚SQL是否正确</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>python binlog2sql/binlog2sql.py -h127.0.0.1 -P端口 -u账号 -p<span class="token string">'密码'</span> -d数据库 -t表 --start-file<span class="token operator">=</span><span class="token string">'binlog文件'</span> --start-position<span class="token operator">=</span>开始位置 --stop-position<span class="token operator">=</span>结束位置 -B
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>确认回滚SQL正确，执行回滚语句。登录MySQL确认，数据回滚成功。</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>python binlog2sql/binlog2sql.py -h127.0.0.1 -P端口 -u账号 -p<span class="token string">'密码'</span> -d数据库 -t表 --start-file<span class="token operator">=</span><span class="token string">'binlog文件'</span> --start-position<span class="token operator">=</span>开始位置 --stop-position<span class="token operator">=</span>结束位置 -B <span class="token operator">|</span> mysql -h127.0.0.1 -P端口 -u账号 -p<span class="token string">'密码'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="mysqldump备份恢复"><a href="#mysqldump备份恢复" class="header-anchor">#</a> <code>mysqldump</code>备份恢复</h2> <blockquote><p>如果是在本机上备份本机的数据库地址和端口可以不要，如果是在本机上备份其他主机上的数据库就需要地址和端口</p> <p><code>mysqldump</code>命令需要手动输入密码，所以一般不输入<code>-p</code>参数</p></blockquote> <h3 id="参数说明"><a href="#参数说明" class="header-anchor">#</a> 参数说明</h3> <blockquote><p><code>-d</code> 结构(--no-data:不导出任何数据，只导出数据库表结构)</p> <p><code>-t</code> 数据(--no-create-info:只导出数据，而不添加CREATE TABLE 语句)</p> <p><code>-n</code> (--no-create-db:只导出数据，而不添加CREATE DATABASE 语句）</p> <p><code>-R</code> (--routines:导出存储过程以及自定义函数)</p> <p><code>-E</code> (--events:导出事件)</p> <p><code>--triggers</code> (默认导出触发器，使用--skip-triggers屏蔽导出)</p> <p><code>-B</code> (--databases:导出数据库列表，单个库时可省略）</p> <p><code>--tables</code> 表列表（单个表时可省略）</p> <blockquote><p>①同时导出结构以及数据时可同时省略-d和-t</p> <p>②同时不导出结构和数据可使用-ntd</p> <p>③只导出存储过程和函数可使用-R -ntd</p> <p>④导出所有(结构&amp;数据&amp;存储过程&amp;函数&amp;事件&amp;触发器)使用-R -E(相当于①，省略了-d -t;触发器默认导出)</p> <p>⑤只导出结构&amp;函数&amp;事件&amp;触发器使用 -R -E -d</p></blockquote></blockquote> <h3 id="导出"><a href="#导出" class="header-anchor">#</a> 导出</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 只导出结构&amp;函数&amp;事件&amp;触发器使用</span>
+mysqldump -R -E -d -h需要备份的主机地址 -P端口 -u用户名 -p 数据库名 <span class="token operator">&gt;</span> /home/backup.sql
+
+<span class="token comment"># 只导出存储过程和函数可使用</span>
+mysqldump -R -ntd -h需要备份的主机地址 -P端口 -u用户名 -p 数据库名 <span class="token operator">&gt;</span> /home/backup.sql
+
+<span class="token comment"># 导出单个数据库中所有(结构&amp;数据&amp;存储过程&amp;函数&amp;事件&amp;触发器)到sql文件</span>
+mysqldump -R -E -h需要备份的主机地址 -P端口 -u用户名 -p 数据库名 <span class="token operator">&gt;</span> /home/backup.sql
+
+<span class="token comment"># mysqldump 备份并压缩sql文件</span>
+mysqldump -R -E -h主机地址 -P端口 -u用户名 -p 数据库名 <span class="token operator">|</span> <span class="token function">gzip</span> <span class="token operator">&gt;</span> /home/backup.sql.gz
+
+<span class="token comment"># 备份所有的数据库到一个sql文件</span>
+mysqldump -R -E -h主机地址 -P端口 -u用户名 -p --all-databases <span class="token operator">&gt;</span> /home/all.sql
+
+<span class="token comment"># 从一个数据库导出到另一个数据库</span>
+mysqldump -R -E -u用户名 -p 数据库名 <span class="token operator">|</span> mysql 新数据库名 -u用户名 -p密码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="导入"><a href="#导入" class="header-anchor">#</a> 导入</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 用mysqldump导入本地sql文件</span>
+mysqldump -h主机地址 -P端口 -u用户名 数据库名 <span class="token operator">&lt;</span> /home/backup.sql
+
+<span class="token comment"># mysql直接用压缩文件恢复</span>
+gunzip <span class="token operator">&lt;</span> backup.sql.gz <span class="token operator">|</span> mysql -h主机地址 -P端口 -u用户名 -p密码 数据库名
+
+<span class="token comment"># mysql从本地sql文件导入</span>
+mysql -h主机地址 -P端口 -u用户名 -p密码 数据库名 <span class="token operator">&lt;</span> backupfile.sql
+
+<span class="token comment"># 登录MySQL用source命令导入本地sql文件</span>
+<span class="token comment"># 指定数据库</span>
+use 数据库名<span class="token punctuation">;</span>
+<span class="token comment"># 导入数据（注意sql文件的路径）</span>
+<span class="token builtin class-name">source</span> /home/backup.sql<span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="mysqldump两台主机同步备份"><a href="#mysqldump两台主机同步备份" class="header-anchor">#</a> <code>mysqldump</code>两台主机同步备份</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>mysqldump -R -E -h导出的主机地址 -P端口 -u用户名 -p 数据库名 <span class="token operator">|</span> mysql -h导入的主机地址 -P端口 -u用户名 -p密码 -C 数据库名
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>--opt等同于--add-drop-table，--add-locks，--create-options，--quick，--extended-insert，--lock-tables，--set-charset，--disable-keys。
+该选项默认开启， 可以用--skip-opt禁用。</p> <blockquote><p>1、--opt 在创建表结构之前 会有 DROP TABLE IF EXISTS</p></blockquote></blockquote> <blockquote><blockquote><p>2、原表在创建的时候指定了AUTO_INCREMENT，在使用了--opt 仍然和建表时候一样存在参数，在使用参数--skip-opt的时候，忽略了此参数AUTO_INCREMENT</p></blockquote></blockquote> <blockquote><blockquote><p>3、在使用参数--opt的时候，创建表的类型，字符集等等都是默认参数ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;当使用了--skip-opt的时候，这些参数都给忽略了</p></blockquote></blockquote> <blockquote><blockquote><p>4、导出原表中的数据，--opt是一个insert多个value，在使用了--skip-opt的时候，是多个insert组成的；</p></blockquote></blockquote> <p><a href="https://blog.csdn.net/hao7030187/article/details/77839968" target="_blank" rel="noopener noreferrer">mysqldump数据导出参数说明<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="http://www.cnblogs.com/chenmh/p/5300370.html" target="_blank" rel="noopener noreferrer">mysqldump数据导出参数说明<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h3 id="mysqldump其他命令"><a href="#mysqldump其他命令" class="header-anchor">#</a> <code>mysqldump</code>其他命令</h3> <blockquote><p><code>mysqldump</code>导入导出结构，数据，存储过程，函数，事件，触发器</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>1.①导出一个库结构
+
+mysqldump -d dbname -u root -p &gt; xxx.sql
+
+②导出多个库结构
+
+mysqldump -d -B dbname1 dbname2 -u root -p &gt; xxx.sql
+
+2.①导出一个库数据
+
+mysqldump -t dbname -u root -p &gt; xxx.sql
+
+②导出多个库数据
+
+mysqldump -t -B dbname1 dbname2 -u root -p &gt; xxx.sql
+ 
+
+3.①导出一个库结构以及数据
+
+mysqldump dbname1 -u root -p &gt; xxx.sql
+
+②导出多个库结构以及数据
+
+mysqldump -B dbname1 dbname2 -u root -p &gt; xxx.sql
+
+-------------------------数据表操作-----------------------------
+
+4.①导出一个表结构
+
+mysqldump -d dbname1 tablename1 -u root -p &gt; xxx.sql
+
+②导出多个表结构
+
+mysqldump -d -B dbname1 --tables tablename1 tablename2 -u root -p &gt; xxx.sql
+ 
+
+5.①导出一个表数据
+
+mysqldump -t dbname1 tablename1 -u root -p &gt; xxx.sql
+
+②导出多个表数据
+
+mysqldump -d -B dbname1 --tables tablename1 tablename2 -u root -p &gt; xxx.sql
+ 
+
+6.①导出一个表结构以及数据
+
+mysqldump dbname1 tablename1 -u root -p &gt; xxx.sql
+
+②导出多个表结构以及数据
+
+mysqldump -B dbname1 --tables tablename1 tablename2 -u root -p &gt; xxx.sql
+
+-------------------------存储过程、函数操作-----------------------------
+
+7.只导出存储过程和函数(不导出结构和数据，要同时导出结构的话，需要同时使用-d)
+
+mysqldump -R -ndt dbname1 -u root -p &gt; xxx.sql
+ 
+-------------------------事件操作-----------------------------
+8.只导出事件
+
+mysqldump -E -ndt dbname1 -u root -p &gt; xxx.sql
+ 
+-------------------------触发器操作-----------------------------
+
+9.不导出触发器（触发器是默认导出的–triggers，使用–skip-triggers屏蔽导出触发器）
+
+mysqldump --skip-triggers dbname1 -u root -p &gt; xxx.sql
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br></div></div><h2 id="脚本"><a href="#脚本" class="header-anchor">#</a> 脚本</h2> <h3 id="备份并删除历史"><a href="#备份并删除历史" class="header-anchor">#</a> 备份并删除历史</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;****************************************************************************&quot;</span>
+<span class="token assign-left variable">startDate</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;★[<span class="token variable">$startDate</span>] 开始执行：&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;----------------------------------------------------------------------------&quot;</span>
+
+<span class="token keyword">function</span> <span class="token function-name function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;----------------------------------------------------------------------------&quot;</span>
+    <span class="token assign-left variable">endDate</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">)</span></span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;★[<span class="token variable">$endDate</span>] 执行结束！&quot;</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;****************************************************************************&quot;</span>
+    <span class="token builtin class-name">exit</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># ============ 以下配置信息请自行修改 ===================</span>
+
+<span class="token comment"># MySQL备份用户</span>
+<span class="token assign-left variable">mysql_user</span><span class="token operator">=</span><span class="token string">&quot;USER&quot;</span>
+<span class="token comment"># MySQL备份用户的密码</span>
+<span class="token assign-left variable">mysql_password</span><span class="token operator">=</span><span class="token string">&quot;PASSWORD&quot;</span>
+<span class="token comment"># 主机地址</span>
+<span class="token assign-left variable">mysql_host</span><span class="token operator">=</span><span class="token string">&quot;localhost&quot;</span>
+<span class="token comment"># 端口</span>
+<span class="token assign-left variable">mysql_port</span><span class="token operator">=</span><span class="token string">&quot;3306&quot;</span>
+<span class="token comment"># MySQL编码</span>
+<span class="token assign-left variable">mysql_charset</span><span class="token operator">=</span><span class="token string">&quot;utf8&quot;</span>
+<span class="token comment"># 要备份的数据库名称，多个用空格分开隔开 如(&quot;db1&quot; &quot;db2&quot; &quot;db3&quot;)</span>
+<span class="token assign-left variable">backup_db_arr</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">&quot;db1&quot;</span> <span class="token string">&quot;db2&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># 备份数据存放位置，末尾请不要带&quot;/&quot;,此项可以保持默认，程序会自动创建文件夹</span>
+<span class="token assign-left variable">backup_location</span><span class="token operator">=</span>/home/mysqlBackup
+<span class="token comment"># 是否开启过期备份删除 ON为开启 OFF为关闭</span>
+<span class="token assign-left variable">expire_backup_delete</span><span class="token operator">=</span><span class="token string">&quot;ON&quot;</span>
+<span class="token comment"># 过期时间天数 默认为三天，此项只有在expire_backup_delete开启时有效</span>
+<span class="token assign-left variable">expire_days</span><span class="token operator">=</span><span class="token number">3</span>
+
+<span class="token comment"># ============= 本行开始不需要修改 ===================</span>
+
+<span class="token comment"># 定义备份详细时间</span>
+<span class="token assign-left variable">backup_time</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%Y%m%d%H%M<span class="token variable">)</span></span>
+<span class="token comment"># 3天之前的日期</span>
+<span class="token comment">#backup_3ago=$(date -d '3 days ago' +%Y-%m-%d)</span>
+
+<span class="token comment"># 定义备份目录中的年月日时间</span>
+<span class="token comment">#backup_Ymd=`date +%Y-%m-%d`</span>
+<span class="token comment"># 备份文件夹全路径</span>
+<span class="token comment">#backup_dir=$backup_location/$backup_Ymd</span>
+<span class="token assign-left variable">backup_dir</span><span class="token operator">=</span><span class="token variable">$backup_location</span>
+
+<span class="token comment"># 判断MYSQL是否启动,mysql没有启动则备份退出</span>
+<span class="token assign-left variable">mysql_ps</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> mysql <span class="token operator">|</span> <span class="token function">wc</span> -l<span class="token variable">)</span></span>
+<span class="token assign-left variable">mysql_listen</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">netstat</span> -an <span class="token operator">|</span> <span class="token function">grep</span> LISTEN <span class="token operator">|</span> <span class="token function">grep</span> $mysql_port <span class="token operator">|</span> <span class="token function">wc</span> -l<span class="token variable">)</span></span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token variable">$mysql_ps</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span> -o <span class="token punctuation">[</span><span class="token variable">$mysql_listen</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;错误：MySQL没有运行！备份停止！&quot;</span>
+    finish
+<span class="token keyword">fi</span>
+
+<span class="token comment"># 连接到mysql数据库，无法连接则备份退出</span>
+<span class="token comment"># 可以用shell脚本操作mysql数据库，</span>
+<span class="token comment"># 使用mysql的-e参数可以执行各种sql的(创建，删除，增，删，改、查)等各种操作 。</span>
+<span class="token assign-left variable">databases</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>mysql -h$mysql_host -P$mysql_port -u$mysql_user <span class="token punctuation">\</span>
+-p$mysql_password -e <span class="token string">&quot;show databases;&quot;</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>/dev/null<span class="token variable">`</span></span>
+
+<span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $?<span class="token variable">)</span></span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$flag</span> <span class="token operator">!=</span> <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;错误：无法连接mysql服务器！备份停止！&quot;</span>
+    finish
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;MySQL连接成功! 请等待......&quot;</span>
+<span class="token comment"># 如果没有定义备份的数据库，则退出备份</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">&quot;<span class="token variable">$backup_db_arr</span>&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;错误：没有定义备份的数据库&quot;</span>
+    finish
+<span class="token keyword">fi</span>
+
+<span class="token comment">#dbnames=$(cut -d ',' -f1-5 $backup_database)</span>
+<span class="token comment">#echo &quot;arr is (${backup_db_arr[@]})&quot;</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">dbname</span> <span class="token keyword">in</span> <span class="token variable">${backup_db_arr<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;数据库 <span class="token variable">$dbname</span> 备份开始...&quot;</span>
+    
+    <span class="token comment"># 过滤查询出的数据库中是否有当前数据库</span>
+    <span class="token assign-left variable">result</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> $databases <span class="token operator">|</span> <span class="token function">grep</span> -o $dbname<span class="token variable">`</span></span>
+    <span class="token comment"># 如果定义备份的数据库不存在，则备份停止</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">&quot;<span class="token variable">$result</span>&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;错误：数据库中没有查到此数据库<span class="token variable">$dbname</span>！&quot;</span>
+        finish
+    <span class="token keyword">fi</span>
+
+    <span class="token comment"># 创建备份文件夹</span>
+    <span class="token variable"><span class="token variable">$(</span><span class="token function">mkdir</span> -p $backup_dir<span class="token variable">)</span></span>
+    <span class="token comment"># 开始备份</span>
+    <span class="token variable"><span class="token variable">$(</span>
+        mysqldump -h$mysql_host -P$mysql_port -u$mysql_user <span class="token punctuation">\</span>
+        -p$mysql_password $dbname --default-character-set<span class="token operator">=</span>$mysql_charset <span class="token punctuation">\</span>
+        <span class="token operator">|</span> <span class="token function">gzip</span> <span class="token operator">&gt;</span>$backup_dir/$dbname-$backup_time.sql.gz
+    <span class="token variable">)</span></span>
+
+    <span class="token comment"># 获取执行结果</span>
+    <span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> $?<span class="token variable">)</span></span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$flag</span> <span class="token operator">==</span> <span class="token string">&quot;0&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;数据库 <span class="token variable">$dbname</span> 成功备份到 <span class="token variable">$backup_dir</span>/<span class="token variable">$dbname</span>-<span class="token variable">$backup_time</span>.sql.gz&quot;</span>
+    <span class="token keyword">else</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">&quot;数据库 <span class="token variable">$dbname</span> 备份失败!&quot;</span>
+    <span class="token keyword">fi</span>
+
+<span class="token keyword">done</span>
+
+<span class="token comment"># 如果开启了删除过期备份，则进行删除操作</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">&quot;<span class="token variable">$expire_backup_delete</span>&quot;</span> <span class="token operator">==</span> <span class="token string">&quot;ON&quot;</span> -a <span class="token string">&quot;<span class="token variable">$backup_dir</span>&quot;</span> <span class="token operator">!=</span> <span class="token string">&quot;&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;查找要删除的文件：&quot;</span>
+    <span class="token comment"># 查找要删除的文件</span>
+    <span class="token variable"><span class="token variable">$(</span><span class="token function">find</span> $backup_dir/ -type f -mtime +$expire_days -print<span class="token variable">)</span></span>
+    <span class="token comment"># 开始查找并删除</span>
+    <span class="token variable"><span class="token variable">$(</span><span class="token function">find</span> $backup_dir/ -type f -mtime +$expire_days -print <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">rm</span> -f<span class="token variable">)</span></span>
+    <span class="token builtin class-name">echo</span> <span class="token string">&quot;删除备份文件成功!&quot;</span>
+<span class="token keyword">fi</span>
+
+finish
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br></div></div><h3 id="同步远程数据库到本地"><a href="#同步远程数据库到本地" class="header-anchor">#</a> 同步远程数据库到本地</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;****************************************************************************&quot;</span>
+<span class="token assign-left variable">startDate</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;★[<span class="token variable">$startDate</span>] 开始执行：&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;----------------------------------------------------------------------------&quot;</span>
+
+<span class="token comment"># 远程数据库</span>
+<span class="token assign-left variable">SERVER_HOST</span><span class="token operator">=</span><span class="token string">&quot;ip&quot;</span>
+<span class="token assign-left variable">SERVER_PORT</span><span class="token operator">=</span><span class="token string">&quot;端口&quot;</span>
+<span class="token assign-left variable">SERVER_USER</span><span class="token operator">=</span><span class="token string">&quot;用户名&quot;</span>
+<span class="token assign-left variable">SERVER_PASSWORD</span><span class="token operator">=</span><span class="token string">&quot;密码&quot;</span>
+<span class="token assign-left variable">SERVER_DB</span><span class="token operator">=</span><span class="token string">&quot;kcyw&quot;</span>
+
+<span class="token comment"># 本地数据库</span>
+<span class="token assign-left variable">LOCAL_HOST</span><span class="token operator">=</span><span class="token string">&quot;localhost&quot;</span>
+<span class="token assign-left variable">LOCAL_PORT</span><span class="token operator">=</span><span class="token string">&quot;3306&quot;</span>
+<span class="token assign-left variable">LOCAL_USER</span><span class="token operator">=</span><span class="token string">&quot;用户名&quot;</span>
+<span class="token assign-left variable">LOCAL_PASSWORD</span><span class="token operator">=</span><span class="token string">&quot;密码&quot;</span>
+
+<span class="token comment"># 如果本地数据库不存在则创建</span>
+<span class="token assign-left variable">create_db_sql</span><span class="token operator">=</span><span class="token string">&quot;create database IF NOT EXISTS <span class="token variable">${SERVER_DB}</span>&quot;</span>
+mysql -h<span class="token variable">${LOCAL_HOST}</span> -P<span class="token variable">${LOCAL_PORT}</span> -u<span class="token variable">${LOCAL_USER}</span> -p<span class="token variable">${LOCAL_PASSWORD}</span> -e <span class="token string">&quot;<span class="token variable">${create_db_sql}</span>&quot;</span>
+
+<span class="token comment">#从远程数据库备份到本地数据库</span>
+mysqldump -R -E -h<span class="token variable">${SERVER_HOST}</span> -P<span class="token variable">${SERVER_PORT}</span> -u<span class="token variable">${SERVER_USER}</span> -p<span class="token variable">${SERVER_PASSWORD}</span> <span class="token variable">${SERVER_DB}</span> <span class="token punctuation">\</span>
+<span class="token operator">|</span> mysql -h<span class="token variable">${LOCAL_HOST}</span> -P<span class="token variable">${LOCAL_PORT}</span> -u<span class="token variable">${LOCAL_USER}</span> -p<span class="token variable">${LOCAL_PASSWORD}</span> -C <span class="token variable">${SERVER_DB}</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;----------------------------------------------------------------------------&quot;</span>
+<span class="token assign-left variable">endDate</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">&quot;%Y-%m-%d %H:%M:%S&quot;</span><span class="token variable">)</span></span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;★[<span class="token variable">$endDate</span>] Successful&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;****************************************************************************&quot;</span>
+<span class="token builtin class-name">exit</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/database/MySQL/MySQL事件.html" class="prev">
+        MySQL事件
+      </a></span> <span class="next"><a href="/database/MySQL/MySQL存储过程.html">
+        MySQL存储过程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.95d022f7.js" defer></script><script src="/assets/js/2.3a46498f.js" defer></script><script src="/assets/js/75.2fbd2e4c.js" defer></script>
+  </body>
+</html>

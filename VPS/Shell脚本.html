@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shell脚本 | IMBAPUB</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="这真的很imba">
+    <link rel="preload" href="/assets/css/0.styles.471cf497.css" as="style"><link rel="preload" href="/assets/js/app.95d022f7.js" as="script"><link rel="preload" href="/assets/js/2.3a46498f.js" as="script"><link rel="preload" href="/assets/js/59.a3a3fe01.js" as="script"><link rel="prefetch" href="/assets/js/10.2018e9fd.js"><link rel="prefetch" href="/assets/js/100.ab12de60.js"><link rel="prefetch" href="/assets/js/101.583cee00.js"><link rel="prefetch" href="/assets/js/102.fdf7f15c.js"><link rel="prefetch" href="/assets/js/103.50a42b70.js"><link rel="prefetch" href="/assets/js/104.df2eaa11.js"><link rel="prefetch" href="/assets/js/105.a9ee9f5b.js"><link rel="prefetch" href="/assets/js/106.41810fd1.js"><link rel="prefetch" href="/assets/js/107.e57d210f.js"><link rel="prefetch" href="/assets/js/108.a467b44e.js"><link rel="prefetch" href="/assets/js/109.e9c99e12.js"><link rel="prefetch" href="/assets/js/11.823d6f8d.js"><link rel="prefetch" href="/assets/js/110.0640c39f.js"><link rel="prefetch" href="/assets/js/111.705c2200.js"><link rel="prefetch" href="/assets/js/112.9a19d341.js"><link rel="prefetch" href="/assets/js/12.ef380254.js"><link rel="prefetch" href="/assets/js/13.697ff2be.js"><link rel="prefetch" href="/assets/js/14.d9443a9c.js"><link rel="prefetch" href="/assets/js/15.344d8e75.js"><link rel="prefetch" href="/assets/js/16.853a732c.js"><link rel="prefetch" href="/assets/js/17.e3862510.js"><link rel="prefetch" href="/assets/js/18.5871cfb3.js"><link rel="prefetch" href="/assets/js/19.c55a149a.js"><link rel="prefetch" href="/assets/js/20.7aab1c7d.js"><link rel="prefetch" href="/assets/js/21.5372c147.js"><link rel="prefetch" href="/assets/js/22.6e9ff47a.js"><link rel="prefetch" href="/assets/js/23.4176bb24.js"><link rel="prefetch" href="/assets/js/24.b7f8575c.js"><link rel="prefetch" href="/assets/js/25.8f5b4ea3.js"><link rel="prefetch" href="/assets/js/26.f296e447.js"><link rel="prefetch" href="/assets/js/27.9a4e430a.js"><link rel="prefetch" href="/assets/js/28.1868bb3c.js"><link rel="prefetch" href="/assets/js/29.c83b0c3a.js"><link rel="prefetch" href="/assets/js/3.a0918208.js"><link rel="prefetch" href="/assets/js/30.35fa5fba.js"><link rel="prefetch" href="/assets/js/31.34fd8625.js"><link rel="prefetch" href="/assets/js/32.0437cf42.js"><link rel="prefetch" href="/assets/js/33.021d9ee8.js"><link rel="prefetch" href="/assets/js/34.a063ad66.js"><link rel="prefetch" href="/assets/js/35.c3adff0b.js"><link rel="prefetch" href="/assets/js/36.af37ef5c.js"><link rel="prefetch" href="/assets/js/37.4bbd540e.js"><link rel="prefetch" href="/assets/js/38.d2348311.js"><link rel="prefetch" href="/assets/js/39.91cb2501.js"><link rel="prefetch" href="/assets/js/4.606cd99c.js"><link rel="prefetch" href="/assets/js/40.1445f188.js"><link rel="prefetch" href="/assets/js/41.59c89272.js"><link rel="prefetch" href="/assets/js/42.f1c3bf6d.js"><link rel="prefetch" href="/assets/js/43.62c14b97.js"><link rel="prefetch" href="/assets/js/44.4f8a4c9e.js"><link rel="prefetch" href="/assets/js/45.f6c272ae.js"><link rel="prefetch" href="/assets/js/46.81e29f75.js"><link rel="prefetch" href="/assets/js/47.6b11caa9.js"><link rel="prefetch" href="/assets/js/48.4db0cc53.js"><link rel="prefetch" href="/assets/js/49.6747ab5a.js"><link rel="prefetch" href="/assets/js/5.09079429.js"><link rel="prefetch" href="/assets/js/50.e5e8b53c.js"><link rel="prefetch" href="/assets/js/51.6d41569c.js"><link rel="prefetch" href="/assets/js/52.9f684a44.js"><link rel="prefetch" href="/assets/js/53.1fb124a5.js"><link rel="prefetch" href="/assets/js/54.94191d1f.js"><link rel="prefetch" href="/assets/js/55.8f63ccfb.js"><link rel="prefetch" href="/assets/js/56.7f2ef3fa.js"><link rel="prefetch" href="/assets/js/57.e0e55bd4.js"><link rel="prefetch" href="/assets/js/58.8b9bbcc6.js"><link rel="prefetch" href="/assets/js/6.3c4b6517.js"><link rel="prefetch" href="/assets/js/60.47f5455b.js"><link rel="prefetch" href="/assets/js/61.55dccf8c.js"><link rel="prefetch" href="/assets/js/62.25c52188.js"><link rel="prefetch" href="/assets/js/63.3584d76c.js"><link rel="prefetch" href="/assets/js/64.490d018b.js"><link rel="prefetch" href="/assets/js/65.e5e6c765.js"><link rel="prefetch" href="/assets/js/66.9718a4fe.js"><link rel="prefetch" href="/assets/js/67.29af663e.js"><link rel="prefetch" href="/assets/js/68.51122fa7.js"><link rel="prefetch" href="/assets/js/69.f16d243b.js"><link rel="prefetch" href="/assets/js/7.5dcc397c.js"><link rel="prefetch" href="/assets/js/70.39a7658f.js"><link rel="prefetch" href="/assets/js/71.eba1a8e2.js"><link rel="prefetch" href="/assets/js/72.3ff88419.js"><link rel="prefetch" href="/assets/js/73.45ff0234.js"><link rel="prefetch" href="/assets/js/74.51e7d3b1.js"><link rel="prefetch" href="/assets/js/75.2fbd2e4c.js"><link rel="prefetch" href="/assets/js/76.a2a0d747.js"><link rel="prefetch" href="/assets/js/77.d594f05b.js"><link rel="prefetch" href="/assets/js/78.22ea4811.js"><link rel="prefetch" href="/assets/js/79.f083c4ed.js"><link rel="prefetch" href="/assets/js/8.cd10b72e.js"><link rel="prefetch" href="/assets/js/80.a39506a7.js"><link rel="prefetch" href="/assets/js/81.36e1981f.js"><link rel="prefetch" href="/assets/js/82.7fe0ea1b.js"><link rel="prefetch" href="/assets/js/83.ea15296a.js"><link rel="prefetch" href="/assets/js/84.3029f850.js"><link rel="prefetch" href="/assets/js/85.795c3724.js"><link rel="prefetch" href="/assets/js/86.5121e878.js"><link rel="prefetch" href="/assets/js/87.17471d31.js"><link rel="prefetch" href="/assets/js/88.efcb3215.js"><link rel="prefetch" href="/assets/js/89.8a6e7508.js"><link rel="prefetch" href="/assets/js/9.9f4472b7.js"><link rel="prefetch" href="/assets/js/90.6b8c7246.js"><link rel="prefetch" href="/assets/js/91.7d30ab2b.js"><link rel="prefetch" href="/assets/js/92.130b4b9d.js"><link rel="prefetch" href="/assets/js/93.28ebba80.js"><link rel="prefetch" href="/assets/js/94.61b822d8.js"><link rel="prefetch" href="/assets/js/95.e3c10163.js"><link rel="prefetch" href="/assets/js/96.b5bcd2a4.js"><link rel="prefetch" href="/assets/js/97.1ddae833.js"><link rel="prefetch" href="/assets/js/98.48bbeec7.js"><link rel="prefetch" href="/assets/js/99.affd3259.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.471cf497.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">IMBAPUB</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/java/" class="nav-link">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="shell脚本"><a href="#shell脚本" class="header-anchor">#</a> Shell脚本</h1> <ul><li><a href="#flag">flag</a></li> <li><a href="#%E6%B8%85%E7%90%86%E5%86%85%E5%AD%98">清理内存</a></li> <li><a href="#%E6%B8%85%E7%90%86%E6%97%A5%E5%BF%97">清理日志</a></li> <li><a href="#linux%E4%B9%8B%E9%97%B4%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6">Linux之间传输文件</a></li></ul> <h2 id="flag"><a href="#flag" class="header-anchor">#</a> flag</h2> <blockquote><p><code>Shell</code>脚本（<code>shell script</code>），是一种为<code>Shell</code>编写的脚本程序。
+<code>Shell</code>脚本文件的名称可以任意，但为了避免被误以为是普通文件，建议将<code>.sh</code>后缀加上，以表示是一个脚本文件。</p></blockquote> <ul><li><p><a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener noreferrer">Shell 教程<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p><a href="https://www.jianshu.com/p/3782970dec75" target="_blank" rel="noopener noreferrer">Shell命令脚本初步认识，Shell脚本入门<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li></ul> <h2 id="清理内存"><a href="#清理内存" class="header-anchor">#</a> 清理内存</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 获取到的内存配置信息若为0的话，则表示开启了缓存机制</span>
+<span class="token function">cat</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># drop_caches是让系统清理内存页的缓存，从而得到更多的可用内存</span>
+<span class="token comment"># 释放网页缓存(To free pagecache)</span>
+<span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">&gt;</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># 释放目录项和索引(To free dentries and inodes)</span>
+<span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">2</span> <span class="token operator">&gt;</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># 释放网页缓存，目录项和索引（To free pagecache, dentries and inodes）</span>
+<span class="token function">sync</span><span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> <span class="token number">3</span> <span class="token operator">&gt;</span> /proc/sys/vm/drop_caches
+
+<span class="token comment"># 清理/var/cache/yum的headers</span>
+yum clean headers
+
+<span class="token comment"># 清理/var/cache/yum下的软件包</span>
+yum clean packages
+
+<span class="token comment"># 清理软件源</span>
+yum clean metadata
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="清理日志"><a href="#清理日志" class="header-anchor">#</a> 清理日志</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 清除定时任务记录</span>
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/cron
+<span class="token comment"># 清除ftp记录</span>
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/xferlog
+<span class="token comment"># 清除数据库日志</span>
+<span class="token function">sed</span> -i <span class="token string">'1,50'</span> /var/log/mariadb/mariadb.log
+<span class="token comment"># 清除sshd信息</span>
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/secure
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/firewalld
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/httpd/access_log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/httpd/ssl_access_log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/httpd/ssl_error_log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/httpd/ssl_request_log
+<span class="token comment"># 清除系统开机发生的错误</span>
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/messages
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/tuned/tuned.log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/hawkey.log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/yum.log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/dnf.log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/dnf.rpm.log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/ntp.log
+<span class="token function">sed</span> -i <span class="token string">'1,50d'</span> /var/log/audit/audit.log
+
+<span class="token comment"># 清除历史执行命令</span>
+<span class="token function">rm</span> -rf ~/.bash_history
+
+<span class="token comment"># 清除系统登录成功的记录</span>
+<span class="token builtin class-name">echo</span> <span class="token operator">&gt;</span> /var/log/wtmp
+<span class="token comment"># 清除系统登录失败的记录</span>
+<span class="token builtin class-name">echo</span> <span class="token operator">&gt;</span> /var/log/btmp
+<span class="token comment"># 清除最近登录信息</span>
+<span class="token builtin class-name">echo</span> <span class="token operator">&gt;</span> /var/log/lastlog
+
+<span class="token function">rm</span> -fr /var/log/*
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h2 id="linux之间传输文件"><a href="#linux之间传输文件" class="header-anchor">#</a> Linux之间传输文件</h2> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+
+
+<span class="token comment"># 远程IP</span>
+<span class="token assign-left variable">des_ip</span><span class="token operator">=</span><span class="token number">192.168</span>.1.1
+<span class="token comment"># 远程端口</span>
+<span class="token assign-left variable">des_port</span><span class="token operator">=</span><span class="token number">22</span>
+<span class="token comment"># 远程用户</span>
+<span class="token assign-left variable">des_user</span><span class="token operator">=</span>root
+<span class="token comment"># 远程密码</span>
+<span class="token assign-left variable">des_pass</span><span class="token operator">=</span><span class="token number">123456</span>
+<span class="token comment"># 远程文件或文件夹路径</span>
+<span class="token assign-left variable">des_path</span><span class="token operator">=</span>/www/wwwroot/file
+<span class="token comment"># 本地文件或文件夹路径</span>
+<span class="token assign-left variable">local_path</span><span class="token operator">=</span>/www/wwwroot/file
+
+<span class="token comment"># 检索expect是否安装</span>
+<span class="token assign-left variable">is_expect</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">whereis</span> <span class="token function">expect</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">$2</span>}'</span><span class="token variable">`</span></span>
+<span class="token comment"># 如果没有安装</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -n <span class="token string">&quot;<span class="token variable">$is_expect</span>&quot;</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    yum -y <span class="token function">install</span> <span class="token function">expect</span> <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+<span class="token keyword">fi</span>
+
+
+<span class="token function">expect</span> -c <span class="token string">&quot;
+# 设置拷贝的时间，超时时间-1为永不超时
+set timeout -1
+
+# 本地路径在前，远程在后，是从本地上传到远端
+# spawn scp -P <span class="token variable">${des_port}</span> -p -r <span class="token variable">${local_path}</span> <span class="token variable">${des_user}</span>@<span class="token variable">${des_ip}</span>:<span class="token variable">${des_path}</span>
+# 远程在前，本地路径在后，的是从远端下载到本地
+spawn scp -P <span class="token variable">${des_port}</span> -p -r <span class="token variable">${des_user}</span>@<span class="token variable">${des_ip}</span>:<span class="token variable">${des_path}</span> <span class="token variable">${local_path}</span>
+
+expect {
+  <span class="token entity" title="\&quot;">\&quot;</span>*yes/no*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span>yes<span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>; exp_continue}
+  <span class="token entity" title="\&quot;">\&quot;</span>*password*<span class="token entity" title="\&quot;">\&quot;</span> {send <span class="token entity" title="\&quot;">\&quot;</span><span class="token variable">${des_pass}</span><span class="token entity" title="\r">\r</span><span class="token entity" title="\&quot;">\&quot;</span>;}
+}
+
+&quot;</span>
+<span class="token builtin class-name">exit</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.95d022f7.js" defer></script><script src="/assets/js/2.3a46498f.js" defer></script><script src="/assets/js/59.a3a3fe01.js" defer></script>
+  </body>
+</html>
