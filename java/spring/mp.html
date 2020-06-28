@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>mybatis plus | IMBAPUB</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="这真的很imba">
+    <link rel="preload" href="/assets/css/0.styles.471cf497.css" as="style"><link rel="preload" href="/assets/js/app.e35ca489.js" as="script"><link rel="preload" href="/assets/js/2.3a46498f.js" as="script"><link rel="preload" href="/assets/js/95.82855d61.js" as="script"><link rel="prefetch" href="/assets/js/10.2018e9fd.js"><link rel="prefetch" href="/assets/js/100.d248d1a1.js"><link rel="prefetch" href="/assets/js/101.20d374a3.js"><link rel="prefetch" href="/assets/js/102.6f89bce9.js"><link rel="prefetch" href="/assets/js/103.462dee05.js"><link rel="prefetch" href="/assets/js/104.f7cda00b.js"><link rel="prefetch" href="/assets/js/105.f9a26864.js"><link rel="prefetch" href="/assets/js/106.363e309f.js"><link rel="prefetch" href="/assets/js/107.77657b30.js"><link rel="prefetch" href="/assets/js/108.a958628c.js"><link rel="prefetch" href="/assets/js/109.b08e857c.js"><link rel="prefetch" href="/assets/js/11.823d6f8d.js"><link rel="prefetch" href="/assets/js/110.c76d755d.js"><link rel="prefetch" href="/assets/js/111.b2fd2943.js"><link rel="prefetch" href="/assets/js/112.8b25f21e.js"><link rel="prefetch" href="/assets/js/113.3ed89c42.js"><link rel="prefetch" href="/assets/js/114.fb9abbf2.js"><link rel="prefetch" href="/assets/js/115.40001f6b.js"><link rel="prefetch" href="/assets/js/116.034d175f.js"><link rel="prefetch" href="/assets/js/117.1a08fa0d.js"><link rel="prefetch" href="/assets/js/118.36362764.js"><link rel="prefetch" href="/assets/js/119.9d971d94.js"><link rel="prefetch" href="/assets/js/12.ef380254.js"><link rel="prefetch" href="/assets/js/120.c657f1a3.js"><link rel="prefetch" href="/assets/js/121.2e4976c7.js"><link rel="prefetch" href="/assets/js/122.1b4544e7.js"><link rel="prefetch" href="/assets/js/123.67648aac.js"><link rel="prefetch" href="/assets/js/13.697ff2be.js"><link rel="prefetch" href="/assets/js/14.d9443a9c.js"><link rel="prefetch" href="/assets/js/15.a9dff45d.js"><link rel="prefetch" href="/assets/js/16.77e1e60d.js"><link rel="prefetch" href="/assets/js/17.6eced122.js"><link rel="prefetch" href="/assets/js/18.5af74e2c.js"><link rel="prefetch" href="/assets/js/19.150015fd.js"><link rel="prefetch" href="/assets/js/20.a1dd4619.js"><link rel="prefetch" href="/assets/js/21.5372c147.js"><link rel="prefetch" href="/assets/js/22.6e9ff47a.js"><link rel="prefetch" href="/assets/js/23.4176bb24.js"><link rel="prefetch" href="/assets/js/24.b7f8575c.js"><link rel="prefetch" href="/assets/js/25.bd0cd70a.js"><link rel="prefetch" href="/assets/js/26.309cbfe1.js"><link rel="prefetch" href="/assets/js/27.9489af17.js"><link rel="prefetch" href="/assets/js/28.9cca7ff8.js"><link rel="prefetch" href="/assets/js/29.c6f85384.js"><link rel="prefetch" href="/assets/js/3.02e401b3.js"><link rel="prefetch" href="/assets/js/30.19535190.js"><link rel="prefetch" href="/assets/js/31.57c3c868.js"><link rel="prefetch" href="/assets/js/32.db16b5a4.js"><link rel="prefetch" href="/assets/js/33.d68397d3.js"><link rel="prefetch" href="/assets/js/34.27338e5a.js"><link rel="prefetch" href="/assets/js/35.76c61489.js"><link rel="prefetch" href="/assets/js/36.c7baad28.js"><link rel="prefetch" href="/assets/js/37.0bd618e5.js"><link rel="prefetch" href="/assets/js/38.67646ba4.js"><link rel="prefetch" href="/assets/js/39.792b5004.js"><link rel="prefetch" href="/assets/js/4.606cd99c.js"><link rel="prefetch" href="/assets/js/40.4263f589.js"><link rel="prefetch" href="/assets/js/41.3ae17213.js"><link rel="prefetch" href="/assets/js/42.67d07cb8.js"><link rel="prefetch" href="/assets/js/43.8d0ddff6.js"><link rel="prefetch" href="/assets/js/44.8082ba0e.js"><link rel="prefetch" href="/assets/js/45.5a00bcd5.js"><link rel="prefetch" href="/assets/js/46.0abb047f.js"><link rel="prefetch" href="/assets/js/47.78779a39.js"><link rel="prefetch" href="/assets/js/48.4bd49e90.js"><link rel="prefetch" href="/assets/js/49.178fe603.js"><link rel="prefetch" href="/assets/js/5.09079429.js"><link rel="prefetch" href="/assets/js/50.57067e12.js"><link rel="prefetch" href="/assets/js/51.6d41569c.js"><link rel="prefetch" href="/assets/js/52.9f684a44.js"><link rel="prefetch" href="/assets/js/53.1fb124a5.js"><link rel="prefetch" href="/assets/js/54.94191d1f.js"><link rel="prefetch" href="/assets/js/55.8f63ccfb.js"><link rel="prefetch" href="/assets/js/56.7f2ef3fa.js"><link rel="prefetch" href="/assets/js/57.e0e55bd4.js"><link rel="prefetch" href="/assets/js/58.8b9bbcc6.js"><link rel="prefetch" href="/assets/js/59.a3a3fe01.js"><link rel="prefetch" href="/assets/js/6.3c4b6517.js"><link rel="prefetch" href="/assets/js/60.47f5455b.js"><link rel="prefetch" href="/assets/js/61.55dccf8c.js"><link rel="prefetch" href="/assets/js/62.25c52188.js"><link rel="prefetch" href="/assets/js/63.3584d76c.js"><link rel="prefetch" href="/assets/js/64.490d018b.js"><link rel="prefetch" href="/assets/js/65.e5e6c765.js"><link rel="prefetch" href="/assets/js/66.9718a4fe.js"><link rel="prefetch" href="/assets/js/67.29af663e.js"><link rel="prefetch" href="/assets/js/68.51122fa7.js"><link rel="prefetch" href="/assets/js/69.f16d243b.js"><link rel="prefetch" href="/assets/js/7.5dcc397c.js"><link rel="prefetch" href="/assets/js/70.db5049d8.js"><link rel="prefetch" href="/assets/js/71.eba1a8e2.js"><link rel="prefetch" href="/assets/js/72.105af7b3.js"><link rel="prefetch" href="/assets/js/73.874bb3c4.js"><link rel="prefetch" href="/assets/js/74.7cd2f043.js"><link rel="prefetch" href="/assets/js/75.fbe74913.js"><link rel="prefetch" href="/assets/js/76.a15f95f0.js"><link rel="prefetch" href="/assets/js/77.29e93c64.js"><link rel="prefetch" href="/assets/js/78.fde575dd.js"><link rel="prefetch" href="/assets/js/79.8b819553.js"><link rel="prefetch" href="/assets/js/8.cd10b72e.js"><link rel="prefetch" href="/assets/js/80.5b868bd2.js"><link rel="prefetch" href="/assets/js/81.af82a4ee.js"><link rel="prefetch" href="/assets/js/82.51e287e4.js"><link rel="prefetch" href="/assets/js/83.d1e608e1.js"><link rel="prefetch" href="/assets/js/84.078544e4.js"><link rel="prefetch" href="/assets/js/85.fe00d630.js"><link rel="prefetch" href="/assets/js/86.db79d92c.js"><link rel="prefetch" href="/assets/js/87.32b22d6b.js"><link rel="prefetch" href="/assets/js/88.f90507d5.js"><link rel="prefetch" href="/assets/js/89.a7e63c75.js"><link rel="prefetch" href="/assets/js/9.9f4472b7.js"><link rel="prefetch" href="/assets/js/90.a04287a5.js"><link rel="prefetch" href="/assets/js/91.2b998c2e.js"><link rel="prefetch" href="/assets/js/92.2b4b3b8d.js"><link rel="prefetch" href="/assets/js/93.1b09a3ca.js"><link rel="prefetch" href="/assets/js/94.7e4c07e5.js"><link rel="prefetch" href="/assets/js/96.14bb02d0.js"><link rel="prefetch" href="/assets/js/97.6ed84340.js"><link rel="prefetch" href="/assets/js/98.7a99d066.js"><link rel="prefetch" href="/assets/js/99.b8d15a06.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.471cf497.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">IMBAPUB</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/design/" class="nav-link">
+  design
+</a></div><div class="nav-item"><a href="/php/" class="nav-link">
+  php
+</a></div><div class="nav-item"><a href="/safety/" class="nav-link">
+  安全
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/java/" class="nav-link router-link-active">
+  java
+</a></div><div class="nav-item"><a href="/IDE/" class="nav-link">
+  IDE
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  linux
+</a></div><div class="nav-item"><a href="/Python/" class="nav-link">
+  Python
+</a></div><div class="nav-item"><a href="/Web/" class="nav-link">
+  Web
+</a></div><div class="nav-item"><a href="/windows/" class="nav-link">
+  windows
+</a></div><div class="nav-item"><a href="/database/" class="nav-link">
+  database
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link">
+  vue
+</a></div><div class="nav-item"><a href="/design/" class="nav-link">
+  design
+</a></div><div class="nav-item"><a href="/php/" class="nav-link">
+  php
+</a></div><div class="nav-item"><a href="/safety/" class="nav-link">
+  安全
+</a></div><div class="nav-item"><a href="/Other/" class="nav-link">
+  Other
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>构建工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>spring</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/java/spring/springboot.html" class="sidebar-link">springboot 知识汇总</a></li><li><a href="/java/spring/springcloud.html" class="sidebar-link">springcloud</a></li><li><a href="/java/spring/springboot swagger.html" class="sidebar-link">swagger</a></li><li><a href="/java/spring/thymeleaf.html" class="sidebar-link">thymeleaf</a></li><li><a href="/java/spring/shiro.html" class="sidebar-link">shiro</a></li><li><a href="/java/spring/mp.html" aria-current="page" class="active sidebar-link">mybatis plus</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="mybatis-plus"><a href="#mybatis-plus" class="header-anchor">#</a> mybatis plus</h1> <p>Address: https://mp.baomidou.com/guide/quick-start.html</p> <ul><li><p>Quick start</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//create table
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE user
+(
+	id BIGINT(20) NOT NULL COMMENT '主键ID',
+	name VARCHAR(30) NULL DEFAULT NULL COMMENT '姓名',
+	age INT(11) NULL DEFAULT NULL COMMENT '年龄',
+	email VARCHAR(50) NULL DEFAULT NULL COMMENT '邮箱',
+	PRIMARY KEY (id)
+);
+DELETE FROM user;
+
+INSERT INTO user (id, name, age, email) VALUES
+(1, 'Jone', 18, 'test1@baomidou.com'),
+(2, 'Jack', 20, 'test2@baomidou.com'),
+(3, 'Tom', 28, 'test3@baomidou.com'),
+(4, 'Sandy', 21, 'test4@baomidou.com'),
+(5, 'Billie', 24, 'test5@baomidou.com');
+-- true develop : version （  乐观锁）deleted gmt_create fmt_modified
+
+//dependency
+	//maven
+	&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+    &lt;version&gt;2.3.1.RELEASE&lt;/version&gt;
+    &lt;relativePath/&gt;
+&lt;/parent&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+        &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+        &lt;optional&gt;true&lt;/optional&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
+        &lt;version&gt;3.3.2&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+        &lt;artifactId&gt;h2&lt;/artifactId&gt;
+        &lt;scope&gt;runtime&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+//application.yml
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema-h2.sql
+    data: classpath:db/data-h2.sql
+    url: jdbc:h2:mem:test
+    username: root
+    password: test
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div></li> <li><p>mybatis plus</p> <ul><li><p>pojo</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+@TableName(value = &quot;dc_measure&quot;)//指定表名
+public class Dc_measure {
+
+    @TableId(value = &quot;id&quot;,type = IdType.AUTO)//指定自增策略
+    private int id;
+
+    private String measure_name;
+
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></li> <li><p>mapper</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>@Mapper
+public interface DcMeasureMapper extends BaseMapper&lt;Dc_measure&gt; {
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li> <li><p>test</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> System.out.println((&quot;----- selectAll method test ------&quot;));
+ List&lt;Dc_measure&gt; userList = measureMapper.selectList(null);
+ Assert.assertEquals(3, userList.size());
+ userList.forEach(System.out::println);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li></ul></li> <li><p>config log</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//yml
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>CRUD</p> <ul><li><p>数据库插入默认id（雪花算法）</p> <blockquote><p>@TableId(value = &quot;id&quot;,type = IdType.AUTO)//指定自增策略</p></blockquote></li></ul></li> <li><p>自动填充</p> <ul><li><p>all tables : gmt_created, gmt_modified</p> <blockquote><p>1.database</p> <p>'createTime' timestamp DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',</p> <p>'moditiyTime' timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  COMMENT '更新时间',</p> <p>2.code</p> <p>@TableField(fill = FieldFill.INSERT)
+private Date createtime
+@TableField(fill = FieldFill.INSERT_UPDATE)
+private Date updatetime</p></blockquote> <p>3.处理器</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>@Component // mybatis 自动使用
+@Slf4j
+public class MyHandler implements MetaObjectHandler {
+
+    @Override
+    public void insertFill(MetaObject metaObject) {
+        log.info(&quot;start insert fill&quot;);
+        this.setFieldValByName(&quot;createTime&quot;, new Date(), metaObject);
+        this.setFieldValByName(&quot;updateTime&quot;, new Date(), metaObject);
+    }
+
+    @Override
+    public void updateFill(MetaObject metaObject) {
+        this.setFieldValByName(&quot;updateTime&quot;, new Date(), metaObject);
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li></ul></li> <li><p>乐观锁&amp;悲观锁</p> <ul><li><p>乐观锁实现方式：</p> <ul><li>取出记录时，获取当前version</li> <li>更新时，带上这个version</li> <li>执行更新时， set version = newVersion where version = oldVersion</li> <li>如果version不对，就更新失败</li></ul></li> <li><p>实体类加注解</p> <blockquote><p>@Version //乐观锁
+private Integer version;</p></blockquote></li> <li><p>注册组件</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Bean</span>
+<span class="token keyword">public</span> <span class="token class-name">OptimisticLockerInterceptor</span> <span class="token function">optimisticLockerInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">OptimisticLockerInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li></ul></li> <li><p>查询操作</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+ List&lt;Dc_measure&gt; userList = measureMapper.selectByMap(null);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li> <li><p>分页</p> <ul><li><p>配置拦截器</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Bean</span>
+<span class="token keyword">public</span> <span class="token class-name">PaginationInterceptor</span> <span class="token function">paginationInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">PaginationInterceptor</span> paginationInterceptor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PaginationInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 设置请求的页面大于最大页后操作， true调回到首页，false 继续请求  默认false</span>
+  <span class="token comment">// paginationInterceptor.setOverflow(false);</span>
+  <span class="token comment">// 设置最大单页限制数量，默认 500 条，-1 不受限制</span>
+  <span class="token comment">// paginationInterceptor.setLimit(500);</span>
+  <span class="token comment">// 开启 count 的 join 优化,只针对部分 left join</span>
+  paginationInterceptor<span class="token punctuation">.</span><span class="token function">setCountSqlParser</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">JsqlParserCountOptimize</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> paginationInterceptor<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></li> <li><p>使用</p> <blockquote><p>Page<User> page = new Page&lt;&gt;(1,5);// 1当前页 5页面大小</User></p> <p>userMapper.selectPageVo(page, state);</p></blockquote></li></ul></li> <li><p>删除</p> <ul><li><p>普通删除</p></li> <li><p>逻辑删除</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//yml
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: flag  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+
+@TableLogic
+private Integer deleted;
+
+
+@Bean//3.3.0不需要bean
+public ISqlInjector sqlInjector(){
+	return new LogicSqlInjector();
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div></li></ul></li> <li><p>性能分析插件：慢查询</p> <ul><li><p>1.导入插件</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token annotation punctuation">@Bean</span><span class="token comment">//3.2.0以上版本已移除 使用https://mp.baomidou.com/guide/p6spy.html</span>
+    <span class="token annotation punctuation">@Profile</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">&quot;dev&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token comment">// 设置 dev test 环境开启</span>
+    <span class="token keyword">public</span> <span class="token class-name">PerformanceInterceptor</span> <span class="token function">performanceInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">PerformanceInterceptor</span> tt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PerformanceInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tt<span class="token punctuation">.</span><span class="token function">setMaxTime</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tt<span class="token punctuation">.</span><span class="token function">setFormat</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> tt<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li> <li><p>2.测试使用</p></li></ul></li> <li><p>条件构造器：wrapper https://mp.baomidou.com/guide/wrapper.html#abstractwrapper</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>QueryWrapper&lt;User&gt; wrapper = new QueryWrapper&lt;&gt;();
+wrapper.eq(&quot;name&quot;, &quot;zhangsan&quot;);
+wrapper.notLike(&quot;name&quot;, &quot;zhangsan&quot;).likeRight(&quot;name&quot;, &quot;li&quot;);
+
+//子查询
+wrapper.inSql(&quot;id&quot;, &quot;select id from user where id&lt;3&quot;);
+
+//排序
+wrapper.orderByDesc(&quot;id&quot;)
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/java/spring/shiro.html" class="prev">
+        shiro
+      </a></span> <span class="next"><a href="/java/base/JDK.html">
+        JDK
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e35ca489.js" defer></script><script src="/assets/js/2.3a46498f.js" defer></script><script src="/assets/js/95.82855d61.js" defer></script>
+  </body>
+</html>
